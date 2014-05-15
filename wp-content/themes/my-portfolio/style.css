@@ -160,6 +160,8 @@ h2 {
  	margin: 1% 0;
  	color: #000;
  }
+ h3#comments,
+ #respond h3,
  h4 {
  	font-family: 'brandon_grotesque_lightRg';
  	text-transform: uppercase;
@@ -359,9 +361,6 @@ nav a {
 
 article {
 	text-align: left;
-}
-.excerpt:after {
-   content: "[...]";
 }
  ul.info {
 	padding: 0;

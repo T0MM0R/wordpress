@@ -1,8 +1,22 @@
-<?php
+<?php get_header();?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<div class="grid_12 omega clearfix">
+    
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <?php get_template_part( 'content', 'post' );?>
+
+    <?php endwhile; else: ?>
+        
+        <p>Page not found! :(</p>
+
+    <?php endif; ?>
+
+</div>
+
+<?php get_template_part( 'content', 'testimonials' );?>
+
+
+
+<?php get_footer();?>
 

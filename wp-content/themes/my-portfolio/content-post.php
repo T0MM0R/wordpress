@@ -10,7 +10,19 @@
     </ul>
     
     <div class="excerpt">
+        
+        <?php if(is_single()): ?>
+        
+            <?php the_content(); ?>
+            <?php comments_template(); ?>
+        
+        <?php else: ?>
+        
         <?php the_excerpt(); ?>
         <p><a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a></p>
+        
+        <?php endif; ?>
+        
+        
     </div>
 </div>
