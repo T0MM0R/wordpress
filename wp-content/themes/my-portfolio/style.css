@@ -135,13 +135,12 @@ h1, h2 {
  	}
 
 h1 {
-    font-family: 'brandon_grotesque_lightRg';
- 	text-transform: uppercase;
- 	text-align: center;
+        font-family: 'Cinzel Decorative', 'cursive';
  	letter-spacing: -2px;
+        text-align: center;
  	}
 h1 a {
-    color: #474747;
+        color: #474747;
 }
 
 h2 {
@@ -150,7 +149,7 @@ h2 {
  	font-weight: normal;
  	font-size: 1.25em;
  	line-height: 1em;
- 	text-align: center;
+        text-align: center;
  	}
 
  h3 {
@@ -259,21 +258,33 @@ header {
 }
 
 nav {
-	display: -webkit-box;
-	-webkit-box-orient:horizontal;
- 	padding: 2% 0;
  	border-bottom: 1px solid #e6e6e6;
- 	border-top: 1px solid #e6e6e6;	
- 	margin: 2% 0 2% 0;
+ 	border-top: 1px solid #e6e6e6;
+        text-align: center;
+        padding: 10px 0;
+        margin: 20px 0 0;
+
 	}
+        
+nav ul {
+    list-style: none;
+    margin: 0 10px;
+    padding: 0;
+}
+        
+nav li {
+    display: inline-block;
+    padding: 0 3%;
+}
 
 nav a {
 	font-family: 'GoudyRegular';
 	display:block;
 	-webkit-box-flex:1;
 	text-align:center;
-	font-size: 1.25;
+	font-size: 1.25em;
 	color: #666;
+        padding: 15px 20px;
 	}
 
 /* ==========================================================================
