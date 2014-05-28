@@ -78,6 +78,20 @@ $next.click(function(){
     }
     console.log("next:",currentImage);
     });
+    
+$(document).keydown(function(e){
+    if (e.keyCode == 39) {
+        currentImage++;
+        $image.attr("src", images[currentImage]);
+        if (currentImage >= imageCount - 1) {
+        $next.hide();
+        }
+        if (currentImage >= 0) {
+            $prev.show();
+        }
+    }
+        
+});
 
 $prev.click(function(){
     currentImage--;

@@ -1,15 +1,35 @@
 <?php get_header();?>
-<p>this is the single-work.php file</p>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<div class="grid_12 omega clearfix">
 
-<h3><?php the_title(); ?></h3>
-<?php the_field( 'description' ); ?>
-<hr>
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<?php endwhile; else: ?>
+    <h3><?php the_title(); ?></h3>
+    <div class="intro">
+        <p><?php the_field( 'description' ); ?></p>
+    </div>
+    
+    <p>
+        <a class="btn blue" href="<?php the_field( 'url' ); ?>" style="background-color: <?php the_field( 'button_color' );?>">
+            View Project &rarr;
+        </a>
+    </p>
+    
+    <hr>
+    
+    <div class="project-images">
+        
+        
+        
+    </div>
 
-<?php endif; ?>
+    <?php endwhile; else: ?>
+    
+        <p>Page not found</p>
+
+    <?php endif; ?>
+
+</div>
 
 <?php get_footer();?>
 
