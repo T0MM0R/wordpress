@@ -5,8 +5,8 @@
     
     <ul class="info">
         <li>Posted in: <?php the_category(', '); ?></li>
-        <li>Written by: <a href="<?php bloginfo('siteurl') ;?>/about/"><?php the_author(); ?></a></li>
-        <li>On: <?php the_time('F j, Y'); ?></li>
+        <li>Author: <a href="<?php bloginfo('siteurl') ;?>/about/"><?php the_author(); ?></a></li>
+        <li>Date: <?php the_time('F j, Y'); ?></li>
     </ul>
     
     <div class="excerpt">

@@ -1,16 +1,26 @@
 <footer>
     <div class="grid_12 omega clearfix">
-        <div id="twitter" class="grid_6">
-            <h5>Twitter</h5>
-            <a href="#" class="post-link">Follow me on Twitter &rarr;</a>
+        <div class="grid_6 footer-left">
+            <?php if ( dynamic_sidebar( 'footer_left' ) ): ?>
+            <?php else: ?>
+            
+                <h5>Twitter</h5>
+                <p>Install the TwiGet plugin.</p>
+                
+            <?php endif; ?>
         </div>
-        <div id="treehouse" class="grid_6 omega">
-            <h5>Treehouse</h5>
-            <p>Treehouse Badges</p>
+        <div class="grid_6 footer-right">
+            <?php if ( dynamic_sidebar( 'footer_right' ) ): ?>
+            <?php else: ?>
+            
+                <h5>Treehouse</h5>
+                <p>Install the Treehouse Badges plugin.</p>
+            
+            <?php endif; ?>
         </div>
     </div>
     <div id="copyright">
-        <p>&copy; Copyright <?php echo date( 'Y' ); ?> <a href="#">Thomas Wilson</a>. All Rights Reserved.</p>
+        <p>&copy; Copyright <?php echo date( 'Y' ); ?> <a href="http://thomaswilson.me">Thomas Wilson</a>. All Rights Reserved.</p>
         <div class="grid_12 ss-icon omega">
             <a href="#">&#xF610;</a>
             <a href="#">&#xF611;</a>
