@@ -9,17 +9,11 @@
         <p><?php the_field( 'description' ); ?></p>
     </div>
     
-    <p>
-        <a class="btn blue" href="<?php the_field( 'url' ); ?>" style="background-color: <?php the_field( 'button_color' );?>">
-            View Project &rarr;
-        </a>
-    </p>
-    
     <hr>
     
     <div class="project-images">
         
-        
+        <?php the_field( 'project_images' ); ?>
         
     </div>
 
