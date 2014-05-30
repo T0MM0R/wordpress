@@ -396,6 +396,25 @@ article {
  	  margin: 2% 0;
 }
 
+.footer-left li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1em;
+}
+
+li.wptreehouse-badges {
+    width: 50px;
+}
+ul.wptreehouse-badge {
+    padding: 0;
+}
+.wptreehouse-badges,
+.wptreehouse-badge-info {
+    bottom: 130px !important;
+    left: -22px !important;
+}
+
 
 /* ==========================================================================
    Footer

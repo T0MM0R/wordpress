@@ -1,0 +1,28 @@
+ul#badges li {
+    width: 50px;
+    display: inline-block;
+    margin: -9px;
+    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 500ms;
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 500ms;
+    -ms-transition-timing-function: ease-out;
+    -ms-transition-duration: 500ms;
+}
+
+ul#badges li:hover {
+    transform:translateY(-20px) translateX(-20px) rotate(10deg) scale(1.5);
+    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+    -webkit-transform:translateY(-20px) translateX(-20px) rotate(10deg) scale(1.5);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 500ms;
+    -ms-transform:translateY(-20px) translateX(-20px) rotate(10deg) scale(1.5);
+    -ms-transition-timing-function: ease-out;
+    -ms-transition-duration: 500ms;
+    -moz-transform:translateY(-20px) translateX(-20px) rotate(10deg) scale(1.5);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 500ms;
+}
