@@ -30,9 +30,31 @@
         <?php endwhile; endif; ?>
         
         <div class="grid_12 omega clearfix">
+                        
+            <div class="grid_6">
+                <h5>Albums</h5>
+                        
+                <?php 
+
+                $args = array(
+                    'post_type' => 'work'
+                );
+
+                $the_query = new WP_Query( $args );
+
+                ?>
+
+                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                    <?php get_template_part( 'content', 'work' ); ?>
+
+                <?php endwhile; endif; ?>
+                
+            </div>
+            
             <div class="grid_6 recent-post">
                 <article>
-                    <h5>Recent Post</h5>
+                    <h5>Latest Post</h5>
                     <?php
                     
                     $args = array(
@@ -56,27 +78,7 @@
             
         </div>
             
-            <div class="grid_12 omega">
-                <h5>Albums</h5>
-            </div>
-                        
-            <?php 
-
-            $args = array(
-                'post_type' => 'work'
-            );
-
-            $the_query = new WP_Query( $args );
-
-            ?>
-
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-                <?php get_template_part( 'content', 'work' ); ?>
-
-            <?php endwhile; endif; ?>
-            
-        </div>
+    </div>
     
 <?php get_template_part( 'content', 'testimonials' );?>
 
