@@ -177,7 +177,7 @@ h2 {
  	font-size: .75em;
  	line-height: 1em;
  	color: #474747;
- 	padding: 0 0 2% 0;
+ 	padding: 0 0 0 0;
  	border-bottom: 1px solid #e6e6e6;
  }
  h6 {
@@ -302,7 +302,8 @@ nav a {
 
 	#featured {
         text-align: center;
-        padding: 2% 0 0 0;
+        padding: 0 0 0 0;
+        margin-top: 1%;
 	}
     #work {
         text-align: center;
@@ -462,6 +463,9 @@ footer {
     #featured .grid_8 {
         margin: 0;
     }
+    #featured img {
+        margin-top: 5%;
+    }
     #featured-info {
         margin: 0;
     }
@@ -480,7 +484,12 @@ footer {
 
 @media only screen and (max-width : 600px) {
 
-	nav {
+        #featured img {
+            display: inline;
+            text-align: center;
+            max-width: 75%;
+        }
+        nav {
 		margin: 10% 0;
 	}
 
