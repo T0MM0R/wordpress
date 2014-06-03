@@ -499,7 +499,7 @@ footer {
 @media only screen and (max-width : 600px) {
 
     h1 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
         #featured img {
             display: inline;
@@ -509,6 +509,19 @@ footer {
         nav {
 		margin: 10% 0;
 	}
+        
+        nav li {
+            display: inline;
+            padding: 0;
+        }
+        
+        nav a {
+            padding: 2px;
+        }
+        
+        img.avatar {
+            margin-right: 34px;
+        }
 
 	.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12{
 		width: 100%;
