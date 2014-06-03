@@ -4,6 +4,7 @@
     </header>
     
     <ul class="info">
+        <?php if(is_single()): ?><li><?php echo get_avatar( get_the_author_meta('user_email') , 150 ); ?></li><?php endif; ?>
         <li>Posted in: <?php the_category(', '); ?></li>
         <li>Author: <a href="<?php bloginfo('siteurl') ;?>/about/"><?php the_author(); ?></a></li>
         <li>Date: <?php the_time('F j, Y'); ?></li>

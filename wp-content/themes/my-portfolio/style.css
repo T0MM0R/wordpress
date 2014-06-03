@@ -422,6 +422,10 @@ ul.wptreehouse-badge {
     padding: 10px 10px 0;
 }
 
+img.avatar {
+    border-radius: 5%;
+}
+
 
 /* ==========================================================================
    Footer
