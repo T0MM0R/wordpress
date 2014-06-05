@@ -119,7 +119,7 @@ body {
 
 
 
-@font-face {
+/*@font-face {
     font-family: 'brandon_grotesque_lightRg';
     src: url('css/webfonts/brandon_light-webfont.eot');
     src: url('css/webfonts/brandon_light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -129,7 +129,7 @@ body {
     font-weight: normal;
     font-style: normal;
 
-}
+}*/
 h1, h2 {
  	margin: 0;
  	}
@@ -231,10 +231,10 @@ a:hover {
     background-color: #88e1d8;
 }
 .dropshadow {
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
-    -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
-    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
-}
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+            -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+            -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+            }
 .fade {
    opacity: 0.5;
    transition: opacity .25s ease-in-out;
@@ -271,15 +271,15 @@ nav {
 	}
         
 nav ul {
-    list-style: none;
-    margin: 0 10px;
-    padding: 0;
-}
+        list-style: none;
+        margin: 0 10px;
+        padding: 0;
+        }
         
 nav li {
-    display: inline-block;
-    padding: 0 3%;
-}
+        display: inline-block;
+        padding: 0 3%;
+        }
 
 nav a {
 	font-family: 'GoudyRegular';
@@ -290,6 +290,11 @@ nav a {
 	color: #666;
         padding: 15px 20px;
 	}
+        
+.current-menu-item {
+                    text-decoration: underline;
+                    color: initial;
+                    }
 
 /* ==========================================================================
    Homepage
@@ -424,6 +429,48 @@ ul.wptreehouse-badge {
 
 img.avatar {
     border-radius: 5%;
+}
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+
+#gallery {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#gallery li {
+    float: left;
+    margin: 1%;
+    color: #bdc3c7;
+}
+
+#gallery li a p {
+    margin: 0;
+    padding: 5%;
+    font-size: 0.75em;
+    color: #bdc3c7;
+}
+
+#overlay {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    display: none;
+    text-align: center;
+    
+}
+
+#overlay img {
+    width: 55%;
+    margin-top: 5%;
+    box-shadow: 0 0 50px rgba(255, 255, 255, .5);
 }
 
 

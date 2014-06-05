@@ -21,8 +21,8 @@
         <div class="container clearfix">
             <header>
                 <div class="grid_12 omega none">
-                    <hgroup>
-                        <h1><a href=""><?php bloginfo( 'name' ); ?></a></h1>
+                    <hgroup id="logo">
+                        <h1><a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
                         <h2><?php bloginfo( 'description' ) ;?></h2>
                     </hgroup>
                 </div>

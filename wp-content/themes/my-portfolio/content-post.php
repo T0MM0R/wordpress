@@ -3,8 +3,8 @@
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <ul class="info">
             <?php if(is_single()): ?><li><?php echo get_avatar( get_the_author_meta('user_email') , 100 ); ?></li><?php endif; ?>
-            <li>Posted in: <?php the_category(', '); ?></li>
             <li>Author: <a href="<?php bloginfo('siteurl') ;?>/about/"><?php the_author(); ?></a></li>
+            <li>Posted in: <?php the_category(', '); ?></li>
             <li>Date: <?php the_time('F j, Y'); ?></li>
         </ul> 
     </header>
