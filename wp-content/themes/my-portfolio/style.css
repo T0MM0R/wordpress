@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 body {
  	color: #ababab;
- 	font-family: 'GoudyRegular', serif; /* 1 */
+ 	font-family: 'garamound', serif; /* 1 */
  	}
 
 
@@ -146,7 +146,7 @@ h1 a {
 
 h2 {
  	color: #ccc;
- 	font-family: 'GoudyItalic', serif; /* 1 */
+ 	font-family: 'Cinzel Decorative', 'cursive'; /* 1 */
  	font-weight: normal;
  	font-size: 1.25em;
  	line-height: 1em;
@@ -154,7 +154,7 @@ h2 {
  	}
 
  h3 {
- 	font-family: 'brandon_grotesque_lightRg';
+ 	font-family: 'Cinzel Decorative';
  	text-transform: uppercase;
  	font-size: 3.5em;
  	line-height: 1.25em;
@@ -165,7 +165,7 @@ h2 {
  h3#comments,
  #respond h3,
  h4 {
- 	font-family: 'brandon_grotesque_lightRg';
+ 	font-family: 'Cinzel Decorative';
  	text-transform: uppercase;
  	font-size: 2em;
  	line-height: 1.25em;
@@ -173,7 +173,7 @@ h2 {
  	color: #000;
  }
  h5 {
- 	font-family: 'GoudyRegular', serif; /* 1 */
+ 	font-family: 'garamound', serif; /* 1 */
     text-transform: uppercase;
  	font-size: .75em;
  	line-height: 1em;
@@ -183,7 +183,7 @@ h2 {
  }
  h6 {
     color: #474747;
-    font-family: 'GoudyRegular', serif; /* 1 */
+    font-family: 'garamound', serif; /* 1 */
     font-weight: normal;
     font-size: 1em;
     line-height: 1.5em;
@@ -205,7 +205,7 @@ a:hover {
     color: inherit;
 }
 .btn {
-    font-family: 'GoudyItalic', serif; /* 1 */
+    font-family: 'garamound', serif; /* 1 */
     font-size: 1em;
     padding: 10px 25px;
     margin: 2% 0;
@@ -282,7 +282,7 @@ nav li {
 }
 
 nav a {
-	font-family: 'GoudyRegular';
+	font-family: 'garamound';
 	display:block;
 	-webkit-box-flex:1;
 	text-align:center;
@@ -345,7 +345,7 @@ nav a {
 
 
     blockquote {
-        font-family: 'GoudyItalic';
+        font-family: 'garamound';
         font-size: 1.75em;
         margin: 4% 0;
         border-left: 10px solid #e3e3e3;
@@ -353,7 +353,7 @@ nav a {
         color: #474747;
     }
     cite {
-        font-family: 'GoudyRegular', serif; /* 1 */
+        font-family: 'garamound', serif; /* 1 */
         font-style: normal;
         text-transform: capitalize;
         font-size: 1.25em;
@@ -382,7 +382,7 @@ article {
  }
 
  ul.info a, .post-link {
- 	  font-family: "GoudyItalic";
+ 	  font-family: "garamound";
  }
   .post-link {
  	font-size: 1em;
@@ -394,7 +394,7 @@ article {
    ========================================================================== */
 
 #twitter p {
- 	  font-family: "GoudyItalic";
+ 	  font-family: "garamound";
  	  font-size: 1.25em;
  	  line-height: 1.5em;
  	  margin: 2% 0;
@@ -436,7 +436,7 @@ footer {
     border-top: 1px solid #e6e6e6;
     padding-top: 2%;
     text-align: center;
- 	font-family: "GoudyItalic";
+ 	font-family: "garamound";
 }
 #copyright p {
 	margin: 1% 0;
