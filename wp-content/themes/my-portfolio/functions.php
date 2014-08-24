@@ -39,9 +39,7 @@ function theme_styles() {
 function theme_js() {
     
     wp_register_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '', true );    
-    if( is_page( 'home' ) ) {
-        wp_enqueue_script( 'flexslider' );
-    }
+    wp_enqueue_script( 'flexslider' );
     
     wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery'), '', true);
 }
