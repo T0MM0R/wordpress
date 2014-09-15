@@ -1,5 +1,5 @@
 <div class="clearfix">
-    <header class="title">
+    <div class="title">
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <ul class="info">
             <?php if(is_single()): ?><li><?php echo get_avatar( get_the_author_meta('user_email') , 100 ); ?></li><?php endif; ?>
@@ -7,7 +7,7 @@
             <li>Posted in: <?php the_category(', '); ?></li>
             <li>Date: <?php the_time('F j, Y'); ?></li>
         </ul> 
-    </header>
+    </div>
     
    
     

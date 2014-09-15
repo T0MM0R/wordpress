@@ -1,39 +1,35 @@
 <?php get_header();?>
 </div>
-    <div id="featured" class="clearfix flexslider">
-        
-        <ul class="slides">
-            <?php 
-
-                $args = array(
-                    'post_type' => 'work'
-                );
-
-                $the_query = new WP_Query( $args );
-
-            ?>
-
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-            <li style="background-color: <?php the_field( 'background_color' ); ?>;">
-                <div class="container">
-                    <div class="grid_8">
-                        <img src="<?php the_field( 'homepage_slider_image' ); ?>" alt="<?php the_title(); ?> featured image">
+    
+    <div id="featured" class="container">
+        <h5>Latest Albums</h5>
+        <div class="flexslider">
+            <ul class="slides">
+                <?php
+                    $args = array(
+                        'post_type' => 'work'
+                    );
+                    $the_query = new WP_Query( $args );
+                ?>
+                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <li>
+                    <div>
+                        <a href="<?php the_field( 'url' ); ?>">
+                            <div class="featured-album">
+                                <h3><?php the_title(); ?></h3>
+                                <p><?php the_field( 'description' ) ;?></p>
+                            </div>
+                            <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>" alt="<?php the_title(); ?> featured image">
+                        </a>
                     </div>
-                    <div id="featured-info" class="grid_4 omega">
-                        <h5>Featured Project</h5>
-                        <h3 style="color:<?php the_field( 'button_color' ); ?>;"><?php the_title(); ?></h3>
-                        <p><?php the_field( 'description' ) ;?></p>
-                        <a class="btn blue" href="<?php the_field( 'url' ); ?>" style="background-color:<?php the_field( 'button_color' ); ?>;">View Project &rarr;</a>
-                    </div>
-                </div>
-            </li>        
-            <?php endwhile; endif; ?>            
-        </ul>
-
+                </li>        
+                <?php endwhile; endif; ?>            
+            </ul>
+        </div>
     </div>
 
-    <div class="container clearfix">
-        <div class="grid_12 omega">
+    <div class="container">
+        <div class="col-md-12">
             <h5>Featured Post</h5>
         </div>
     
@@ -53,7 +49,7 @@
 
         <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     
-        <div class="push_2 grid_10 omega clearfix">
+        <div class="col-md-offset-2 col-md-10">
             <article>
                 
                 <?php get_template_part( 'content', 'post' ); ?>
@@ -63,9 +59,9 @@
         
         <?php endwhile; endif; ?>
         
-        <div class="grid_12 omega clearfix">
+        <div class="col-md-12">
                         
-            <div class="grid_8">
+            <div class="col-md-8">
                 <h5>Albums</h5>
                         
                 <?php
@@ -88,7 +84,7 @@
                 
             </div>
             
-            <div class="grid_4 recent-post">
+            <div class="col-md-4 recent-post">
                 <article>
                     <h5>Latest Post</h5>
                     <?php
