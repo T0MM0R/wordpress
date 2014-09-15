@@ -1,4 +1,4 @@
-                    <div class="divider grid_12">
+                    <div class="col-md-12">
                         
                         <h5>Testimonial</h5>
 

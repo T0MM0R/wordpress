@@ -1,4 +1,4 @@
-<div class="clearfix">
+
     <div class="title">
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <ul class="info">
@@ -8,10 +8,7 @@
             <li>Date: <?php the_time('F j, Y'); ?></li>
         </ul> 
     </div>
-    
-   
-    
-    
+
     <div class="excerpt">
         
         <?php if(is_single()): ?>
@@ -21,11 +18,12 @@
         
         <?php else: ?>
         
-        <?php the_excerpt(); ?>
-        <p><a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a></p>
+        <p>
+            <?php the_excerpt(); ?>
+            <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
+        </p>
         
         <?php endif; ?>
         
         
     </div>
-</div>

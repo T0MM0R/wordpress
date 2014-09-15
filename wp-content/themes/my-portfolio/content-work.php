@@ -1,4 +1,4 @@
-    <div class="grid_6 spotlight project" style="background-color: <?php the_field( 'background_color' );?>">
+    <div class="col-md-6">
         
         <a href="<?php the_permalink();?>">
             <img src="<?php the_field( 'homepage_slider_image' ); ?>">

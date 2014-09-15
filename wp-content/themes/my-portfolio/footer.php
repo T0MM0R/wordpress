@@ -1,6 +1,6 @@
 <footer>
-    <div class="grid_12 omega clearfix">
-        <div class="grid_6 footer-left">
+    <div class="container">
+        <div class="col-md-6">
             <?php if ( dynamic_sidebar( 'footer_left' ) ): ?>
             <?php else: ?>
             
@@ -9,7 +9,7 @@
                 
             <?php endif; ?>
         </div>
-        <div class="grid_6 footer-right">
+        <div class="col-md-6">
             <?php if ( dynamic_sidebar( 'footer_right' ) ): ?>
             <?php else: ?>
             
@@ -21,7 +21,7 @@
     </div>
     <div id="copyright">
         <p>&copy; Copyright <?php echo date( 'Y' ); ?> <a href="http://thomaswilson.me">Thomas Wilson</a>. All Rights Reserved.</p>
-        <div class="grid_12 ss-icon omega">
+        <div class="row ss-icon">
             <a href="#">&#xF610;</a>
             <a href="#">&#xF611;</a>
             <a href="#">&#xF612;</a>
