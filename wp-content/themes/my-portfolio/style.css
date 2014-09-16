@@ -224,7 +224,7 @@ nav a {
         text-align: left;
     }
     
-    .img-responsive {
+    .project-images .img-responsive {
         max-height: 500px;
         width: auto;
     }
