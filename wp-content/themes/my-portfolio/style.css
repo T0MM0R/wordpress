@@ -223,11 +223,6 @@ nav a {
         color: #ddd;
         text-align: left;
     }
-    
-    .project-images .img-responsive {
-        max-height: 500px;
-        width: auto;
-    }
 
 
 /* Testimonial ----------- */
