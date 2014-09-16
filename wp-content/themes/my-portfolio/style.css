@@ -223,6 +223,11 @@ nav a {
         color: #ddd;
         text-align: left;
     }
+    
+    .img-responsive {
+        max-height: 500px;
+        width: auto;
+    }
 
 
 /* Testimonial ----------- */
