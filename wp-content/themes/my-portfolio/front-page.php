@@ -3,7 +3,6 @@
     
     <div id="featured" class="container">
         <div class="row">
-            <h5>Latest Albums</h5>
             <div class="flexslider">
                 <ul class="slides">
                     <?php
@@ -53,7 +52,7 @@
         </div>
         
         <div class="row">        
-            <div class="col-md-8">
+            <div class="col-md-8 album">
                 <h5>Albums</h5>
                         
                 <?php

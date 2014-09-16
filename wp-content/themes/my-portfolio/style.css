@@ -192,10 +192,17 @@ nav a {
 
 /* Work ----------- */
     
-        #work {
-        text-align: center;
-        }
+    
+#work {    
+    text-align: center;     
+}
 
+        
+.album img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;   
+}
+        
     #featured-info {
         margin-top: 4%;
       text-align: left;
@@ -297,10 +304,6 @@ ul.wptreehouse-badge {
 }
 .wptreehouse-badges li {
     padding: 10px 10px 0;
-}
-
-img.avatar {
-    border-radius: 5%;
 }
 
 /* ==========================================================================

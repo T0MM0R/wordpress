@@ -1,9 +1,5 @@
-                    <div class="col-md-12">
-                        
-                        <h5>Testimonial</h5>
-
-                    </div>
-
+                    
+                    <h5>Testimonial</h5>
                     <?php
                     
                     $args = array(
@@ -18,7 +14,7 @@
 
                     <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-                    <div class="testimonial push_2 grid_10 clearfix">
+                    <div class="testimonial col-md-10">
                         <blockquote>&ldquo;<?php the_field( 'testimonial' ); ?>&rdquo;</blockquote>
                         <cite>&mdash; <?php the_field( 'name' ); ?></cite>
                     </div>
