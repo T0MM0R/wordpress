@@ -14,7 +14,7 @@
                     <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <li>
                         <div>
-                            <a href="<?php get_permalink(); ?>">
+                            <a href="<?php echo get_permalink(); ?>">
                                 <div class="featured-album">
                                     <h3><?php the_title(); ?></h3>
                                     <p><?php the_field( 'description' ) ;?></p>
