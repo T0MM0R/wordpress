@@ -203,26 +203,30 @@ nav a {
     border-radius: 2px;   
 }
         
-    #featured-info {
-        margin-top: 4%;
-      text-align: left;
+#featured-info {
+    margin-top: 4%;
+    text-align: left;
 
-    }
+}
 
-    .spotlight {
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-        text-align: left;
-        border: 1px solid #e6e6e6;
-        padding: 6% 4%;
-        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-    }
+.spotlight {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-align: left;
+    border: 1px solid #e6e6e6;
+    padding: 6% 4%;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 
-    .spotlight h4, .spotlight h5, .spotlight p {
-        color: #ddd;
-        text-align: left;
-    }
+.spotlight h4, .spotlight h5, .spotlight p {
+    color: #ddd;
+    text-align: left;
+}
+    
+.flex-control-nav {
+    visibility: hidden;
+}
 
 
 /* Testimonial ----------- */
