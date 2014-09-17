@@ -159,7 +159,22 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 add_filter('acf/load_value/name=project_images', 'img_class_filter');
 add_filter('the_content', 'img_class_filter');
 function img_class_filter($content) {
-    $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
-    return $content;
+    
+    if (strstr($content, '[caption')) {
+    
+        $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
+        $content = "<div class='flexslider'><ul class='slides'>$content</ul></div>";
+        $content = str_replace('[caption', '<li>[caption', $content);
+        $content = str_replace('[/caption]', '[/caption]</li>', $content);
+        return $content;
+    
+    } else {
+        $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
+        $content = "<div class='flexslider'><ul class='slides'>$content</ul></div>";
+        $content = str_replace('<a', '<li><a', $content);
+        $content = str_replace('</a>', '</a></li>', $content);
+        return $content;
+    }
+        
     
 }
