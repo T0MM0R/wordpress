@@ -156,8 +156,11 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 	return apply_filters( 'get_avatar', $avatar, $id_or_email, $size, $default, $alt );
 }
 
-add_filter('acf/load_value/name=project_images', 'img_class_filter');
-add_filter('the_content', 'img_class_filter');
+if ( !is_admin() ) {
+    add_filter('acf/load_value/name=project_images', 'img_class_filter');
+    add_filter('the_content', 'img_class_filter');
+}
+
 function img_class_filter($content) {
     
     if (strstr($content, '[caption')) {
