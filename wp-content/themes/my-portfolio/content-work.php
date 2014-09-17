@@ -1,4 +1,4 @@
-    <div class="col-md-6">
+    <div class="col-md-6 album">
         
         <a href="<?php the_permalink();?>">
             <img src="<?php the_field( 'homepage_slider_image' ); ?>">
