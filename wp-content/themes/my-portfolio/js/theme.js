@@ -10,7 +10,7 @@ jQuery("#logo").hide().fadeIn(1000);
 var $overlay = jQuery('<div id="overlay"></div>');
 var $image = jQuery('<img>');
 //open lightbox when image is clicked
-jQuery("#gallery a").click(function(event) {
+jQuery(".project-images a").click(function(event) {
     event.preventDefault();
     $overlay.append($image);
     jQuery("body").append($overlay);
