@@ -81,12 +81,12 @@ h2 {
      position: absolute;
      top: 80%;
      color: #fff;
+     text-align: right;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
  }
  
  .featured-album h3 {
      color: #fff;
-     text-align: right;
  }
  
  h5 {
