@@ -311,27 +311,8 @@ ul.wptreehouse-badge {
 }
 
 /* ==========================================================================
-   Gallery
+   OVERLAY
    ========================================================================== */
-
-#gallery {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#gallery li {
-    float: left;
-    margin: 1%;
-    color: #bdc3c7;
-}
-
-#gallery li a p {
-    margin: 0;
-    padding: 5%;
-    font-size: 0.75em;
-    color: #bdc3c7;
-}
 
 #overlay {
     background: rgba(0, 0, 0, 0.8);
@@ -347,8 +328,9 @@ ul.wptreehouse-badge {
 }
 
 #overlay img {
-    width: 65%;
-    margin-top: 5%;
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
     box-shadow: 0 0 50px rgba(255, 255, 255, .5);
 }
 
