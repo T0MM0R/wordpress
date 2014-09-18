@@ -15,7 +15,7 @@
                     <li>
                         <div>
                             <a href="<?php the_permalink(); ?>">
-                                <div class="featured-album visible-lg col-md-8 pull-right">
+                                <div class="featured-album visible-lg col-md-8 col-md-offset-4">
                                     <h3><?php the_title(); ?></h3>
                                     <p><?php the_field( 'description' ) ;?></p>
                                 </div>
