@@ -327,10 +327,13 @@ ul.wptreehouse-badge {
     
 }
 
+#overlay > .container {
+    height: 80%;
+    
+}
+
 #overlay img {
-    margin-top: 100px;
-    width: 100%;
-    height: auto;
+    margin: 2% 0;
     box-shadow: 0 0 50px rgba(255, 255, 255, .5);
 }
 

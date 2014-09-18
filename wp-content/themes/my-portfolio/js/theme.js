@@ -8,7 +8,7 @@ jQuery("#logo").hide().fadeIn(1000);
    Lightbox
    ========================================================================== */
 var $overlay = jQuery('<div id="overlay"></div>');
-var $image = jQuery('<div class="container"><div class="col-md-4 col-md-offset-4"><img></div></div>');
+var $image = jQuery('<div class="container"><img class="img img-responsive"></div>');
 //open lightbox when image is clicked
 jQuery(".project-images a").click(function(event) {
     event.preventDefault();
