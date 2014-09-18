@@ -323,7 +323,6 @@ ul.wptreehouse-badge {
     left: 0;
     z-index: 5000;
     display: none;
-    text-align: center;
     
 }
 
@@ -333,7 +332,9 @@ ul.wptreehouse-badge {
 }
 
 #overlay img {
-    margin: 2% 0;
+    position: absolute;
+    top: 20%;
+    left: 40%;
     box-shadow: 0 0 50px rgba(255, 255, 255, .5);
 }
 
