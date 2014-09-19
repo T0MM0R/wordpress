@@ -158,7 +158,6 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 
 if ( !is_admin() ) {
     add_filter('acf/load_value/name=project_images', 'img_class_filter');
-    add_filter('the_content', 'img_class_filter');
 }
 
 function str_replace_first($search, $replace, $subject) {
@@ -175,8 +174,6 @@ function img_class_filter($content) {
     if (strstr($content, '[caption')) {
         
         $count = substr_count($content, 'attachment');
-    
-        $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
         
         $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>"
                 . "<ol class='carousel-indicators'>";
@@ -202,8 +199,6 @@ function img_class_filter($content) {
     
     } else {
         $count = substr_count($content, 'img');
-        
-        $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
         
         $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>"
                 . "<ol class='carousel-indicators'>";
