@@ -12,7 +12,7 @@
 
         <hr>
 
-        <div class="project-images col-md-6 col-md-offset-3">
+        <div class="project-images col-md-12 no-padding">
 
             <?php the_field( 'project_images' ); ?>
 
