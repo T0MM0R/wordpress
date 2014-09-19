@@ -316,10 +316,10 @@ ul.wptreehouse-badge {
 
 .carousel-indicators {
     position: relative;
-    left: 50px;
+    left: 0;
     bottom: 0;
     z-index: 15;
-    width: 60%;
+    width: 100%;
     padding-left: 0;
     margin-left: 0;
     text-align: left;
