@@ -190,12 +190,12 @@ function img_class_filter($content) {
                 
         $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
                 
-        $content = $carouselouter . '<div class="carousel-inner">' . $content;
+        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
         
         $content = str_replace('[caption', '<div class="item">[caption', $content);
         $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
         $content = str_replace('[/caption]', '[/caption]</div>', $content);
-        $content = $content . $carouselcontrols . '</div>' .  $carouselindicators;
+        $content = $content . '</div>' . $carouselcontrols . $carouselindicators;
         return $content;
     
     } else {
@@ -216,12 +216,12 @@ function img_class_filter($content) {
                 
         $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
                 
-        $content = $carouselouter . '<div class="carousel-inner">' . $content;
+        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
         
         $content = str_replace('<a', '<div class="item"><a', $content);
         $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
         $content = str_replace('</a>', '</a></div>', $content);
-        $content = $content . $carouselcontrols . '</div>' . $carouselindicators;
+        $content = $content . '</div>' . $carouselcontrols . $carouselindicators;
         return $content;
     }
         
