@@ -175,17 +175,18 @@ function img_class_filter($content) {
         
         $count = substr_count($content, 'attachment');
         
-        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>"
-                . "<ol class='carousel-indicators'>";
-                for ($i = 0; $i < $count; $i++) {
-                    if ($i == 0) {
-                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
-                    } else {
-                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
-                    }
-                    
+        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
+                
+        $carouselindicators = "<ol class='carousel-indicators'>";
+            for ($i = 0; $i < $count; $i++) {
+                if ($i == 0) {
+                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
+                } else {
+                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
                 }
-                $carouselouter .= "</ol>";
+
+            }
+        $carouselindicators .= "</ol>";
                 
         $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
                 
@@ -194,23 +195,24 @@ function img_class_filter($content) {
         $content = str_replace('[caption', '<div class="item">[caption', $content);
         $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
         $content = str_replace('[/caption]', '[/caption]</div>', $content);
-        $content = $content . $carouselcontrols . '</div>';
+        $content = $content . $carouselindicators . $carouselcontrols . '</div>';
         return $content;
     
     } else {
         $count = substr_count($content, 'img');
         
-        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>"
-                . "<ol class='carousel-indicators'>";
-                for ($i = 0; $i < $count; $i++) {
-                    if ($i == 0) {
-                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
-                    } else {
-                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
-                    }
-                    
+        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
+                
+        $carouselindicators = "<ol class='carousel-indicators'>";
+            for ($i = 0; $i < $count; $i++) {
+                if ($i == 0) {
+                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
+                } else {
+                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
                 }
-                $carouselouter .= "</ol>";
+
+            }
+        $carouselindicators .= "</ol>";
                 
         $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
                 
@@ -219,7 +221,7 @@ function img_class_filter($content) {
         $content = str_replace('<a', '<div class="item"><a', $content);
         $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
         $content = str_replace('</a>', '</a></div>', $content);
-        $content = $content . $carouselcontrols . '</div>';
+        $content = $content . $carouselindicators . $carouselcontrols . '</div>';
         return $content;
     }
         
