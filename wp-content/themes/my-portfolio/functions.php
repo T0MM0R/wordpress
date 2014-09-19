@@ -195,7 +195,7 @@ function img_class_filter($content) {
         $content = str_replace('[caption', '<div class="item">[caption', $content);
         $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
         $content = str_replace('[/caption]', '[/caption]</div>', $content);
-        $content = $content . $carouselindicators . $carouselcontrols . '</div>';
+        $content = $content . $carouselcontrols . '</div>' . $carouselindicators;
         return $content;
     
     } else {
@@ -221,7 +221,7 @@ function img_class_filter($content) {
         $content = str_replace('<a', '<div class="item"><a', $content);
         $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
         $content = str_replace('</a>', '</a></div>', $content);
-        $content = $content . $carouselindicators . $carouselcontrols . '</div>';
+        $content = $content . $carouselcontrols . '</div>' . $carouselindicators;
         return $content;
     }
         
