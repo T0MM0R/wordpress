@@ -188,7 +188,7 @@ function img_class_filter($content) {
             }
         $carouselindicators .= "</ol>";
                 
-        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
+        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a></div>';
                 
         $content = $carouselouter . '<div class="carousel-inner">' . $content;
         
@@ -214,7 +214,7 @@ function img_class_filter($content) {
             }
         $carouselindicators .= "</ol>";
                 
-        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
+        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a></div>';
                 
         $content = $carouselouter . '<div class="carousel-inner">' . $content;
         
