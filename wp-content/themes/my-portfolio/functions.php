@@ -161,21 +161,70 @@ if ( !is_admin() ) {
     add_filter('the_content', 'img_class_filter');
 }
 
+function str_replace_first($search, $replace, $subject) {
+    $pos = strpos($subject, $search);
+    if ($pos !== false) {
+        $subject = substr_replace($subject, $replace, $pos, strlen($search));
+    }
+    return $subject;
+    
+}
+
 function img_class_filter($content) {
     
     if (strstr($content, '[caption')) {
+        
+        $count = substr_count($content, 'attachment');
     
         $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
-        $content = "<div class='flexslider'><ul class='slides'>$content</ul></div>";
-        $content = str_replace('[caption', '<li>[caption', $content);
-        $content = str_replace('[/caption]', '[/caption]</li>', $content);
+        
+        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>"
+                . "<ol class='carousel-indicators'>";
+                for ($i = 0; $i < $count; $i++) {
+                    if ($i == 0) {
+                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
+                    } else {
+                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
+                    }
+                    
+                }
+                $carouselouter .= "</ol>";
+                
+        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
+                
+        $content = $carouselouter . '<div class="carousel-inner">' . $content;
+        
+        $content = str_replace('[caption', '<div class="item">[caption', $content);
+        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
+        $content = str_replace('[/caption]', '[/caption]</div>', $content);
+        $content = $content . $carouselcontrols . '</div>';
         return $content;
     
     } else {
+        $count = substr_count($content, 'img');
+        
         $content = str_replace('wp-image', 'img img-responsive wp-image', $content);
-        $content = "<div class='flexslider'><ul class='slides'>$content</ul></div>";
-        $content = str_replace('<a', '<li><a', $content);
-        $content = str_replace('</a>', '</a></li>', $content);
+        
+        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>"
+                . "<ol class='carousel-indicators'>";
+                for ($i = 0; $i < $count; $i++) {
+                    if ($i == 0) {
+                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
+                    } else {
+                        $carouselouter .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
+                    }
+                    
+                }
+                $carouselouter .= "</ol>";
+                
+        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
+                
+        $content = $carouselouter . '<div class="carousel-inner">' . $content;
+        
+        $content = str_replace('<a', '<div class="item"><a', $content);
+        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
+        $content = str_replace('</a>', '</a></div>', $content);
+        $content = $content . $carouselcontrols . '</div>';
         return $content;
     }
         
