@@ -22,12 +22,11 @@
     <div id="copyright">
         <p>&copy; Copyright <?php echo date( 'Y' ); ?> <a href="http://thomaswilson.me">Thomas Wilson</a>. All Rights Reserved.</p>
         <div class="row ss-icon">
-            <a href="#">&#xF610;</a>
-            <a href="#">&#xF611;</a>
-            <a href="#">&#xF612;</a>
-            <a href="#">&#xF613;</a>
-            <a href="#">&#xF660;</a>
-            <a href="#">&#x2709;</a>
+            <a href="facebook">&#xF610;</a>
+            <a href="twitter">&#xF611;</a>
+            <a href="linkedin">&#xF612;</a>
+            <a href="googleplus">&#xF613;</a>
+            <a href="email">&#x2709;</a>
         </div>
     </div>
 </footer>

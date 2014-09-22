@@ -24,6 +24,7 @@ create_widget( 'Right Footer', 'footer_right', 'Displays in the bottom right of 
 //load style sheets
 function theme_styles() {
     wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' );
+    wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
     wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css' );
     wp_enqueue_style( 'googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,800|Cinzel+Decorative:400,700' );
     wp_enqueue_style( 'social', get_template_directory_uri() . '/css/webfonts/ss-social.css' );
