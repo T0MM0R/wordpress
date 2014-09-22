@@ -19,7 +19,7 @@ get_header();
     <?php endwhile; endif; ?>
     
     <div class="row">
-        <h5>Authors</h5>
+        <h5>Photographers</h5>
         
         <?php get_template_part('content', 'author'); ?>
         
