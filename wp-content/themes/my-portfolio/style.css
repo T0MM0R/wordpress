@@ -260,7 +260,7 @@ article {
  	list-style: none;
  	margin: 0 2% 0 0;
 	padding: 1% 0;
-        float: left;
+        display: inline-block;
  }
 
  .post-link {
