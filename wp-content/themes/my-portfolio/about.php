@@ -14,7 +14,7 @@ get_header();
     <div class="about album col-md-8">
         <h5><?php the_title(); ?></h5>
         <?php if ( has_post_thumbnail() ) : ?>
-            <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' ) ) ?>
+            <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive margin-bottom-10 visible-md visible-lg' ) ) ?>
         <?php endif; ?>
         <?php the_content(); ?>
     </div>
