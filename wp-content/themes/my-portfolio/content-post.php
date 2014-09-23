@@ -1,13 +1,17 @@
 <div <?php if (has_post_thumbnail()) { echo "class=\"col-md-6\""; } ?>>
+    <?php if(is_single()): ?>
+        <div class="album pull-right"><?php echo get_custom_avatar( get_the_author_meta('user_email') , 100 , 'mysteryman' , 'gravatar' ); ?></div>
+    <?php endif; ?>
     <div class="title">
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <ul class="info">
-            <?php if(is_single()): ?><li class="img album"><?php echo get_custom_avatar( get_the_author_meta('user_email') , 100 , 'mysteryman' , 'gravatar' ); ?></li><?php endif; ?>
-            <li><a href="<?php bloginfo('siteurl') ;?>/about/"><?php the_author(); ?></a></li>
+            <li><?php the_author(); ?></li>
             <li>Posted in: <?php the_category(', '); ?></li>
             <li><?php the_time('F j, Y'); ?></li>
-        </ul> 
+        </ul>
+        
     </div>
+    
 
     <div class="excerpt">
         
