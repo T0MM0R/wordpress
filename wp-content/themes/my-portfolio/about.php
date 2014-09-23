@@ -12,7 +12,7 @@ get_header();
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
     <div class="about col-md-8">
-        <h3><?php the_title(); ?></h3>
+        <h5><?php the_title(); ?></h5>
         <?php the_content(); ?>
     </div>
     
