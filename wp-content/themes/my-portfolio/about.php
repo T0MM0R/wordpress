@@ -11,8 +11,11 @@ get_header();
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
-    <div class="about col-md-8">
+    <div class="about album col-md-8">
         <h5><?php the_title(); ?></h5>
+        <?php if ( has_post_thumbnail() ) : ?>
+            <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' ) ) ?>
+        <?php endif; ?>
         <?php the_content(); ?>
     </div>
     
