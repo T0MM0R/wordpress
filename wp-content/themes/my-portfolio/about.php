@@ -11,14 +11,14 @@ get_header();
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
-    <div class="about">
+    <div class="about col-md-8">
         <h3><?php the_title(); ?></h3>
         <?php the_content(); ?>
     </div>
     
     <?php endwhile; endif; ?>
     
-    <div class="row">
+    <div class="about col-md-4">
         <h5>Photographers</h5>
         
         <?php get_template_part('content', 'author'); ?>
