@@ -5,6 +5,7 @@
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+        <?php the_content(); ?>
         <h3><?php the_title(); ?></h3>
         <div class="intro">
             <p><?php the_field( 'description' ); ?></p>
@@ -15,7 +16,7 @@
         <div class="project-images col-md-12 no-padding">
 
             <?php the_field( 'project_images' ); ?>
-            <?php the_content(); ?>
+            
 
         </div>
 
