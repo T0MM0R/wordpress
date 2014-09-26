@@ -4,12 +4,11 @@
     <div class="container">
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-        <?php the_content(); ?>
         <h3><?php the_title(); ?></h3>
         <div class="intro">
             <p><?php the_field( 'description' ); ?></p>
         </div>
+        <?php the_content(); ?>
 
         <hr>
 
