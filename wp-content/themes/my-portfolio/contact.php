@@ -18,7 +18,7 @@ get_header();
     
     <?php endwhile; endif; ?>
     
-    <div class="about col-md-4">
+    <div class="about album col-md-4">
         <?php if ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive margin-bottom-10 visible-md visible-lg' ) ) ?>
         <?php endif; ?>
