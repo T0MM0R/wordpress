@@ -13,19 +13,22 @@ get_header();
     
     <div class="about album col-md-8">
         <h5><?php the_title(); ?></h5>
-        <?php if ( has_post_thumbnail() ) : ?>
-            <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive margin-bottom-10 visible-md visible-lg' ) ) ?>
-        <?php endif; ?>
         <?php the_content(); ?>
     </div>
     
     <?php endwhile; endif; ?>
     
     <div class="about col-md-4">
-        <h5>Photographers</h5>
-        
-        <?php get_template_part('content', 'author'); ?>
-        
+        <?php if ( has_post_thumbnail() ) : ?>
+            <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive margin-bottom-10 visible-md visible-lg' ) ) ?>
+        <?php endif; ?>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Photographers</h5>
+            <?php get_template_part('content', 'author'); ?>
+        </div>
     </div>
 </div>
 
