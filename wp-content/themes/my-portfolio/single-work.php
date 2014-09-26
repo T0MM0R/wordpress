@@ -15,6 +15,7 @@
         <div class="project-images col-md-12 no-padding">
 
             <?php the_field( 'project_images' ); ?>
+            <?php the_content(); ?>
 
         </div>
 
