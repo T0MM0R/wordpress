@@ -33,9 +33,7 @@ function theme_styles() {
     
     wp_register_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css');
     wp_enqueue_style( 'flexslider' );
-    
-    wp_register_style( 'bootstrap-image-gallery', get_template_directory_uri() . '/css/bootstrap-image-gallery.min.css');
-    wp_enqueue_style( 'bootstrap-image-gallery' );
+   
 }
 
 //load js
@@ -43,9 +41,6 @@ function theme_js() {
     
     wp_register_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '', true );    
     wp_enqueue_script( 'flexslider' );
-    
-    wp_register_script( 'bootstrap-image-gallery', get_template_directory_uri() . '/js/bootstrap-image-gallery.min.js', array('jquery'), '', true );    
-    wp_enqueue_script( 'bootstrap-image-gallery' );
     
     wp_enqueue_script( 'bootstrap_js', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), '', true);
     wp_enqueue_script( 'gallery_js', '//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js', array('jquery'), '', true);
@@ -185,39 +180,17 @@ function img_class_filter($content) {
         $content = str_replace('href=', 'data-gallery href=', $content);
         
         $content = '<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-                    <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+                    <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
                     <!-- The container for the modal slides -->
-                    <div class="slides"></div>
-                    <!-- Controls for the borderless lightbox -->
-                    <h3 class="title"></h3>
-                    <a class="prev">‹</a>
-                    <a class="next">›</a>
-                    <a class="close">×</a>
-                    <a class="play-pause"></a>
-                    <ol class="indicator"></ol>
-                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-                    <div class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title"></h4>
-                                </div>
-                                <div class="modal-body next"></div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default pull-left prev">
-                                        <i class="glyphicon glyphicon-chevron-left"></i>
-                                        Previous
-                                    </button>
-                                    <button type="button" class="btn btn-primary next">
-                                        Next
-                                        <i class="glyphicon glyphicon-chevron-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>' . $content;
+                        <div class="slides"></div>
+                        <!-- Controls for the borderless lightbox -->
+                        <h3 class="title"></h3>
+                        <a class="prev">‹</a>
+                        <a class="next">›</a>
+                        <a class="close">×</a>
+                        <a class="play-pause"></a>
+                        <ol class="indicator"></ol>
+                    </div>' . $content;
         
     }
     
