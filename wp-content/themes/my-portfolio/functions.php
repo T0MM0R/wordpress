@@ -200,7 +200,7 @@ function img_class_filter($content) {
         $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
         return $content;
     
-    } else {
+    } elseif( strstr( $content, 'wp-image' ) ) {
         $count = substr_count($content, 'img');
         
         $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
