@@ -180,7 +180,7 @@ function img_class_filter($content) {
         $content = str_replace('href=', 'data-gallery href=', $content);
         
         $content = '<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-                    <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+                    <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-controls">
                     <!-- The container for the modal slides -->
                         <div class="slides"></div>
                         <!-- Controls for the borderless lightbox -->
