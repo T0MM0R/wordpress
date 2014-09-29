@@ -225,6 +225,8 @@ function img_class_filter($content) {
         $content = str_replace('</a>', '</a></div>', $content);
         $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
         return $content;
+    } else {
+        return $content;
     }
         
     
