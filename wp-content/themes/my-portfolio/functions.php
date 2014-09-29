@@ -24,6 +24,7 @@ create_widget( 'Right Footer', 'footer_right', 'Displays in the bottom right of 
 //load style sheets
 function theme_styles() {
     wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' );
+    wp_enqueue_style( 'gallery', '//blueimp.github.io/Gallery/css/blueimp-gallery.min.css' );
     wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
     wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css' );
     wp_enqueue_style( 'googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,800|Cinzel+Decorative:400,700' );
@@ -33,6 +34,8 @@ function theme_styles() {
     wp_register_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css');
     wp_enqueue_style( 'flexslider' );
     
+    wp_register_style( 'bootstrap-image-gallery', get_template_directory_uri() . '/css/bootstrap-image-gallery.min.css');
+    wp_enqueue_style( 'bootstrap-image-gallery' );
 }
 
 //load js
@@ -41,7 +44,11 @@ function theme_js() {
     wp_register_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '', true );    
     wp_enqueue_script( 'flexslider' );
     
+    wp_register_script( 'bootstrap-image-gallery', get_template_directory_uri() . '/js/bootstrap-image-gallery.min.js', array('jquery'), '', true );    
+    wp_enqueue_script( 'bootstrap-image-gallery' );
+    
     wp_enqueue_script( 'bootstrap_js', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), '', true);
+    wp_enqueue_script( 'gallery_js', '//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js', array('jquery'), '', true);
     wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery'), '', true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
@@ -157,10 +164,10 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 	return apply_filters( 'get_avatar', $avatar, $id_or_email, $size, $default, $alt );
 }
 
-//if ( !is_admin() ) {
-//    add_filter('acf/load_value/name=project_images', 'img_class_filter');
-//    add_filter('the_content', 'img_class_filter');
-//}
+if ( !is_admin() ) {
+    add_filter('acf/load_value/name=project_images', 'img_class_filter');
+    add_filter('the_content', 'img_class_filter');
+}
 
 //function str_replace_first($search, $replace, $subject) {
 //    $pos = strpos($subject, $search);
@@ -170,64 +177,51 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 //    return $subject;
 //    
 //}
-//
-//function img_class_filter($content) {
-//    
-//    if (strstr($content, '[caption')) {
-//        
-//        $count = substr_count($content, 'attachment');
-//        
-//        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
-//                
-//        $carouselindicators = "<ol class='carousel-indicators'>";
-//            for ($i = 0; $i < $count; $i++) {
-//                if ($i == 0) {
-//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
-//                } else {
-//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
-//                }
-//
-//            }
-//        $carouselindicators .= "</ol>";
-//                
-//        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
-//                
-//        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
-//        
-//        $content = str_replace('[caption', '<div class="item">[caption', $content);
-//        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
-//        $content = str_replace('[/caption]', '[/caption]</div>', $content);
-//        $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
-//        return $content;
-//    
-//    } elseif( strstr( $content, 'wp-image' ) ) {
-//        $count = substr_count($content, 'img');
-//        
-//        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
-//                
-//        $carouselindicators = "<ol class='carousel-indicators'>";
-//            for ($i = 0; $i < $count; $i++) {
-//                if ($i == 0) {
-//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
-//                } else {
-//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
-//                }
-//
-//            }
-//        $carouselindicators .= "</ol>";
-//                
-//        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
-//                
-//        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
-//        
-//        $content = str_replace('<a', '<div class="item"><a', $content);
-//        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
-//        $content = str_replace('</a>', '</a></div>', $content);
-//        $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
-//        return $content;
-//    } else {
-//        return $content;
-//    }
-//        
-//    
-//}
+
+function img_class_filter($content) {
+    
+    if ( strstr( $content, 'id="gallery"' ) ) {
+        
+        $content = str_replace('href=', 'data-gallery href=', $content);
+        
+        $content = '<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+                    <div id="blueimp-gallery" class="blueimp-gallery">
+                    <!-- The container for the modal slides -->
+                    <div class="slides"></div>
+                    <!-- Controls for the borderless lightbox -->
+                    <h3 class="title"></h3>
+                    <a class="prev">‹</a>
+                    <a class="next">›</a>
+                    <a class="close">×</a>
+                    <a class="play-pause"></a>
+                    <ol class="indicator"></ol>
+                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                    <div class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body next"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left prev">
+                                        <i class="glyphicon glyphicon-chevron-left"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary next">
+                                        Next
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>' . $content;
+        
+    }
+    
+    return $content;
+        
+    
+}
