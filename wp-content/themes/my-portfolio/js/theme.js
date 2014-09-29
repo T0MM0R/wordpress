@@ -8,7 +8,8 @@ blueimp.Gallery(
     document.getElementById('gallery').getElementsByTagName('a'),
     {
         container: '#blueimp-gallery-carousel',
-        carousel: true
+        carousel: true,
+        startSlideshow: false
     }
 );
 
