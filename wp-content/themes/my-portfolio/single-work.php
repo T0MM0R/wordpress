@@ -8,12 +8,13 @@
         <div class="intro">
             <p><?php the_field( 'description' ); ?></p>
         </div>
-        <?php the_content(); ?>
+        
 
         <hr>
 
         <div class="project-images col-md-12 no-padding">
 
+            <?php the_content(); ?>
             <?php the_field( 'project_images' ); ?>
             
 
