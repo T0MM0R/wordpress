@@ -157,77 +157,77 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 	return apply_filters( 'get_avatar', $avatar, $id_or_email, $size, $default, $alt );
 }
 
-if ( !is_admin() ) {
-    add_filter('acf/load_value/name=project_images', 'img_class_filter');
-    add_filter('the_content', 'img_class_filter');
-}
+//if ( !is_admin() ) {
+//    add_filter('acf/load_value/name=project_images', 'img_class_filter');
+//    add_filter('the_content', 'img_class_filter');
+//}
 
-function str_replace_first($search, $replace, $subject) {
-    $pos = strpos($subject, $search);
-    if ($pos !== false) {
-        $subject = substr_replace($subject, $replace, $pos, strlen($search));
-    }
-    return $subject;
-    
-}
-
-function img_class_filter($content) {
-    
-    if (strstr($content, '[caption')) {
-        
-        $count = substr_count($content, 'attachment');
-        
-        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
-                
-        $carouselindicators = "<ol class='carousel-indicators'>";
-            for ($i = 0; $i < $count; $i++) {
-                if ($i == 0) {
-                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
-                } else {
-                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
-                }
-
-            }
-        $carouselindicators .= "</ol>";
-                
-        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
-                
-        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
-        
-        $content = str_replace('[caption', '<div class="item">[caption', $content);
-        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
-        $content = str_replace('[/caption]', '[/caption]</div>', $content);
-        $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
-        return $content;
-    
-    } elseif( strstr( $content, 'wp-image' ) ) {
-        $count = substr_count($content, 'img');
-        
-        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
-                
-        $carouselindicators = "<ol class='carousel-indicators'>";
-            for ($i = 0; $i < $count; $i++) {
-                if ($i == 0) {
-                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
-                } else {
-                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
-                }
-
-            }
-        $carouselindicators .= "</ol>";
-                
-        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
-                
-        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
-        
-        $content = str_replace('<a', '<div class="item"><a', $content);
-        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
-        $content = str_replace('</a>', '</a></div>', $content);
-        $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
-        return $content;
-    } else {
-        return $content;
-    }
-        
-    
-}
+//function str_replace_first($search, $replace, $subject) {
+//    $pos = strpos($subject, $search);
+//    if ($pos !== false) {
+//        $subject = substr_replace($subject, $replace, $pos, strlen($search));
+//    }
+//    return $subject;
+//    
+//}
+//
+//function img_class_filter($content) {
+//    
+//    if (strstr($content, '[caption')) {
+//        
+//        $count = substr_count($content, 'attachment');
+//        
+//        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
+//                
+//        $carouselindicators = "<ol class='carousel-indicators'>";
+//            for ($i = 0; $i < $count; $i++) {
+//                if ($i == 0) {
+//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
+//                } else {
+//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
+//                }
+//
+//            }
+//        $carouselindicators .= "</ol>";
+//                
+//        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
+//                
+//        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
+//        
+//        $content = str_replace('[caption', '<div class="item">[caption', $content);
+//        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
+//        $content = str_replace('[/caption]', '[/caption]</div>', $content);
+//        $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
+//        return $content;
+//    
+//    } elseif( strstr( $content, 'wp-image' ) ) {
+//        $count = substr_count($content, 'img');
+//        
+//        $carouselouter = "<div id='slides' class='carousel slide' data-ride='carousel'>";
+//                
+//        $carouselindicators = "<ol class='carousel-indicators'>";
+//            for ($i = 0; $i < $count; $i++) {
+//                if ($i == 0) {
+//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}' class='active'></li>";
+//                } else {
+//                    $carouselindicators .= "<li data-target='#slides' data-slide-to='{$i}'></li>";
+//                }
+//
+//            }
+//        $carouselindicators .= "</ol>";
+//                
+//        $carouselcontrols = '<a class="left carousel-control" href="#slides" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#slides" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>';
+//                
+//        $content = $carouselouter . '<div class="carousel-inner">' . $content . '</div>';
+//        
+//        $content = str_replace('<a', '<div class="item"><a', $content);
+//        $content = str_replace_first('<div class="item">', '<div class="item active">', $content);
+//        $content = str_replace('</a>', '</a></div>', $content);
+//        $content = $content . $carouselindicators . '</div>' . $carouselcontrols;
+//        return $content;
+//    } else {
+//        return $content;
+//    }
+//        
+//    
+//}
