@@ -146,21 +146,22 @@ a:hover {
 }
 
 .dropshadow {
-            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
-            -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
-            -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
             
-            }
+}
+
 .fade {
    opacity: 0.5;
    transition: opacity .25s ease-in-out;
    -moz-transition: opacity .25s ease-in-out;
    -webkit-transition: opacity .25s ease-in-out;
-   }
+}
 
 .fade:hover {
       opacity: 1;
-      }
+}
 
 hr {
     border: none;
@@ -191,9 +192,7 @@ hr {
 }
 
 header {
-    
     padding: 10px;
-    
 }
 
 header a:hover {
@@ -201,9 +200,7 @@ header a:hover {
 }
 
 .nav>li>a, .nav>li>a {
-    
     transition: font-size .5s, text-decoration .5s;
-    
 }
 
 .nav>li>a:hover, .nav>li>a:focus {

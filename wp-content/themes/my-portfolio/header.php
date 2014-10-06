@@ -16,7 +16,7 @@
     </head>
     <body>
         
-        <div class="navbar navbar-default navbar-fixed-top">
+        <div id="nav" class="navbar navbar-default navbar-fixed-top">
             <header>
                 <div class="container-fluid">
                     <hgroup id="logo" class="navbar-header">
