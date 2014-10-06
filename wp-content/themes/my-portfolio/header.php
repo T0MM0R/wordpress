@@ -16,7 +16,7 @@
     </head>
     <body>
         
-        <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-default navbar-fixed-top">
             <header>
                 <div class="container-fluid">
                     <hgroup id="logo" class="navbar-header">
@@ -26,8 +26,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <h1><a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-                        <h2><?php bloginfo( 'description' ) ;?></h2>
+                        
+                        <a href="<?php echo site_url(); ?>">
+                            <h1><?php bloginfo( 'name' ); ?></h1>
+                            <h2><?php bloginfo( 'description' ) ;?></h2>
+                        </a>
+                        
                     </hgroup>
                     <nav class="navbar-collapse collapse" id="nav1">
                        <?php

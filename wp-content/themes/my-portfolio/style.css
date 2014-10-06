@@ -67,12 +67,8 @@ h1 {
  	letter-spacing: -2px;
         font-size: 2em;
  	}
-h1 a {
-        color: #474747;
-}
 
 h2 {
- 	color: #000;
  	font-family: 'Cinzel Decorative', 'cursive'; /* 1 */
  	font-weight: normal;
  	font-size: 1.25em;
@@ -90,13 +86,19 @@ h2 {
  
  .featured-album {
      position: absolute;
-     top: 80%;
+     width: 200px;
+     top: 60%;
+     left: 50%;
+     margin-left: -100px;
      color: #fff;
-     text-align: right;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: center;
+     background-color: rgba(0, 0, 0, 0.8);
+     padding: 10px;
+     border-radius: 5px;
  }
  
- .featured-album h3 {
+ .featured-album h3, .featured-album h4 {
      color: #fff;
  }
  
@@ -173,27 +175,61 @@ hr {
    ========================================================================== */
 
 .navbar-default {
-    background-color: rgba(255,255,255, 0.5);
-    border-bottom: solid thin rgba(200, 200, 200, 0.5);
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
 }
 
 header {
-    background-color: rgba(255,255,255, 0.8);
-    padding: 10px 0;
-    border-bottom: solid thin rgba(200, 200, 200, 0.8);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    
+    padding: 10px;
+    
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+.nav>li>a, .nav>li>a {
+    
+    transition: font-size .5s, text-decoration .5s;
+    
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1.2em;
 }
 
 nav a {
-	font-family: 'Cinzel Decorative', cursive;
-	font-size: 1em;
-	color: #666;
-	}
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1em;
+    color: #fff;
+}
         
 .current-menu-item {
-                    text-decoration: underline;
-                    color: initial;
-                    }
+    text-decoration: underline;
+    color: initial;
+}
+
+#logo a {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    
+}
 
 /* ==========================================================================
    Homepage
@@ -208,37 +244,11 @@ nav a {
 }
 
 /* Work ----------- */
-    
-    
-#work {    
-    text-align: center;     
-}
 
         
 .album img {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border-radius: 2px;   
-}
-        
-#featured-info {
-    margin-top: 4%;
-    text-align: left;
-
-}
-
-.spotlight {
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    text-align: left;
-    border: 1px solid #e6e6e6;
-    padding: 6% 4%;
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-}
-
-.spotlight h4, .spotlight h5, .spotlight p {
-    color: #ddd;
-    text-align: left;
 }
     
 .flex-control-nav {
