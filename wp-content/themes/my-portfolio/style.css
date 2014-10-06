@@ -86,10 +86,8 @@ h2 {
  
  .featured-album {
      position: absolute;
-     width: 500px;
      top: 60%;
-     left: 50%;
-     margin-left: -250px;
+     right: 10%;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
