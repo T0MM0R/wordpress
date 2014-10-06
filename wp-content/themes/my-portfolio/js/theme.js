@@ -12,9 +12,6 @@ jQuery(document).scroll(function(){
     var featuredInfoPosition = Math.floor(jQuery("#featured-info").offset()['top']);
     var windowPosition = jQuery(document).scrollTop();
     
-    console.log(featuredInfoPosition);
-    console.log(windowPosition);
-    
     if (windowPosition >= featuredInfoPosition ) {
         jQuery("header").css({backgroundColor: "rgba(0, 0, 0, 0.8)"});
     } else {
