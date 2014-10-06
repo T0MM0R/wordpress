@@ -14,7 +14,8 @@
         <?php wp_head(); ?>
         
     </head>
-    <body>
+    
+    <body <?php if (is_front_page()) { echo "class='home'"; } ?>>
         
         <div id="nav" class="navbar navbar-default navbar-fixed-top">
             <header>

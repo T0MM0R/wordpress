@@ -12,9 +12,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 body {
-        color: #555;
- 	font-family: 'garamound', serif; /* 1 */
- 	}
+    margin-top: 100px;
+}
+
+body.home {
+    margin-top: 0;
+    color: #555;
+    font-family: 'garamound', serif; /* 1 */
+}
         
 #login {
 
@@ -174,20 +179,20 @@ hr {
    Header
    ========================================================================== */
 
-.navbar-default {
+.home .navbar-default {
     background-color: transparent;
     border: none;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.home .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
 
-.navbar-default .navbar-nav>li>a {
+.home .navbar-default .navbar-nav>li>a {
     color: #fff;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
+.home .navbar-default .navbar-nav>li>a:hover {
     color: #fff;
 }
 
@@ -204,8 +209,7 @@ header a:hover {
 }
 
 .nav>li>a:hover, .nav>li>a:focus {
-    background-color: transparent;
-    color: #fff;
+    color: #000;
     text-decoration: underline;
     font-size: 1.2em;
 }
@@ -213,7 +217,7 @@ header a:hover {
 nav a {
     font-family: 'Cinzel Decorative', cursive;
     font-size: 1em;
-    color: #fff;
+    color: #000;
 }
         
 .current-menu-item {
@@ -222,6 +226,12 @@ nav a {
 }
 
 #logo a {
+    color: #000;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    
+}
+
+.home #logo a {
     color: #fff;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     
