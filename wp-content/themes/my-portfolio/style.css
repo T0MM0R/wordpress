@@ -12,10 +12,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 body {
- 	margin-top: 100px;
         color: #555;
  	font-family: 'garamound', serif; /* 1 */
  	}
+        
+#login {
+
+    position: fixed;
+    top: 100px;
+    left: 42.5%;
+    width: 400px;
+    height: 300px;
+    border: thin solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 50px;
+}
 
 
 /* ==========================================================================
@@ -160,10 +172,15 @@ hr {
    Header
    ========================================================================== */
 
+.navbar-default {
+    background-color: rgba(255,255,255, 0.5);
+    border-bottom: solid thin rgba(200, 200, 200, 0.5);
+}
+
 header {
-    background-color: #fff;
+    background-color: rgba(255,255,255, 0.8);
     padding: 10px 0;
-    border-bottom: solid thin #ddd;
+    border-bottom: solid thin rgba(200, 200, 200, 0.8);
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
@@ -184,6 +201,10 @@ nav a {
 
 .divider {
 	margin: 4% 0 2% 0;
+}
+
+.flexslider {
+    border: none;
 }
 
 /* Work ----------- */

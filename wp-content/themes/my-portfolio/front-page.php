@@ -1,7 +1,8 @@
 <?php get_header();?>
 </div>
     
-    <div id="featured" class="container">
+    <div id="featured" class="container-fluid no-padding">
+        
         <div class="row">
             <div class="flexslider">
                 <ul class="slides">
@@ -27,6 +28,10 @@
                 </ul>
             </div>
         </div>
+        
+    </div>
+
+    <div class="container">
     
 
         <div class="row">
