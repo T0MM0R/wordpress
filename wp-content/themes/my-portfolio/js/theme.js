@@ -9,10 +9,10 @@ jQuery(document).ready(function($) {
 jQuery(document).scroll(function(){
     
     
-    var featuredInfoPosition = Math.floor(jQuery("#featured-info").offset()['top']);
+    var headerChangePosition = Math.floor(jQuery("#content").offset()['top']) - 600;
     var windowPosition = jQuery(document).scrollTop();
     
-    if (windowPosition >= featuredInfoPosition ) {
+    if (windowPosition >= headerChangePosition ) {
         jQuery("header").css({backgroundColor: "rgba(0, 0, 0, 0.8)"});
     } else {
         jQuery("header").css({backgroundColor: "transparent"});
