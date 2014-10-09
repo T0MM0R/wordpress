@@ -462,6 +462,13 @@ and (max-device-width : 480px) {
      background-color: #222;
      border-top: solid 1px #aaa;
  }
+  #nav h1 {
+     font-size: 1.25em;
+ }
+ 
+ #nav h2 {
+     font-size: 0.75em;
+ }
 
 }
 
@@ -494,6 +501,13 @@ and (max-width : 320px) {
      text-align: left;
      background-color: #222;
      border-top: solid 1px #aaa;
+ }
+  #nav h1 {
+     font-size: 1.25em;
+ }
+ 
+ #nav h2 {
+     font-size: 0.75em;
  }
 }
 
@@ -606,5 +620,13 @@ only screen and (min-device-pixel-ratio : 1.5) {
      text-align: left;
      background-color: #222;
      border-top: solid 1px #aaa;
+ }
+ 
+ #nav h1 {
+     font-size: 1.25em;
+ }
+ 
+ #nav h2 {
+     font-size: 0.75em;
  }
 }
