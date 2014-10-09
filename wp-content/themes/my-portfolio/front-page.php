@@ -14,14 +14,13 @@
                     ?>
                     <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <li>
-                            
+                            <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>" alt="<?php the_title(); ?> featured image">
                             <div id="featured-info" class="featured-album">
                                 <a href="<?php the_permalink(); ?>">
                                     <h3><?php the_title(); ?></h3>
                                     <h4><?php the_field( 'description' ) ;?></h4>
                                 </a>
                             </div>
-                            <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>" alt="<?php the_title(); ?> featured image">
                             
                     </li>        
                     <?php endwhile; endif; ?>            

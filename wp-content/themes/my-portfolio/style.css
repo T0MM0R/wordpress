@@ -28,7 +28,7 @@ body.home {
     left: 42.5%;
     width: 400px;
     height: 300px;
-    border: thin solid #000;
+    border: 1px solid #000;
     border-radius: 10px;
     background-color: #fff;
     padding: 50px;
@@ -97,6 +97,7 @@ h2 {
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: right;
+     background-color: rgba(0, 0, 0, 0.8);
      padding: 10px;
      border-radius: 5px;
  }
@@ -446,3 +447,164 @@ footer {
    Media Queries
    ========================================================================== */
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+ .featured-album {
+     position: initial;
+     max-width: 100%;
+     padding: 10px 45px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: left;
+     background-color: #222;
+     border-top: solid 1px #aaa;
+ }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+.featured-album {
+     position: initial;
+     max-width: 100%;
+     padding: 10px 45px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: left;
+     background-color: #222;
+     border-top: solid 1px #aaa;
+ }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+.featured-album {
+     position: initial;
+     max-width: 100%;
+     padding: 10px 45px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: left;
+     background-color: #222;
+     border-top: solid 1px #aaa;
+ }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+ .featured-album {
+     position: absolute;
+     top: 63%;
+     right: 2.5%;
+     max-width: 500px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: right;
+     background-color: rgba(0, 0, 0, 0.8);
+     padding: 10px;
+     border-radius: 5px;
+ }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+ .featured-album {
+     position: absolute;
+     top: 63%;
+     right: 2.5%;
+     max-width: 500px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: right;
+     background-color: rgba(0, 0, 0, 0.8);
+     padding: 10px;
+     border-radius: 5px;
+ }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+ .featured-album {
+     position: absolute;
+     top: 63%;
+     right: 2.5%;
+     max-width: 500px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: right;
+     background-color: rgba(0, 0, 0, 0.8);
+     padding: 10px;
+     border-radius: 5px;
+ }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1024px) {
+/* Styles */
+ .featured-album {
+     position: absolute;
+     top: 63%;
+     right: 2.5%;
+     max-width: 500px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: right;
+     background-color: rgba(0, 0, 0, 0.8);
+     padding: 10px;
+     border-radius: 5px;
+ }
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+ .featured-album {
+     position: absolute;
+     top: 63%;
+     right: 2.5%;
+     max-width: 500px;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: right;
+     background-color: rgba(0, 0, 0, 0.8);
+     padding: 10px;
+     border-radius: 5px;
+ }
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+.featured-album {
+     position: initial;
+     padding: 10px 45px;
+     max-width: 100%;
+     color: #fff;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+     text-align: left;
+     background-color: #222;
+     border-top: solid 1px #aaa;
+ }
+}
