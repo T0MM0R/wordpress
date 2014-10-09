@@ -190,7 +190,7 @@ function img_class_filter($content) {
                         <a class="prev">‹</a>
                         <a class="next">›</a>
                         <a class="play-pause"></a>
-                        <ol class="indicator"></ol>
+                        <ol class="indicator visible-md visible-lg"></ol>
                     </div>' . $content;
         
     }
