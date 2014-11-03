@@ -91,15 +91,13 @@ h2 {
  
  .featured-album {
      position: absolute;
-     top: 63%;
-     right: 2.5%;
-     max-width: 500px;
+     top: 60%;
+     margin: 0 26%;
+     width: 50%;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: right;
-     background-color: rgba(0, 0, 0, 0.8);
+     text-align: center;
      padding: 10px;
-     border-radius: 5px;
  }
  
  .featured-album h3, .featured-album h4 {
@@ -538,15 +536,13 @@ and (orientation : landscape) {
 /* Styles */
  .featured-album {
      position: absolute;
-     top: 63%;
-     right: 2.5%;
-     max-width: 500px;
+     top: 60%;
+     margin: 0 26%;
+     width: 50%;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: right;
-     background-color: rgba(0, 0, 0, 0.8);
+     text-align: center;
      padding: 10px;
-     border-radius: 5px;
  }
 }
 
@@ -558,15 +554,13 @@ and (orientation : portrait) {
 /* Styles */
  .featured-album {
      position: absolute;
-     top: 63%;
-     right: 2.5%;
-     max-width: 500px;
+     top: 60%;
+     margin: 0 26%;
+     width: 50%;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: right;
-     background-color: rgba(0, 0, 0, 0.8);
+     text-align: center;
      padding: 10px;
-     border-radius: 5px;
  }
 }
 
@@ -576,15 +570,15 @@ and (min-width : 1024px) {
 /* Styles */
  .featured-album {
      position: absolute;
-     top: 63%;
-     right: 2.5%;
-     max-width: 500px;
+     top: 60%;
+     margin: 0 26%;
+     width: 50%;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: right;
-     background-color: rgba(0, 0, 0, 0.8);
+     text-align: center;
      padding: 10px;
-     border-radius: 5px;
+     background-color: transparent;
+     border-top: none;
  }
 }
 
@@ -594,15 +588,13 @@ and (min-width : 1824px) {
 /* Styles */
  .featured-album {
      position: absolute;
-     top: 63%;
-     right: 2.5%;
-     max-width: 500px;
+     top: 60%;
+     margin: 0 26%;
+     width: 50%;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: right;
-     background-color: rgba(0, 0, 0, 0.8);
+     text-align: center;
      padding: 10px;
-     border-radius: 5px;
  }
 }
 
