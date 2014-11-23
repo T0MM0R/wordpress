@@ -20,19 +20,6 @@ body.home {
     color: #555;
     font-family: 'garamound', serif; /* 1 */
 }
-        
-#login {
-
-    position: fixed;
-    top: 100px;
-    left: 42.5%;
-    width: 400px;
-    height: 300px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 50px;
-}
 
 
 /* ==========================================================================
@@ -233,6 +220,10 @@ nav a {
     color: #fff;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     
+}
+
+.home #logo h1 {
+    font-size: 3em;
 }
 
 /* ==========================================================================
