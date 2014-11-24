@@ -438,24 +438,28 @@ footer {
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
-/* Styles */
- .featured-album {
-     position: initial;
-     max-width: 100%;
-     padding: 10px 45px;
-     color: #fff;
-     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: left;
-     background-color: #222;
-     border-top: solid 1px #aaa;
- }
-  #nav h1 {
-     font-size: 1.25em;
- }
- 
- #nav h2 {
-     font-size: 0.75em;
- }
+    /* Styles */
+    .featured-album {
+         position: initial;
+         max-width: 100%;
+         padding: 10px 45px;
+         color: #fff;
+         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+         text-align: left;
+         background-color: #222;
+         border-top: solid 1px #aaa;
+     }
+     #nav h1 {
+         font-size: 1.25em;
+     }
+
+    #nav h2 {
+         font-size: 0.75em;
+     }
+
+    .home #logo h1 {
+        font-size: 1.25em;
+    }
 
 }
 
@@ -496,6 +500,9 @@ and (max-width : 320px) {
  #nav h2 {
      font-size: 0.75em;
  }
+ .home #logo h1 {
+        font-size: 1.25em;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -610,4 +617,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
  #nav h2 {
      font-size: 0.75em;
  }
+ .home #logo h1 {
+        font-size: 1.25em;
+    }
 }
