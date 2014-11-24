@@ -221,10 +221,6 @@ nav a {
     
 }
 
-.home #logo h1 {
-    font-size: 3em;
-}
-
 /* ==========================================================================
    Homepage
    ========================================================================== */
@@ -477,6 +473,9 @@ and (min-width : 321px) {
      background-color: #222;
      border-top: solid 1px #aaa;
  }
+ .home #nav h1 {
+        font-size: 1.25em;
+    }
 }
 
 /* Smartphones (portrait) ----------- */
@@ -522,6 +521,9 @@ and (max-device-width : 1024px) {
      padding: 10px;
      border-radius: 5px;
  }
+ .home #logo h1 {
+    font-size: 3em;
+}
 }
 
 /* iPads (landscape) ----------- */
@@ -540,6 +542,9 @@ and (orientation : landscape) {
      text-align: center;
      padding: 10px;
  }
+ .home #logo h1 {
+    font-size: 3em;
+}
 }
 
 /* iPads (portrait) ----------- */
@@ -558,6 +563,9 @@ and (orientation : portrait) {
      text-align: center;
      padding: 10px;
  }
+ .home #logo h1 {
+    font-size: 3em;
+}
 }
 
 /* Desktops and laptops ----------- */
@@ -576,6 +584,9 @@ and (min-width : 1024px) {
      background-color: transparent;
      border-top: none;
  }
+ .home #logo h1 {
+    font-size: 3em;
+}
 }
 
 /* Large screens ----------- */
@@ -592,6 +603,9 @@ and (min-width : 1824px) {
      text-align: center;
      padding: 10px;
  }
+ .home #logo h1 {
+    font-size: 3em;
+}
 }
 
 /* iPhone 4 ----------- */
