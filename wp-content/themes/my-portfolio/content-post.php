@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<?php if (has_post_thumbnail()) :?>
+<?php if (has_post_thumbnail() && !is_front_page()) :?>
 <!-- Featured Image -->
 <div class="col-md-6 album">
     <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
