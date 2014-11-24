@@ -88,7 +88,7 @@
                     
                     $args = array(
                         'post_type' => 'post',
-                        'cat' => -3,
+                        'cat' => -2,
                         'posts_per_page' => 1
                     );
                     
