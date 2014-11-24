@@ -16,7 +16,7 @@
         
     <?php foreach ( $user_query->results as $user ) : ?>
         <div class="row">
-            <div class="col-md-4">
+            <div class="album pull-left">
                 <?php echo get_custom_avatar( $user->user_email , 100 , 'mysteryman' , 'gravatar' ); ?>
             </div>
             <div class="col-md-8">
@@ -28,7 +28,9 @@
                     <li><a href="<?php echo get_the_author_meta('facebook', $user->ID); ?>"><i class="fa fa-facebook"></i></a></li>
                 </ul>
                 <div class="clearfix"></div>
-                <p><?php echo get_the_author_meta('description', $user->ID); ?></p>
+                <?php if (is_page('contact')) : ?>
+                    <p><?php echo get_the_author_meta('description', $user->ID); ?></p>
+                <?php endif; ?>
             </div>
         </div>
 
