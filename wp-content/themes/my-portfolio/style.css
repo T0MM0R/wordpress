@@ -245,6 +245,10 @@ nav a {
     visibility: hidden;
 }
 
+div.portfolio {
+    margin-bottom: 10px;
+}
+
 
 /* Testimonial ----------- */
 
