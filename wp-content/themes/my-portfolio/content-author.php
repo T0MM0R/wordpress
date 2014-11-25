@@ -2,7 +2,7 @@
 
             $args = array(
                 
-                'role' => array('Author', 'Administrator', 'Contributor', 'Editor')
+                'role' => 'Administrator'
                 
                 
             );
