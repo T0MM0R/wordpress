@@ -1,4 +1,4 @@
-    <div class="<?php echo (has_post_thumbnail()) ? "col-md-6" : ""; ?>">
+<div class="<?php echo (has_post_thumbnail() && !is_single()) ? "col-md-6" : ""; ?>">
     
         <div class="title">
             <h3>
@@ -53,10 +53,17 @@
             <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
         </div>
         
-    <?php elseif (!is_front_page()) : ?>
+    <?php elseif (!is_front_page() && !is_single()) : ?>
         
         <!-- Featured Image -->
         <div class="col-md-6 album">
+            <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+        </div>
+        
+    <?php else: ?>
+        
+        <!-- Featured Image -->
+        <div class="album">
             <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
         </div>
         
