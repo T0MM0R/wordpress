@@ -2,6 +2,22 @@ jQuery(document).ready(function() {
     
     jQuery('.flexslider').flexslider();
     
+    //add html for lightbox
+    var $overlay = jQuery('<div id="overlay"></div>');
+    var $image = jQuery('<img>');
+    $overlay.append($image);
+    jQuery('a img').click(function(event){
+        
+        event.preventDefault();
+        jQuery("body").append($overlay);
+        $image.attr("src", jQuery(this).attr("src"));
+        $overlay.fadeIn("fast");
+        $overlay.click(function(){
+            $overlay.hide();
+        });
+        
+    });
+    
 });
 
 jQuery(document).scroll(function(){

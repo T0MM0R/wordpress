@@ -410,7 +410,9 @@ ul.wptreehouse-badge {
 #overlay img {
     position: absolute;
     top: 20%;
-    left: 40%;
+    left: 25%;
+    height: 500px;
+    width: auto;
     box-shadow: 0 0 50px rgba(255, 255, 255, .5);
 }
 
