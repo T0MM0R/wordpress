@@ -18,6 +18,13 @@ jQuery(document).ready(function() {
         
     });
     
+    
+
+    
+});
+
+jQuery(window).load(function(){
+    
     blueimp.Gallery(
     document.getElementById('gallery').getElementsByTagName('a'),
     {
@@ -34,7 +41,6 @@ jQuery(document).ready(function() {
         startSlideshow: true
     }
 );
-
     
 });
 
