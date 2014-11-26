@@ -22,6 +22,7 @@
             </article>
     
             <div class="author">
+                <h3>About The Author</h3>
                 <div class="album pull-left">
                     <?php echo get_custom_avatar( get_the_author_meta('user_email'), 100 , 'mysteryman' , 'gravatar' ); ?>
                 </div>
