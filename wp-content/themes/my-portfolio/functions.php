@@ -199,3 +199,16 @@ function img_class_filter($content) {
         
     
 }
+
+function favicon() {
+    if (is_admin()) {
+        $favicon_url = get_stylesheet_directory_uri() . '/favicon-bw.png';
+    } else {
+        $favicon_url = get_stylesheet_directory_uri() . '/favicon.png';
+    }
+    echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
+}
+
+add_action('admin_head', 'favicon');
+add_action('wp_head', 'favicon');
+add_action('login_head', 'favicon');
