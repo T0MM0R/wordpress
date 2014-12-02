@@ -16,9 +16,6 @@
         <p>Page not found! :(</p>
 
     <?php endif; ?>
-            
-    
-<?php get_template_part( 'content', 'testimonials' );?>
         
 </div>
 

@@ -4,7 +4,7 @@
     <div id="content" class="container">
     
         <h5>Featured Post</h5>
-        <div class="row card">
+        <div class="row">
             <?php
             wp_reset_postdata();
             $args = array(
@@ -26,7 +26,7 @@
         </div>
         
         <h5>Recent Work</h5>
-        <div class="row card">
+        <div class="row">
             <div class="flexslider">
                 <ul class="slides">
             <?php
@@ -57,7 +57,7 @@
         </div>
             
         <h5>Latest Post</h5>
-        <div class="row recent-post card">
+        <div class="row recent-post">
             <article>
 
                 <?php
