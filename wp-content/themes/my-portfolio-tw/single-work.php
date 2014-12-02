@@ -17,6 +17,8 @@
                 <?php the_content(); ?>
 
             </article>
+            
+            <a class="btn btn-success" href="<?php the_field('project_url'); ?>">View Project &rarr;</a>
                 
             <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>">
 
