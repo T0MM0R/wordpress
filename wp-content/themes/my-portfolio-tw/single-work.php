@@ -20,7 +20,7 @@
             
             <hr>
                 
-            <?php the_field('homepage_slider_image') ?>
+            <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>">
 
         </div>
 
