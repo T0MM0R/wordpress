@@ -10,20 +10,6 @@ Text Domain: My Portfolio
 */
 
 /* header */
-body {
-    margin-top: 100px;
-    color: #555;
-    font-family: 'garamound', serif; /* 1 */
-    background-color: #ddd;
-}
-
-.row {
-    background-color: #fff;
-    margin: 5px;
-    padding: 5px;
-    border: solid thin #000;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-}
 
 #nav {
     background-color: rgba(15, 110, 250, 0.8);
@@ -57,4 +43,24 @@ nav a {
 
 .navbar-default:hover .navbar-nav>li>a:hover {
     color: #fff;
+}
+
+/*body*/
+body {
+    margin-top: 100px;
+    color: #555;
+    font-family: 'garamound', serif; /* 1 */
+    background-color: #ddd;
+}
+
+.row {
+    background-color: #fff;
+    margin: 5px;
+    padding: 10px;
+    border: solid thin #000;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.album img {
+    box-shadow: none;
 }
