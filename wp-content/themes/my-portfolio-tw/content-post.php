@@ -1,4 +1,4 @@
-<div class="card <?php echo (has_post_thumbnail() && !is_single()) ? "col-md-6" : ""; ?>">
+<div class="<?php echo (has_post_thumbnail() && !is_single()) ? "col-md-6" : ""; ?>">
     
         <div class="title">
             <h3>
