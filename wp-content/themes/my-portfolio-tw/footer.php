@@ -9,7 +9,7 @@
                 
             <?php endif; ?>
         </div>
-        <div class="col-md-6 card">
+        <div class="col-md-6">
             <?php if ( dynamic_sidebar( 'footer_right' ) ): ?>
             <?php else: ?>
             
