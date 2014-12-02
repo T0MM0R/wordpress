@@ -232,6 +232,7 @@ nav a {
 .flexslider {
     border: none;
     background: transparent;
+    margin: 0;
 }
 
 /* Work ----------- */
