@@ -19,13 +19,8 @@
                 </article>
             
             <hr>
-            
-            <?php if (has_post_thumbnail()) : ?>
                 
-                <?php the_post_thumbnail() ?>
-            
-            <?php endif; ?>
-
+            <?php the_field('homepage_slider_image') ?>
 
         </div>
 
