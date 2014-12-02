@@ -1,39 +1,10 @@
 <?php get_header();?>
 </div>
-    
-<!--    <div id="featured" class="container-fluid no-padding">
-        
-        <div class="row">
-            <div class="flexslider">
-                <ul class="slides">
-                    <?php
-                        $args = array(
-                            'post_type' => 'work'
-                        );
-                        $the_query = new WP_Query( $args );
-                    ?>
-                    <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                    <li>
-                            <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>" alt="<?php the_title(); ?> featured image">
-                            <div id="featured-info" class="featured-album">
-                                <a href="<?php the_permalink(); ?>">
-                                    <h3><?php the_title(); ?></h3>
-                                    <h4><?php the_field( 'description' ) ;?></h4>
-                                </a>
-                            </div>
-                            
-                    </li>        
-                    <?php endwhile; endif; ?>            
-                </ul>
-            </div>
-        </div>
-        
-    </div>-->
 
     <div id="content" class="container">
     
         <h5>Featured Post</h5>
-        <div class="row">
+        <div class="row card">
             <?php
             wp_reset_postdata();
             $args = array(
@@ -55,7 +26,7 @@
         </div>
         
         <h5>Recent Work</h5>
-        <div class="row">
+        <div class="row card">
             <div class="flexslider">
                 <ul class="slides">
             <?php
@@ -86,7 +57,7 @@
         </div>
             
         <h5>Latest Post</h5>
-        <div class="row recent-post">
+        <div class="row recent-post card">
             <article>
 
                 <?php
@@ -113,7 +84,7 @@
         </div>
         
         <h5>Testimonial</h5>
-        <div class="row">
+        <div class="row card">
             <?php get_template_part( 'content', 'testimonials' );?>
         </div>
     </div>
