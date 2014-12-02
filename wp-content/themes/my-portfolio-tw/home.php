@@ -5,7 +5,7 @@
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
-    <div class="row card">
+    <div class="row">
 
         <?php get_template_part( 'content', 'post' );?>
         
