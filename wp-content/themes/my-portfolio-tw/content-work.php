@@ -8,6 +8,8 @@
             <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
         </h4>
         
-        <?php the_field( 'description' ); ?>
+        <?php if (is_single()) : ?>
+            <?php the_field( 'description' ); ?>
+        <?php endif; ?>
         
     </div>
