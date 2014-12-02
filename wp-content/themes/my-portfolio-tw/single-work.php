@@ -12,8 +12,6 @@
 
             <hr>
 
-            <div class="project-images col-md-12 no-padding">
-
                 <article>
 
                     <?php the_content(); ?>
@@ -21,7 +19,7 @@
                 </article>
 
 
-            </div>
+        </div>
 
             <?php endwhile; else: ?>
 
@@ -31,8 +29,6 @@
             
         </div>
 
-    </div>
-    
 </div>
 
 <?php get_footer();?>
