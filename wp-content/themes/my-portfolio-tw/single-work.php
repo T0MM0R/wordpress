@@ -17,6 +17,14 @@
                     <?php the_content(); ?>
 
                 </article>
+            
+            <hr>
+            
+            <?php if (has_post_thumbnail()) : ?>
+                
+                <?php the_post_thumbnail() ?>
+            
+            <?php endif; ?>
 
 
         </div>
