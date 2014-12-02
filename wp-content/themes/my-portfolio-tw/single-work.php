@@ -12,13 +12,11 @@
 
             <hr>
 
-                <article>
+            <article>
 
-                    <?php the_content(); ?>
+                <?php the_content(); ?>
 
-                </article>
-            
-            <hr>
+            </article>
                 
             <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>">
 
