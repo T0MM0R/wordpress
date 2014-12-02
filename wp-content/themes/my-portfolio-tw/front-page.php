@@ -55,13 +55,16 @@
         </div>
         
         <h5>Recent Work</h5>
-        <div class="row">   
+        <div class="row">
+            <div class="flexslider">
+                <ul class="slides">
             <?php
 
             wp_reset_postdata();
 
             $args = array(
                 'post_type' => 'work'
+                
             );
 
             $the_query = new WP_Query( $args );
@@ -69,10 +72,16 @@
             ?>
 
             <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    
+                <li>
 
-                <?php get_template_part( 'content', 'work' ); ?>
+                    <?php get_template_part( 'content', 'work' ); ?>
+                        
+                </li>
 
             <?php endwhile; endif; ?>
+                </ul>
+            </div>
                 
         </div>
             

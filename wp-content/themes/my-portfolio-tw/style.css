@@ -64,3 +64,11 @@ body {
 .album img {
     box-shadow: none;
 }
+
+.flexslider {
+    box-shadow: none;
+}
+
+.flex-control-nav {
+    visibility: visible;
+}
