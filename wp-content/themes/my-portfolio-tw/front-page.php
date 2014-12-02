@@ -103,6 +103,7 @@
             </article>
         </div>
         
+        <h5>Testimonial</h5>
         <div class="row">
             <?php get_template_part( 'content', 'testimonials' );?>
         </div>
