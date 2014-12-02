@@ -11,7 +11,7 @@ get_header();
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
-    <div class="about card col-md-6">
+    <div class="about card col-md-7">
         <h5><?php the_title(); ?></h5>
         <?php if ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive margin-bottom-10 visible-md visible-lg' ) ) ?>
