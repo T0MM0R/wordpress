@@ -6,13 +6,61 @@
             <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
         </div>
     
+        <div class="col-md-6">
+            <div class="title">
+                <h3>
+                    <?php if(!is_single()) :?>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <?php else: ?>
+                        <?php the_title(); ?>
+                    <?php endif; ?>
+                </h3>
+                <ul class="info">
+                    <li>By: <?php the_author(); ?></li>
+                    <li>Published in <?php the_category(', '); ?></li>
+                    <li>On <?php the_time('F j, Y'); ?></li>
+                </ul>
+            </div>
+            <p>
+                <?php the_excerpt(); ?>
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
+            </p>
+        </div>
+    
+    <?php elseif (!is_single() && !is_front_page()) : ?>
+    
+        <div>
+            <div class="title">
+                <h3>
+                    <?php if(!is_single()) :?>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <?php else: ?>
+                        <?php the_title(); ?>
+                    <?php endif; ?>
+                </h3>
+                <ul class="info">
+                    <li>By: <?php the_author(); ?></li>
+                    <li>Published in <?php the_category(', '); ?></li>
+                    <li>On <?php the_time('F j, Y'); ?></li>
+                </ul>
+            </div>
+            <p>
+                <?php the_excerpt(); ?>
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
+            </p>
+        </div>
+    
     <?php elseif (has_post_thumbnail() && is_front_page() && in_category('featured')) : ?>
-    
-        <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-    
-    <?php endif; ?>
-    
-    <div class="<?php if (has_post_thumbnail() && !is_single() && !is_front_page()) : echo "col-md-6" ; endif; ?>">
     
         <div class="title">
             <h3>
@@ -28,37 +76,55 @@
                 <li>On <?php the_time('F j, Y'); ?></li>
             </ul>
         </div>
+    
+        <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+    
+        <p>
+            <?php echo substr(get_the_excerpt(), 0, 150) . " . . ."; ?>
+        </p>
         
-        <?php if(is_single()): ?>
-
-            <article>
-                
-                <?php if (has_post_thumbnail() && is_single()) : ?>
-                <div class="col-md-4 pull-right">
-                    <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-                </div>
-                <?php endif; ?>
-                
-                <?php the_content(); ?>
-                
-            </article>
-        
-        <?php else: ?>
-
+        <div>
             <p>
-                <?php the_excerpt(); ?>
                 <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
             </p>
-            
-        <?php endif; ?>
-            
-    </div>
+        </div>
     
+    <?php elseif (is_single()): ?>
+        
+        <div class="title">
+            <h3>
+                <?php if(!is_single()) :?>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <?php else: ?>
+                    <?php the_title(); ?>
+                <?php endif; ?>
+            </h3>
+            <ul class="info">
+                <li>By: <?php the_author(); ?></li>
+                <li>Published in <?php the_category(', '); ?></li>
+                <li>On <?php the_time('F j, Y'); ?></li>
+            </ul>
+        </div>
+    
+        <article>
+                
+            <?php if (has_post_thumbnail() && is_single()) : ?>
+            <div class="col-md-4 pull-right">
+                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php the_content(); ?>
+
+        </article>
+    
+    <?php endif; ?>
+        
 </div>
 
 <?php if (is_single()) : ?>
 
-<div class="author card clearfix">
+<div class="card clearfix">
     <h3>About The Author</h3>
     <div class="album pull-left">
         <?php echo get_custom_avatar( get_the_author_meta('user_email'), 100 , 'mysteryman' , 'gravatar' ); ?>
