@@ -10,7 +10,7 @@
             </h3>
             <ul class="info">
                 <li>By: <?php the_author(); ?></li>
-                <li>Published in <?php the_category(', '); ?></li>
+                <li><?php the_terms(the_id(), 'work'); ?></li>
                 <li>On <?php the_time('F j, Y'); ?></li>
             </ul>
         </div>
