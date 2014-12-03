@@ -59,7 +59,7 @@
             </div>
         </div>
             
-        <h5>Latest Post</h5>
+        <h5>Latest Posts</h5>
         <div class="row recent-post">
             <article>
 
@@ -69,8 +69,8 @@
 
                 $args = array(
                     'post_type' => 'post',
-                    'cat' => -33,
-                    'posts_per_page' => 1
+                    'posts_per_page' => 3,
+                    'cat' => -3
                 );
 
                 $the_query = new WP_Query( $args );
@@ -78,8 +78,10 @@
                 ?>
 
                 <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-                    <?php get_template_part( 'content', 'post' ); ?>
+                    
+                    <div class="col-md-4">
+                        <?php get_template_part( 'content', 'post' ); ?>
+                    </div>
 
                 <?php endwhile; endif; ?>
 
