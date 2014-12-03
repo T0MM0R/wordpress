@@ -9,8 +9,8 @@
                 <?php endif; ?>
             </h3>
             <ul class="info">
-                <li>By: <?php the_author(); ?></li>
-                <li><?php the_terms(get_the_id(), 'work_types'); ?></li>
+                <li>By <?php the_author(); ?></li>
+                <li>In <?php the_terms(get_the_id(), 'work_types'); ?></li>
                 <li>On <?php the_time('F j, Y'); ?></li>
             </ul>
         </div>
