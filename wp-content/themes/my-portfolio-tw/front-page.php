@@ -70,7 +70,7 @@
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => 3,
-                    'cat' => -3
+                    'cat' => -33
                 );
 
                 $the_query = new WP_Query( $args );
