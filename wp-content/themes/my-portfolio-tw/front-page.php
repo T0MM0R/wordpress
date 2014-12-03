@@ -2,58 +2,61 @@
 </div>
 
     <div id="content" class="container">
-    
-        <h5>Featured Post</h5>
-        <div class="row">
-            <?php
-            wp_reset_postdata();
-            $args = array(
-                'post_type' => 'post',
-                'category_name' => 'featured',
-                'posts_per_page' => 1
-            );
-
-            $the_query = new WP_Query( $args );
-
-            ?>
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                <article>
-
-                    <?php get_template_part( 'content', 'post' ); ?>
-
-                </article>
-            <?php endwhile; endif; ?>
-        </div>
         
-        <h5>Recent Work</h5>
         <div class="row">
-            <div class="flexslider">
-                <ul class="slides">
-            <?php
+    
+            <div class="col-md-6">
+                <h5>Featured Post</h5>
+                <?php
+                wp_reset_postdata();
+                $args = array(
+                    'post_type' => 'post',
+                    'category_name' => 'featured',
+                    'posts_per_page' => 1
+                );
 
-            wp_reset_postdata();
+                $the_query = new WP_Query( $args );
 
-            $args = array(
-                'post_type' => 'work'
-                
-            );
+                ?>
+                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <article>
 
-            $the_query = new WP_Query( $args );
+                        <?php get_template_part( 'content', 'post' ); ?>
 
-            ?>
-
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                    
-                <li>
-
-                    <?php get_template_part( 'content', 'work' ); ?>
-                        
-                </li>
-
-            <?php endwhile; endif; ?>
-                </ul>
+                    </article>
+                <?php endwhile; endif; ?>
             </div>
-                
+            
+            <div class="col-md-6">
+                <h5>Recent Work</h5>
+                <div class="flexslider card">
+                    <ul class="slides">
+                <?php
+
+                wp_reset_postdata();
+
+                $args = array(
+                    'post_type' => 'work'
+
+                );
+
+                $the_query = new WP_Query( $args );
+
+                ?>
+
+                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                    <li>
+
+                        <?php get_template_part( 'content', 'work' ); ?>
+
+                    </li>
+
+                <?php endwhile; endif; ?>
+                    </ul>
+                </div>
+
+            </div>
         </div>
             
         <h5>Latest Post</h5>
@@ -66,7 +69,7 @@
 
                 $args = array(
                     'post_type' => 'post',
-                    'cat' => -2,
+                    'cat' => -33,
                     'posts_per_page' => 1
                 );
 
@@ -84,7 +87,7 @@
         </div>
         
         <h5>Testimonial</h5>
-        <div class="row card">
+        <div class="row">
             <?php get_template_part( 'content', 'testimonials' );?>
         </div>
     </div>

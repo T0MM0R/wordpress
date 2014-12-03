@@ -1,4 +1,4 @@
-    <div class="portfolio card">
+    <div class="portfolio">
         
         <a href="<?php the_permalink();?>">
             <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>">

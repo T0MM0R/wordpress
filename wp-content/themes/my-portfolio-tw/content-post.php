@@ -1,5 +1,18 @@
 <div class="card clearfix">
-    <div class="<?php echo (has_post_thumbnail() && !is_single()) ? "col-md-6" : ""; ?>">
+    
+    <?php if (has_post_thumbnail() && !is_single() && !is_front_page()) : ?>
+    
+        <div class="col-md-6">
+            <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+        </div>
+    
+    <?php elseif (has_post_thumbnail() && is_front_page() && in_category('featured')) : ?>
+    
+        <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+    
+    <?php endif; ?>
+    
+    <div class="<?php if (has_post_thumbnail() && !is_single() && !is_front_page()) : echo "col-md-6" ; endif; ?>">
     
         <div class="title">
             <h3>
@@ -19,7 +32,13 @@
         <?php if(is_single()): ?>
 
             <article>
-
+                
+                <?php if (has_post_thumbnail() && is_single()) : ?>
+                <div class="col-md-4 pull-right">
+                    <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+                </div>
+                <?php endif; ?>
+                
                 <?php the_content(); ?>
                 
             </article>
@@ -34,18 +53,6 @@
         <?php endif; ?>
             
     </div>
-    
-    <?php if (has_post_thumbnail() && !is_single()) : ?>
-    
-    <div class="col-md-6">
-        <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-    </div>
-    
-    <?php elseif (has_post_thumbnail()) : ?>
-    
-        <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-    
-    <?php endif; ?>
     
 </div>
 
