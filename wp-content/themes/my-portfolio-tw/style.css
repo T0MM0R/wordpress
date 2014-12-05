@@ -50,8 +50,7 @@ body {
     margin-top: 100px;
     color: #555;
     font-family: 'garamound', serif; /* 1 */
-    background: rgb(216,224,222); /* Old browsers */
-
+    background-color: #f2f2f4;
 }
 
 .card {
