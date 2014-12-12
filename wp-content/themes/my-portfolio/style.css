@@ -450,7 +450,6 @@ and (max-device-width : 480px) {
     .featured-album {
          position: initial;
          max-width: 100%;
-         padding: 10px 45px;
          color: #fff;
          text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
          text-align: left;
@@ -478,7 +477,6 @@ and (min-width : 321px) {
 .featured-album {
      position: initial;
      max-width: 100%;
-     padding: 10px 45px;
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: left;
@@ -497,7 +495,6 @@ and (max-width : 320px) {
     .featured-album {
          position: initial;
          max-width: 100%;
-         padding: 10px 45px;
          color: #fff;
          text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
          text-align: left;
@@ -534,7 +531,6 @@ and (max-device-width : 1024px) {
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: right;
      background-color: rgba(0, 0, 0, 0.8);
-     padding: 10px;
      border-radius: 5px;
  }
  .home #logo h1 {
@@ -556,7 +552,6 @@ and (orientation : landscape) {
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
-     padding: 10px;
  }
  .home #logo h1 {
     font-size: 3em;
@@ -577,7 +572,6 @@ and (orientation : portrait) {
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
-     padding: 10px;
  }
  .home #logo h1 {
     font-size: 3em;
@@ -596,7 +590,6 @@ and (min-width : 1024px) {
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
-     padding: 10px;
      background-color: transparent;
      border-top: none;
  }
@@ -617,7 +610,6 @@ and (min-width : 1824px) {
      color: #fff;
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
-     padding: 10px;
  }
  .home #logo h1 {
     font-size: 3em;
