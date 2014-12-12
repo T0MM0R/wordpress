@@ -1,6 +1,9 @@
 jQuery(document).ready(function() {
     
-    jQuery('.flexslider').flexslider();
+    jQuery('.flexslider').flexslider({
+        controlNav: false,
+        directionNav: false
+    });
     
     //add html for lightbox
     var $overlay = jQuery('<div id="overlay"></div>');
