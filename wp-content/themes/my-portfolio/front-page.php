@@ -33,24 +33,27 @@
     
 
         <div class="row">
-            <h5>Featured Post</h5>
-            <?php
-            wp_reset_postdata();
-            $args = array(
-                'post_type' => 'post',
-                'category_name' => 'featured',
-                'posts_per_page' => 1
-            );
+            <div class="col-md-12">
+                <h5>Featured Post</h5>
+            </div>
+            <article>
+                <?php
+                wp_reset_postdata();
+                $args = array(
+                    'post_type' => 'post',
+                    'category_name' => 'featured',
+                    'posts_per_page' => 1
+                );
 
-            $the_query = new WP_Query( $args );
+                $the_query = new WP_Query( $args );
 
-            ?>
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                <article>
+                ?>
+                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                
 
                     <?php get_template_part( 'content', 'post' ); ?>
 
-                </article>
+            </article>
             <?php endwhile; endif; ?>
         </div>
         
