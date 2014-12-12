@@ -45,6 +45,14 @@ nav a {
     color: #fff;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #000;
+}
+
 /*body*/
 body {
     margin-top: 100px;
@@ -76,8 +84,10 @@ ul.wptreehouse-badges {
 .flexslider {
     border-radius: 5px;
     box-shadow: none;
+    margin-bottom: 60px;
 }
 
 .flex-control-nav {
     visibility: visible;
+    bottom: -30px;
 }
