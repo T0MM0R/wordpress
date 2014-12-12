@@ -493,26 +493,30 @@ and (min-width : 321px) {
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (max-width : 320px) {
-/* Styles */
-.featured-album {
-     position: initial;
-     max-width: 100%;
-     padding: 10px 45px;
-     color: #fff;
-     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: left;
-     background-color: #222;
-     border-top: solid 1px #aaa;
- }
-  #nav h1 {
-     font-size: 1.25em;
- }
- 
- #nav h2 {
-     font-size: 0.75em;
- }
- .home #nav h1 {
-        font-size: 1.25em;
+    /* Styles */
+    .featured-album {
+         position: initial;
+         max-width: 100%;
+         padding: 10px 45px;
+         color: #fff;
+         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+         text-align: left;
+         background-color: #222;
+         border-top: solid 1px #aaa;
+     }
+      #nav h1 {
+         font-size: 1.25em;
+     }
+
+     #nav h2 {
+         font-size: 0.75em;
+     }
+     .home #nav h1 {
+            font-size: 1.25em;
+        }
+        
+    h3 {
+        font-size: 1.5em;
     }
 }
 
