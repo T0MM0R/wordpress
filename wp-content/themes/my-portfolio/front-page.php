@@ -60,24 +60,26 @@
         <div class="row">        
             <div class="col-md-8 album">
                 <h5>Albums</h5>
-                        
-                <?php
                 
-                wp_reset_postdata();
+                <div class="row">        
+                    <?php
 
-                $args = array(
-                    'post_type' => 'work'
-                );
+                    wp_reset_postdata();
 
-                $the_query = new WP_Query( $args );
+                    $args = array(
+                        'post_type' => 'work'
+                    );
 
-                ?>
+                    $the_query = new WP_Query( $args );
 
-                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    ?>
 
-                    <?php get_template_part( 'content', 'work' ); ?>
+                    <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-                <?php endwhile; endif; ?>
+                        <?php get_template_part( 'content', 'work' ); ?>
+
+                    <?php endwhile; endif; ?>
+                </div>
                 
             </div>
             

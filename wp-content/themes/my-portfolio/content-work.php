@@ -1,4 +1,4 @@
-<div class="col-md-6 album portfolio">
+    <div class="col-md-6 album portfolio">
         
         <a href="<?php the_permalink();?>">
             <img class="img img-responsive" src="<?php the_field( 'homepage_slider_image' ); ?>">
