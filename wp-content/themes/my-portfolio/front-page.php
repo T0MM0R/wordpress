@@ -1,6 +1,6 @@
 <?php get_header();?>
     
-    <div id="featured" class="container-fluid no-padding">
+    <div id="featured" class="container-fluid">
         
         <div class="row">
             <div class="flexslider">
