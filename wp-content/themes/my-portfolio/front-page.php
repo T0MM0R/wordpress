@@ -1,5 +1,4 @@
 <?php get_header();?>
-</div>
     
     <div id="featured" class="container-fluid no-padding">
         
