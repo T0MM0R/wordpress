@@ -12,7 +12,7 @@
 
         <hr>
 
-        <div class="project-images col-md-12">
+        <div class="project-images">
             
             <article>
 
