@@ -161,19 +161,10 @@ function get_custom_avatar( $id_or_email, $size = '96', $default = '', $alt = fa
 	return apply_filters( 'get_avatar', $avatar, $id_or_email, $size, $default, $alt );
 }
 
-if ( !is_admin() ) {
+if ( !is_admin() && !is_front_page() ) {
     add_filter('acf/load_value/name=project_images', 'img_class_filter');
     add_filter('the_content', 'img_class_filter');
 }
-
-//function str_replace_first($search, $replace, $subject) {
-//    $pos = strpos($subject, $search);
-//    if ($pos !== false) {
-//        $subject = substr_replace($subject, $replace, $pos, strlen($search));
-//    }
-//    return $subject;
-//    
-//}
 
 function img_class_filter($content) {
     
