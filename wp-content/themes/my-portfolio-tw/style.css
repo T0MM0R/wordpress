@@ -54,6 +54,10 @@ nav a {
 }
 
 /*body*/
+a {
+    color: #337ab7;
+}
+
 body {
     margin-top: 100px;
     color: #555;
