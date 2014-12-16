@@ -102,3 +102,7 @@ ul.wptreehouse-badges {
     visibility: visible;
     bottom: -30px;
 }
+
+blockquote {
+    margin: 5px 0;
+}
