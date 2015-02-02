@@ -27,6 +27,16 @@ img.size-thumbnail {
     border-radius: 10px;
 }
 
+.caption {
+    background-color: #ccc;
+    padding: 5px;
+}
+
+.caption > h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 
 /* ==========================================================================
    Typography
