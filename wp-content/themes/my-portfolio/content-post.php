@@ -1,6 +1,6 @@
 <?php global $count; ?>
 <?php if ( $count % 2 ) : ?>
-<div class="<?php echo (has_post_thumbnail() && !is_single() && !is_front_page()) ? "col-md-6" : ""; ?>">
+<div class="<?php echo (has_post_thumbnail() && !is_single() && !is_front_page() ) ? "col-md-6" : ""; ?>">
 
             <div class="title">
                 <h3>
@@ -91,7 +91,7 @@
 
     <?php endif; ?>
             
-    <div class="<?php echo (has_post_thumbnail() && !is_single()) ? "col-md-6" : ""; ?>">
+    <div class="<?php echo (has_post_thumbnail() && !is_single() && !is_front_page() ) ? "col-md-6" : ""; ?>">
 
             <div class="title">
                 <h3>
