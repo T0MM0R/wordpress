@@ -37,6 +37,13 @@ img.size-thumbnail {
     margin-bottom: 0px;
 }
 
+input, textarea {
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+}
+
 
 /* ==========================================================================
    Typography
