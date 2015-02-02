@@ -21,6 +21,12 @@ body.home {
     font-family: 'garamound', serif; /* 1 */
 }
 
+img.size-thumnail {
+    margin: 2px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
 
 /* ==========================================================================
    Typography
