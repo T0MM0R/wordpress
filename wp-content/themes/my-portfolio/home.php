@@ -3,7 +3,7 @@
 
 <div class="container">
     
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php if ( have_posts() ) : $count = 0; while ( have_posts() ) : $count++; the_post(); ?>
     
     <div class="row">
 
