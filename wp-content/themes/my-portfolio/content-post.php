@@ -66,13 +66,6 @@
                 <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
             </div>
 
-        <?php else: ?>
-
-            <!-- Featured Image -->
-            <div class="album">
-                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-            </div>
-
         <?php endif; ?>
 
     <?php endif; ?>
@@ -93,14 +86,7 @@
             <div class="col-md-6 album">
                 <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
             </div>
-
-        <?php else: ?>
-
-            <!-- Featured Image -->
-            <div class="album">
-                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-            </div>
-
+            
         <?php endif; ?>
 
     <?php endif; ?>
