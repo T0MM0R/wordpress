@@ -17,8 +17,9 @@
     
     <body <?php if (is_front_page()) { echo "class='home'"; } ?>>
         
-        <header id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
+        <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
             <hgroup id="logo" class="navbar-header">
+                
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -33,6 +34,7 @@
                 </a>
 
             </hgroup>
+            
             <nav class="navbar-collapse collapse" id="nav1">
                <?php
                     $args = array(
@@ -43,5 +45,5 @@
                     wp_nav_menu( $args );
                 ?>
             </nav>
-        </header>
+        </div>
         
