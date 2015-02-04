@@ -54,6 +54,10 @@ input, textarea {
     width: 30px;
 }
 
+.navbar-toggle {
+    padding: 5px 10px;
+}
+
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     background-color: #222;
 }
