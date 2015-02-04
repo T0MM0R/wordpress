@@ -58,7 +58,7 @@ input, textarea {
     padding: 5px 10px;
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+.navbar-default .navbar-collapse .in {
     background-color: #222;
 }
 
