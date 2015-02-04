@@ -54,6 +54,10 @@ input, textarea {
     width: 30px;
 }
 
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    background-color: #222;
+}
+
 /* ==========================================================================
    Typography
    ========================================================================== */
