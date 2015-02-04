@@ -44,7 +44,7 @@ input, textarea {
     padding: 8px;
 }
 
-.navbar-toggle span[value*="MENU"] {
+.navbar-toggle .menu {
     color: #FFF;
     font-family: "Helvetica", arial, sans-serif;
     font-size: .75em;
