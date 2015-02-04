@@ -54,9 +54,9 @@ jQuery(document).scroll(function(){
     var windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
-        jQuery("header").css({backgroundColor: "rgba(0, 0, 0, 0.8)"});
+        jQuery("#nav").css({backgroundColor: "rgba(0, 0, 0, 0.8)"});
     } else {
-        jQuery("header").css({backgroundColor: "transparent"});
+        jQuery("#nav").css({backgroundColor: "transparent"});
     }
 });
 
