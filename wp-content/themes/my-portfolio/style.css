@@ -62,6 +62,10 @@ input, textarea {
     background-color: #222;
 }
 
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #222;
+}
+
 a:hover {
     text-decoration: none;
 }
