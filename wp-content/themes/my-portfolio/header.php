@@ -24,6 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span>MENU</span>
                 </button>
 
                 <a href="<?php echo site_url(); ?>">

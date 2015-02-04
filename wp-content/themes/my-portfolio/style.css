@@ -44,6 +44,15 @@ input, textarea {
     padding: 8px;
 }
 
+.navbar-toggle span[value*="MENU"] {
+    color: #FFF;
+    font-family: "Helvetica", arial, sans-serif;
+    font-size: .75em;
+}
+
+.navbar-toggle .icon-bar {
+    width: 30px;
+}
 
 /* ==========================================================================
    Typography
