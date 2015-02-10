@@ -5,7 +5,7 @@
     
     <?php if ( have_posts() ) : $count = 0; while ( have_posts() ) : $count++; the_post(); ?>
     
-    <div class="row">
+    <div class="row blog">
 
         <?php get_template_part( 'content', 'post' );?>
         
