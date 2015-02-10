@@ -44,6 +44,14 @@ input, textarea {
     padding: 8px;
 }
 
+input:not([type="submit"]), textarea {
+    box-shadow: inset 2px 2px 0 rgba(0, 0, 0, .15);
+}
+
+input[type="submit"] {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .55);
+}
+
 .navbar-toggle .menu {
     color: #FFF;
     font-family: "Helvetica", arial, sans-serif;
