@@ -374,6 +374,9 @@ article {
  .author {
      text-align: center;
  }
+ .author > p {
+     text-align: justify;
+ }
 
 
 /* ==========================================================================
