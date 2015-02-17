@@ -1,5 +1,6 @@
 var windowPosition;
 var headerChangePosition;
+var headerState;
 
 jQuery(document).ready(function() {
     
@@ -57,11 +58,21 @@ jQuery(document).scroll(function(){
     windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
-        jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, 1)"}, 200, 'swing');
-        jQuery("#logo h2").hide();
+        headerState = "solid";
+        if ( "solid" === headerState ) {
+            return;
+        } else {
+            jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, 1)"}, 200, 'swing');
+            jQuery("#logo h2").hide();
+        }
     } else {
-        jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing');
-        jQuery("#logo h2").show();
+        headerState = "transparent";
+        if ( "transparent" == headerState ) {
+            return;
+        } else {
+            jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing');
+            jQuery("#logo h2").show();
+        }
     }
 });
 
