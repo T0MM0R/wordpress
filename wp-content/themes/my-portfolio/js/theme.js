@@ -21,6 +21,9 @@ jQuery(document).ready(function() {
         
     });
     
+    var headerChangePosition = Math.floor(jQuery("#content").offset()['top']);
+    var windowPosition = jQuery(document).scrollTop();
+    
     
 
     
@@ -48,10 +51,6 @@ jQuery(window).load(function(){
 });
 
 jQuery(document).scroll(function(){
-    
-    
-    var headerChangePosition = Math.floor(jQuery("#content").offset()['top']);
-    var windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
         jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, 1)"}, 200, 'linear');
