@@ -78,6 +78,10 @@ input[type="submit"]:hover {
     background-color: #222;
 }
 
+.navbar-toggle {
+    margin-top: 0px;
+}
+
 a:hover {
     text-decoration: none;
 }
