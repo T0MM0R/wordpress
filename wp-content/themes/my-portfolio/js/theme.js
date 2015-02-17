@@ -54,10 +54,9 @@ jQuery(document).scroll(function(){
     var windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
-        jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, 0.8)"}, 400, 'linear', function(){console.log("test");});
+        jQuery("#nav").animate({opacity: 1}, 400, 'linear', function(){console.log("test");});
         jQuery("#logo h2").hide();
     } else {
-        jQuery("#nav").animate({backgroundColor: "transparent"}, 400, 'linear', function(){console.log("test");});
         jQuery("#logo h2").show();
     }
 });
