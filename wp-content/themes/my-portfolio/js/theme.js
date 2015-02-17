@@ -58,20 +58,20 @@ jQuery(document).scroll(function(){
     windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
-        headerState = "solid";
         if ( "solid" === headerState ) {
             return;
         } else {
             jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, 1)"}, 200, 'swing');
             jQuery("#logo h2").hide();
+            headerState = "solid";
         }
     } else {
-        headerState = "transparent";
-        if ( "transparent" == headerState ) {
+        if ( "transparent" === headerState ) {
             return;
         } else {
             jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing');
             jQuery("#logo h2").show();
+            headerState = "transparent";
         }
     }
 });
