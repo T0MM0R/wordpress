@@ -60,6 +60,10 @@ nav a {
     background-color: #000;
 }
 
+hgroup#logo {
+        padding: 0 0;
+    }
+
 /*body*/
 a {
     color: #001F5C;
