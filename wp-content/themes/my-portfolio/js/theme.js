@@ -54,8 +54,10 @@ jQuery(document).scroll(function(){
     var windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
+        jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, 1)"}, 400, 'linear');
         jQuery("#logo h2").hide();
     } else {
+        jQuery("#nav").animate({backgroundColor: "rgba(50, 50, 50, .5)"}, 400, 'linear');
         jQuery("#logo h2").show();
     }
 });
