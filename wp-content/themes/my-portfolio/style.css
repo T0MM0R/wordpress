@@ -253,6 +253,10 @@ nav a {
     color: initial;
 }
 
+hgroup#logo {
+    padding: 15px 0;
+}
+
 #logo a {
     color: #000;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -603,7 +607,7 @@ and (max-device-width : 1024px) {
      border-radius: 5px;
  }
  .home #logo h1 {
-    font-size: 3em;
+    font-size: 2em;
 }
 }
 
