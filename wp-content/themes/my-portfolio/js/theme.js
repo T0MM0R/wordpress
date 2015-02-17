@@ -50,7 +50,7 @@ jQuery(window).load(function(){
 jQuery(document).scroll(function(){
     
     
-    var headerChangePosition = Math.floor(jQuery("#content").offset()['top']) - 600;
+    var headerChangePosition = Math.floor(jQuery("#content").offset()['top']);
     var windowPosition = jQuery(document).scrollTop();
     
     if (windowPosition >= headerChangePosition ) {
