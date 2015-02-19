@@ -75,7 +75,7 @@ input[type="submit"]:hover {
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #222;
+    background-color: transparent;
 }
 
 .navbar-toggle {
