@@ -540,11 +540,14 @@ and (max-device-width : 480px) {
          font-size: 0.75em;
      }
 
-    .home #nav h1, .home #logo h2 {
+    .home #nav h1 {
         font-size: 2em;
         padding-top: 5px;
         padding-left: 20px;
     }
+    .home #logo h2 {
+       display: none;
+   }
 
 }
 
@@ -552,20 +555,23 @@ and (max-device-width : 480px) {
 @media only screen 
 and (min-width : 321px) {
 /* Styles */
-.featured-album {
-     position: initial;
-     max-width: 100%;
-     color: #fff;
-     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: left;
-     background-color: #222;
-     border-top: solid 1px #aaa;
- }
- .home #nav h1, .home #logo h2 {
-        font-size: 2em;
-        padding-top: 5px;
-        padding-left: 20px;
-    }
+    .featured-album {
+         position: initial;
+         max-width: 100%;
+         color: #fff;
+         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+         text-align: left;
+         background-color: #222;
+         border-top: solid 1px #aaa;
+     }
+    .home #nav h1 {
+           font-size: 2em;
+           padding-top: 5px;
+           padding-left: 20px;
+       }
+    .home #logo h2 {
+       display: none;
+   }
 }
 
 /* Smartphones (portrait) ----------- */
@@ -588,11 +594,14 @@ and (max-width : 320px) {
      #nav h2 {
          font-size: 0.75em;
      }
-     .home #nav h1, .home #logo h2 {
+     .home #nav h1 {
         font-size: 2em;
         padding-top: 5px;
         padding-left: 20px;
     }
+    .home #logo h2 {
+       display: none;
+   }
         
     h3 {
         font-size: 1.5em;
@@ -604,21 +613,24 @@ and (max-width : 320px) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
 /* Styles */
- .featured-album {
-     position: absolute;
-     top: 63%;
-     right: 2.5%;
-     max-width: 500px;
-     color: #fff;
-     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: right;
-     background-color: rgba(0, 0, 0, 0.8);
-     border-radius: 5px;
- }
-    .home #logo h1, .home #logo h2 {
+    .featured-album {
+        position: absolute;
+        top: 63%;
+        right: 2.5%;
+        max-width: 500px;
+        color: #fff;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+        text-align: right;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+    }
+    .home #logo h1 {
            font-size: 2em;
            padding-top: 5px;
            padding-left: 20px;
+   }
+   .home #logo h2 {
+       display: none;
    }
 }
 
@@ -647,19 +659,19 @@ and (orientation : landscape) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : portrait) {
-/* Styles */
- .featured-album {
-     position: absolute;
-     top: 60%;
-     margin: 0 26%;
-     width: 50%;
-     color: #fff;
-     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
-     text-align: center;
- }
- .home #logo h1 {
-    font-size: 3em;
-}
+    /* Styles */
+     .featured-album {
+         position: absolute;
+         top: 60%;
+         margin: 0 26%;
+         width: 50%;
+         color: #fff;
+         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+         text-align: center;
+     }
+     .home #logo h1 {
+        font-size: 3em;
+    }
 }
 
 /* Desktops and laptops ----------- */
@@ -728,7 +740,12 @@ only screen and (min-device-pixel-ratio : 1.5) {
  #nav h2 {
      font-size: 0.75em;
  }
- .home #nav h1 {
-        font-size: 1.25em;
+    .home #logo h1 {
+              font-size: 2em;
+              padding-top: 5px;
+              padding-left: 20px;
+    }
+    .home #logo h2 {
+       display: none;
     }
 }
