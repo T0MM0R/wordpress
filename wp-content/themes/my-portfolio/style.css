@@ -540,8 +540,10 @@ and (max-device-width : 480px) {
          font-size: 0.75em;
      }
 
-    .home #nav h1 {
-        font-size: 1.25em;
+    .home #nav h1, .home #logo h2 {
+        font-size: 2em;
+        padding-top: 5px;
+        padding-left: 20px;
     }
 
 }
@@ -559,8 +561,10 @@ and (min-width : 321px) {
      background-color: #222;
      border-top: solid 1px #aaa;
  }
- .home #nav h1 {
-        font-size: 1.25em;
+ .home #nav h1, .home #logo h2 {
+        font-size: 2em;
+        padding-top: 5px;
+        padding-left: 20px;
     }
 }
 
@@ -584,9 +588,11 @@ and (max-width : 320px) {
      #nav h2 {
          font-size: 0.75em;
      }
-     .home #nav h1 {
-            font-size: 1.25em;
-        }
+     .home #nav h1, .home #logo h2 {
+        font-size: 2em;
+        padding-top: 5px;
+        padding-left: 20px;
+    }
         
     h3 {
         font-size: 1.5em;
@@ -609,9 +615,11 @@ and (max-device-width : 1024px) {
      background-color: rgba(0, 0, 0, 0.8);
      border-radius: 5px;
  }
- .home #logo h1 {
-    font-size: 2em;
-}
+    .home #logo h1, .home #logo h2 {
+           font-size: 2em;
+           padding-top: 5px;
+           padding-left: 20px;
+   }
 }
 
 /* iPads (landscape) ----------- */
@@ -629,9 +637,9 @@ and (orientation : landscape) {
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
  }
- .home #logo h1 {
-    font-size: 3em;
-}
+    .home #logo h1 {
+       font-size: 3em;
+   }
 }
 
 /* iPads (portrait) ----------- */
