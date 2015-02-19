@@ -80,6 +80,7 @@ input[type="submit"]:hover {
 
 .navbar-toggle {
     margin-top: 0px;
+    border: none;
 }
 
 a:hover {
