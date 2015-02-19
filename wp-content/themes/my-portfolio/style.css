@@ -598,7 +598,7 @@ and (max-width : 320px) {
          font-size: 0.75em;
      }
      .home #nav h1 {
-        font-size: 2em;
+        font-size: 1.75em;
         padding-top: 5px;
         padding-left: 20px;
     }
@@ -746,7 +746,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
      font-size: 0.75em;
  }
     .home #logo h1 {
-        font-size: 2em;
+        font-size: 1.75em;
         padding-top: 5px;
         padding-left: 20px;
     }
