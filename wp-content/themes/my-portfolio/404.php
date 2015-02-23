@@ -1,4 +1,15 @@
+<?php header("HTTP/1.0 404 Not Found"); ?>
 <?php get_header();?>
+
+<?php 
+
+            $args = array(
+                'post_type' => 'work'
+            );
+
+            $the_query = new WP_Query( $args );
+
+?>
 
 <div>
     <p>We could not find what you were looking for! :(</p>
