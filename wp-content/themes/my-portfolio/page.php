@@ -10,7 +10,7 @@
 
     <?php endwhile; else: ?>
         
-        <?php include(get_404_template()); ?>
+        <?php wp_redirect(get_404_template()); ?>
 
     <?php endif; ?>
 
