@@ -1,3 +1,4 @@
+<?php ( ! have_posts() ) ? wp_redirect(get_404_template()): ""; ?>
 <?php get_header();?>
 
 <div class="container">
@@ -10,7 +11,7 @@
 
     <?php endwhile; else: ?>
         
-        <?php wp_redirect(get_404_template()); ?>
+        index
         
     <?php endif; ?>
 
