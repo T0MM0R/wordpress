@@ -13,7 +13,7 @@
 
     <?php endwhile; else: ?>
 
-        <?php get_404_template(); ?>
+        <?php include(get_404_template()); ?>
 
     <?php endif; ?>
             
