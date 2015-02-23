@@ -53,6 +53,10 @@ function theme_js() {
         wp_enqueue_script( 'home_js', get_template_directory_uri() . '/js/home.js', array('jquery'), '', true);
     }
     
+    if ( is_single() ) {
+        wp_enqueue_script( 'blueimp-init_js', get_template_directory_uri() . '/js/blueimp-init.js', array('jquery'), '', true);
+    }
+    
     wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery'), '', true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
