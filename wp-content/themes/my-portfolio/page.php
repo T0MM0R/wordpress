@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<div class="grid_12 omega clearfix">
+<div class="container">
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -10,7 +10,7 @@
 
     <?php endwhile; else: ?>
         
-        <p>Page not found! :(</p>
+        <?php get_404_template(); ?>
 
     <?php endif; ?>
 

@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<div class="container">
+<div>
     <p>We could not find what you were looking for! :(</p>
     <p>Check out some of our latest work instead</p>
     <?php get_template_part( 'content', 'work' ); ?>
