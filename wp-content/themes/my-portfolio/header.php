@@ -46,9 +46,9 @@
                 ?>
                 
             </nav>
-            <div class="pull-right contact">
+<!--            <div class="pull-right contact">
                     <a href="tel:+15176676212" alt="Call me">Tel: (517)667-6212</a>
                     <a href="mailto:thomasscot@gmail.com" alt="Send me a message">Email: thomasscot@gmail.com</a>
-            </div>
+            </div>-->
         </div>
         
