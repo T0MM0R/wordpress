@@ -13,7 +13,7 @@
 
     <?php endwhile; else: ?>
 
-        <p>Page not found! :(</p>
+        <?php get_404_template(); ?>
 
     <?php endif; ?>
             
