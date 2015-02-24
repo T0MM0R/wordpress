@@ -222,13 +222,21 @@ hr {
     border: none;
 }
 
-.home .navbar-default .navbar-toggle .icon-bar, .home .menu {
+.home .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
     color: #fff;
 }
 
-.navbar-default .navbar-toggle .icon-bar, .menu {
+.navbar-default .navbar-toggle .icon-bar {
     background-color: #000;
+    color: #000;
+}
+
+.home .menu {
+    color: #FFF;
+}
+
+.menu {
     color: #000;
 }
 
