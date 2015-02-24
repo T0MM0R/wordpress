@@ -222,12 +222,14 @@ hr {
     border: none;
 }
 
-.home .navbar-default .navbar-toggle .icon-bar {
+.home .navbar-default .navbar-toggle .icon-bar, .home .menu {
     background-color: #fff;
+    color: #fff;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.navbar-default .navbar-toggle .icon-bar, .menu {
     background-color: #000;
+    color: #000;
 }
 
 .home .navbar-default .navbar-nav>li>a {
