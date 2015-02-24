@@ -236,7 +236,7 @@ hr {
     color: #FFF;
 }
 
-.menu span {
+.navbar-toggle .menu span {
     color: #000;
     font-size: .75em;
 }
