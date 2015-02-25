@@ -561,20 +561,13 @@ and (max-device-width : 480px) {
          background-color: #222;
          border-top: solid 1px #aaa;
      }
-     #nav h1 {
-         font-size: 1.25em;
-     }
 
-    #nav h2 {
-         font-size: 0.75em;
-     }
-
-    .home #nav h1 {
+    .home #nav h1, #nav h1 {
         font-size: 2em;
         padding-top: 5px;
         padding-left: 20px;
     }
-    .home #logo h2 {
+    .home #logo h2, #logo h2 {
         padding-top: 5px;
         padding-left: 20px;
    }
@@ -594,12 +587,12 @@ and (min-width : 321px) {
          background-color: #222;
          border-top: solid 1px #aaa;
      }
-    .home #nav h1 {
+    .home #nav h1, #nav h1 {
            font-size: 2em;
            padding-top: 5px;
            padding-left: 20px;
        }
-    .home #logo h2 {
+    .home #logo h2, #logo h2 {
         padding-top: 5px;
         padding-left: 20px;
    }
@@ -618,19 +611,12 @@ and (max-width : 320px) {
          background-color: #222;
          border-top: solid 1px #aaa;
      }
-      #nav h1 {
-         font-size: 1.25em;
-     }
-
-     #nav h2 {
-         font-size: 0.75em;
-     }
-     .home #nav h1 {
+     .home #nav h1, #nav h1 {
         font-size: 1.75em;
         padding-top: 5px;
         padding-left: 20px;
     }
-    .home #logo h2 {
+    .home #logo h2, #logo h2 {
         padding-top: 5px;
         padding-left: 20px;
    }
@@ -656,12 +642,12 @@ and (max-device-width : 1024px) {
         background-color: rgba(0, 0, 0, 0.8);
         border-radius: 5px;
     }
-    .home #logo h1 {
+    .home #logo h1, #logo h1 {
            font-size: 2em;
            padding-top: 5px;
            padding-left: 20px;
    }
-   .home #logo h2 {
+   .home #logo h2, #logo h2 {
         padding-top: 5px;
         padding-left: 20px;
    }
@@ -682,7 +668,7 @@ and (orientation : landscape) {
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
  }
-    .home #logo h1 {
+    .home #logo h1, #logo h1 {
        font-size: 3em;
    }
 }
@@ -702,7 +688,7 @@ and (orientation : portrait) {
          text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
          text-align: center;
      }
-     .home #logo h1 {
+     .home #logo h1, #logo h1 {
         font-size: 3em;
     }
 }
@@ -722,7 +708,7 @@ and (min-width : 1024px) {
          background-color: transparent;
          border-top: none;
      }
-     .home #logo h1 {
+     .home #logo h1, #logo h1 {
         font-size: 2em;
     }
     hgroup#logo {
@@ -743,7 +729,7 @@ and (min-width : 1824px) {
          text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
          text-align: center;
      }
-     .home #logo h1 {
+     .home #logo h1, #logo h1 {
         font-size: 2em;
     }
     hgroup#logo {
@@ -773,13 +759,14 @@ only screen and (min-device-pixel-ratio : 1.5) {
  #nav h2 {
      font-size: 0.75em;
  }
-    .home #logo h1 {
+    .home #logo h1, #logo h1 {
         font-size: 1.7em;
         padding-top: 5px;
         padding-left: 20px;
     }
-    .home #logo h2 {
+    .home #logo h2, #logo h2 {
         padding-top: 5px;
         padding-left: 20px;
     }
+    
 }
