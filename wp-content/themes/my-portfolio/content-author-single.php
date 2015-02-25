@@ -1,7 +1,7 @@
 <div class="author">
     <h3>About The Author</h3>
 
-    <?php echo get_custom_avatar( get_the_author_meta('user_email'), 100 , 'mysteryman' , 'gravatar' ); ?>
+    <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
 
 
     <h1><?php the_author(); ?></h1>

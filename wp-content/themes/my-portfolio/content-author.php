@@ -17,7 +17,7 @@
     <?php foreach ( $user_query->results as $user ) : ?>
         <div class="row author">
             
-            <?php echo get_custom_avatar( get_the_author_meta('user_email') , 100 , 'mysteryman' , 'gravatar' ); ?>
+            <?php echo get_custom_avatar( get_the_author_meta('user_email') , 150 , 'mysteryman' , 'gravatar' ); ?>
             
             <h1><?php echo $user->display_name; ?></h1>
             <ul class="info">
