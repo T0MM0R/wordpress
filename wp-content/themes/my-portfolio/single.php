@@ -4,11 +4,17 @@
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
-        <div class="row">
+    <div class="row">
 
-            <?php get_template_part( 'content', 'post' );?>
-            
-        </div>
+        <?php get_template_part( 'content', 'post' );?>
+
+    </div>
+    
+    <div class="row">
+       
+        <?php comments_template(); ?>
+        
+    </div>
 
     <?php endwhile; else: ?>
         
