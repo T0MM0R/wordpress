@@ -34,7 +34,7 @@ if ( post_password_required() )
 		</h2>
 
 		<ol class="commentlist">
-			<?php wp_list_comments($avatar_size = 50) ?>
+			<?php wp_list_comments( array( "avatar_size" => 50 ) ); ?>
 		</ol><!-- .commentlist -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
