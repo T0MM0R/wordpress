@@ -12,4 +12,10 @@
             <p><?php the_field( 'description' ); ?></p>
         </div>
         
+        <div class="row">
+       
+            <?php comments_template(); ?>
+
+        </div>
+
     </div>
