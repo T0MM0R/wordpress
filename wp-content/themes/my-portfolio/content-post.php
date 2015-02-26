@@ -22,6 +22,12 @@
                     <?php the_content(); ?>
 
                 </article>
+    
+                <div class="row">
+       
+                    <?php comments_template(); ?>
+        
+                </div>
 
                 <?php get_template_part( 'content', 'author-single' ); ?>
 

@@ -9,12 +9,6 @@
         <?php get_template_part( 'content', 'post' );?>
 
     </div>
-    
-    <div class="row">
-       
-        <?php comments_template(); ?>
-        
-    </div>
 
     <?php endwhile; else: ?>
         
