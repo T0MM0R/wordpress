@@ -20,6 +20,12 @@
                 
             </article>
             
+            <div class="row">
+       
+                <?php comments_template(); ?>
+
+            </div>
+            
 
         </div>
 
