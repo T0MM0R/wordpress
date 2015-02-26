@@ -214,3 +214,11 @@ function favicon() {
 add_action('admin_head', 'favicon');
 add_action('wp_head', 'favicon');
 add_action('login_head', 'favicon');
+
+/* add class to comments avatar */
+add_filter('get_avatar','add_gravatar_class');
+
+function add_gravatar_class($class) {
+    $class = str_replace("class='avatar", "class='avatar img-circle", $class);
+    return $class;
+}
