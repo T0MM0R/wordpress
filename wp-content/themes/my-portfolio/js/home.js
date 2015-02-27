@@ -14,7 +14,7 @@ jQuery(document).scroll(function(){
         } else {
             jQuery("#nav").animate({
                 backgroundColor: "rgba(50, 50, 50, 0.8)",
-                borderBottomColor: "solid 2px #000"  
+                borderBottomColor: "#000"  
             }, 200, 'swing').css({boxShadow: "rgba(0, 0, 0, 0.8) 2px 2px 5px"});
             jQuery("#logo h2").hide();
             headerState = "solid";
@@ -23,7 +23,7 @@ jQuery(document).scroll(function(){
         if ( "transparent" === headerState ) {
             return;
         } else {
-            jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing');
+            jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing').css({boxShadow: "none"});
             jQuery("#logo h2").show();
             headerState = "transparent";
         }
