@@ -32,6 +32,7 @@ jQuery(document).scroll(function(){
                     boxShadow: "none",
                     borderBottom: "none"
                 });
+            });
                 
             jQuery(".home #logo h2").show();
             headerState = "transparent";
