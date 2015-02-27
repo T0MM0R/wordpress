@@ -27,12 +27,12 @@ jQuery(document).scroll(function(){
         if ( "transparent" === headerState ) {
             return;
         } else {
-            jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing',function(){
-                jQuery("#nav").css({
+            jQuery("#nav").css({
                     boxShadow: "none",
                     borderBottom: "none"
-                });
-            });
+                }).animate({
+                    backgroundColor: "transparent"
+                }, 200, 'swing');
                 
             jQuery(".home #logo h2").show();
             headerState = "transparent";
