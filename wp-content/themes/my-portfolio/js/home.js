@@ -17,21 +17,26 @@ jQuery(document).scroll(function(){
             }, 200, 'swing', function(){
                 jQuery("#nav").css({
                     boxShadow: "rgba(0, 0, 0, 0.8) 2px 2px 5px",
-                    borderBottom: "solid 2px #000"
+                    borderBottom: "solid 1px #000"
                 });
             });
-            jQuery("#logo h2").hide();
+            jQuery(".home #logo h2").hide();
             headerState = "solid";
         }
     } else {
         if ( "transparent" === headerState ) {
             return;
         } else {
-            jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing').css({boxShadow: "none"});
-            jQuery("#logo h2").show();
+            jQuery("#nav").animate({backgroundColor: "transparent"}, 200, 'swing',function(){
+                jQuery("#nav").css({
+                    boxShadow: "none",
+                    borderBottom: "none"
+                });
+                
+            jQuery(".home #logo h2").show();
             headerState = "transparent";
         }
     }
 });
 
-jQuery("#logo").hide().fadeIn(1000);
+jQuery(".home #logo").hide().fadeIn(1000);
