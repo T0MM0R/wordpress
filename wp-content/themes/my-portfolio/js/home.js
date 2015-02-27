@@ -14,7 +14,8 @@ jQuery(document).scroll(function(){
         } else {
             jQuery("#nav").animate({
                 backgroundColor: "rgba(50, 50, 50, 0.8)",
-                borderBottomColor: "#000"  
+                borderBottomColor: "#000",
+                borderBottomSize: "2px"
             }, 200, 'swing').css({boxShadow: "rgba(0, 0, 0, 0.8) 2px 2px 5px"});
             jQuery("#logo h2").hide();
             headerState = "solid";
