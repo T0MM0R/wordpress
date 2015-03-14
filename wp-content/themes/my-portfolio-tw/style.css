@@ -69,6 +69,14 @@ a {
     color: #001F5C;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
 body {
     margin-top: 60px;
     color: #555;
