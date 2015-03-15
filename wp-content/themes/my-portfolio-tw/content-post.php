@@ -136,14 +136,14 @@
     
         <article>
             
-            <div class="col-md-4">
-            <?php if (has_post_thumbnail() && is_single()) : ?>
-                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-            <?php endif; ?>
-            </div>
-            
             <div class="col-md-8">
                 <?php the_content(); ?>
+            </div>
+            
+            <div class="col-md-4">
+                <?php if (has_post_thumbnail() && is_single()) : ?>
+                    <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+                <?php endif; ?>
             </div>
 
         </article>
