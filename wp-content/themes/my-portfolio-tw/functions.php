@@ -17,5 +17,6 @@ function load_my_child_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'remove_parent_scripts', 20 );
 function remove_parent_scripts() {
-    wp_dequeue_script('theme_js' );
+    wp_dequeue_script('parent_js' );
+    wp_dequeue_script('home_js');
 }
