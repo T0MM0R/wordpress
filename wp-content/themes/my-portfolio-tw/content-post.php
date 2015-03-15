@@ -135,16 +135,20 @@
         </div>
     
         <article>
-                
-            <?php if (has_post_thumbnail() && is_single()) : ?>
-            <div class="col-md-4 pull-right">
-                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
-            </div>
-            <?php endif; ?>
 
             <?php the_content(); ?>
+            
+            <?php if (has_post_thumbnail() && is_single()) : ?>
+                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive pull-right')); ?>
+            <?php endif; ?>
 
         </article>
+        
+        <div class="row">
+       
+            <?php comments_template(); ?>
+
+        </div>
     
     <?php endif; ?>
         
