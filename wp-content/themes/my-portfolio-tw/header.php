@@ -29,7 +29,7 @@
                 </button>
 
                 <a href="<?php echo site_url(); ?>">
-                    <h1><?php bloginfo( 'name' ); ?>-></h1>
+                    <h1><?php bloginfo( 'name' ); ?> -></h1>
                     <h2><?php bloginfo( 'description' ) ;?></h2>
                 </a>
 
