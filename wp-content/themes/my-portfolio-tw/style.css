@@ -122,3 +122,37 @@ ul.wptreehouse-badges {
 blockquote {
     margin: 5px 0;
 }
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    
+    #logo h2 {
+        display: none;
+    }
+    
+}
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+
+    #logo h2 {
+        display: none;
+    }
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+    #logo h2 {
+        display: none;
+    }
+}
