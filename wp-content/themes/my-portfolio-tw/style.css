@@ -138,6 +138,17 @@ and (max-device-width : 480px) {
     }
     
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+    
+    #logo h2 {
+        display: none;
+    }
+    
+}
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (max-width : 320px) {
