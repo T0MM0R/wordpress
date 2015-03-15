@@ -63,6 +63,16 @@ nav a {
     background-color: #000;
 }
 
+.navbar-toggle:hover, .navbar-toggle:focus {
+    color: #fff;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+span.menu, span.menu:hover, span.menu:focus {
+    color: #fff;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
 hgroup#logo {
         padding: 5px;
         display: block;
