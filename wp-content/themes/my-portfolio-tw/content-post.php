@@ -135,12 +135,12 @@
         </div>
     
         <article>
-
-            <?php the_content(); ?>
             
             <?php if (has_post_thumbnail() && is_single()) : ?>
                 <?php the_post_thumbnail('large', array( 'class' => 'img-responsive pull-right')); ?>
             <?php endif; ?>
+            
+            <?php the_content(); ?>
 
         </article>
         
