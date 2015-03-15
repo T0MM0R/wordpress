@@ -30,18 +30,22 @@ Text Domain: My Portfolio
     color: #fff;
     font-family: 'Helvetica', sans-serif;
     text-shadow: none;
+    display: inline-block;
 }
 
 #nav h2 {
     font-size: 1.5em;
     color: #fff;
     font-family: 'garamound', serif;
+    display: inline-block;
 }
 
 nav a {
     font-family: 'Helvetica', sans-serif;
     font-size: 1.25em;
     color: #fff;
+    display: block;
+    padding: 5px;
 }
 
 .navbar-default .navbar-nav>li>a {
