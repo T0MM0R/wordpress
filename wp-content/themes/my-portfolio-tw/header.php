@@ -18,7 +18,7 @@
     <body>
         
         <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
-            <div class="logo"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" alt="logo"></div>
+            <div class="logo pull-left"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" alt="logo"></div>
             <hgroup id="logo" class="navbar-header">
 
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
