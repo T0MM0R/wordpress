@@ -18,6 +18,7 @@
     <body <?php if (is_front_page()) { echo "class='home'"; } ?>>
         
         <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
+            <div class="logo pull-left hidden-xs"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/logo.png" alt="logo"></div>
             <hgroup id="logo" class="navbar-header">
                 
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
