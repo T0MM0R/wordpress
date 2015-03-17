@@ -31,7 +31,7 @@
 
                 <a href="<?php echo site_url(); ?>">
                     <h1><?php bloginfo( 'name' ); ?> -></h1>
-                    <h2 class="visible-md visible-lg"><?php bloginfo( 'description' ) ;?></h2>
+                    <h2 class="visible-md-inline-block visible-lg-inline-block"><?php bloginfo( 'description' ) ;?></h2>
                 </a>
 
             </hgroup>
