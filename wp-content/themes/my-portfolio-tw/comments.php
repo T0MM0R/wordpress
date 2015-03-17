@@ -21,7 +21,8 @@ if ( post_password_required() )
 	return;
 ?>
 
-<div id="comments" class="comments-area card">
+<div id="comments" class="comments-area card container">
+    <div class="row">
 
 	<?php // You can start editing here -- including this comment! ?>
 
@@ -56,5 +57,7 @@ if ( post_password_required() )
 	<?php endif; // have_comments() ?>
 
 	<?php comment_form(); ?>
+                
+    </div>
 
 </div><!-- #comments .comments-area -->

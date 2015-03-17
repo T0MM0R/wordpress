@@ -1,4 +1,4 @@
-<div class="portfolio <?php echo (!is_front_page()) ? 'card col-md-5' : '' ;?>">
+<div class="portfolio">
         
         <div class="title">
             <h3>

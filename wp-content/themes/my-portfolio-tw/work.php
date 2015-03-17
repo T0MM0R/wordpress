@@ -8,7 +8,7 @@ get_header();
 
 ?>
 <div class="container">
-    <div class="row col-md-offset-1">
+    <div class="row">
 
         <?php 
 
