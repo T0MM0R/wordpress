@@ -22,21 +22,25 @@
                     <?php the_content(); ?>
 
                 </article>
-       
-                <?php comments_template(); ?>
 
-                <?php get_template_part( 'content', 'author-single' ); ?>
-
-        <?php else: ?>
+            <?php else: ?>
 
                 <p>
                     <?php the_excerpt(); ?>
                     <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
                 </p>
 
-        <?php endif; ?>
+            <?php endif; ?>
 
-        </div>
+</div>
+
+<?php if(is_single()): ?>
+                
+    <?php comments_template(); ?>
+
+    <?php get_template_part( 'content', 'author-single' ); ?>
+
+<?php endif; ?>
 
     <?php if (has_post_thumbnail()) :?>
         <?php if (is_front_page() && in_category("featured")) : ?>
