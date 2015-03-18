@@ -82,7 +82,7 @@
 
     <?php endif; ?>
             
-    <div class="<?php echo (has_post_thumbnail() && !is_single() && !is_front_page() ) ? "col-md-6" : ""; ?>">
+    <div class="<?php echo (has_post_thumbnail() && !is_single() && !is_front_page() ) ? "col-md-6" : "col-md-12"; ?>">
 
             <div class="title">
                 <h3>
@@ -104,11 +104,6 @@
                     <?php the_content(); ?>
 
                 </article>
-       
-                <?php comments_template(); ?>
-
-                
-                <?php get_template_part( 'content', 'author-single' ); ?>
 
         <?php else: ?>
 
@@ -120,6 +115,14 @@
         <?php endif; ?>
 
         </div>
+            
+    <?php if(is_single()): ?>
+
+        <?php comments_template(); ?>
+
+        <?php get_template_part( 'content', 'author-single' ); ?>
+
+    <?php endif; ?>
         
 <?php endif; ?>
 
