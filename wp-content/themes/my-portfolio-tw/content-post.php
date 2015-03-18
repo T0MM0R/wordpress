@@ -153,13 +153,9 @@
 </div>
 
 <?php if (is_single()) : ?>
-
-<div class="row">
        
     <?php comments_template(); ?>
 
-</div>
-
-<?php get_template_part( 'content', 'author-single' ); ?>
+    <?php get_template_part( 'content', 'author-single' ); ?>
 
 <?php endif; ?>
