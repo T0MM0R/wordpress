@@ -100,12 +100,8 @@
                     <?php the_content(); ?>
 
                 </article>
-        
-                <div class="row">
        
-                    <?php comments_template(); ?>
-        
-                </div>
+                <?php comments_template(); ?>
 
                 
                 <?php get_template_part( 'content', 'author-single' ); ?>
