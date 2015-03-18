@@ -55,6 +55,6 @@ if ( post_password_required() )
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form($comment_field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" aria-describedby="form-allowed-tags" aria-required="true"></textarea></p>'); ?>
 
 </div><!-- #comments .comments-area -->
