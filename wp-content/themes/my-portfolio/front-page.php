@@ -7,7 +7,9 @@
                 <ul class="slides">
                     <?php
                         $args = array(
-                            'post_type' => 'work'
+                            'post_type' => 'work',
+                            'posts_per_page' => 1,
+                            'order_by' => 'rand'
                         );
                         $the_query = new WP_Query( $args );
                     ?>
