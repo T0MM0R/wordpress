@@ -317,8 +317,16 @@ nav a {
     
 }
 
-.contact .nav > li > a {
+.home .contact .nav > li > a {
     color: #FFF;
+    font-family: 'garamound', serif;
+    font-size: .85em;
+    padding: 4px;
+
+}
+
+.contact .nav > li > a {
+    color: #000;
     font-family: 'garamound', serif;
     font-size: .85em;
     padding: 4px;
