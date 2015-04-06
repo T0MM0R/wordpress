@@ -9,7 +9,7 @@
                         $args = array(
                             'post_type' => 'work',
                             'posts_per_page' => 1,
-                            'order_by' => 'rand'
+                            'orderby' => 'rand'
                         );
                         $the_query = new WP_Query( $args );
                     ?>
