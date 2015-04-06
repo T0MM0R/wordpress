@@ -48,8 +48,31 @@
             ?>
             <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
+            
+            <!-- Featured Image -->
+            <div class="col-md-6 album">
+                <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+            </div>
 
-                <?php get_template_part( 'content', 'post' ); ?>
+            <div class="title col-md-6">
+                <h3>
+                    <?php if(!is_single()) :?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php else: ?>
+                    <?php the_title(); ?>
+                    <?php endif; ?>
+                </h3>
+                <ul class="info">
+                    <li>By: <?php the_author(); ?></li>
+                    <li>Published in <?php the_category(', '); ?></li>
+                    <li>On <?php the_time('F j, Y'); ?></li>
+                </ul>
+                
+                <p>
+                    <?php the_excerpt(); ?>
+                    <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
+                </p>
+            </div>
+            
+            
 
         </article>
         <?php endwhile; endif; ?>
