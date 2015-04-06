@@ -39,5 +39,3 @@ jQuery(document).scroll(function(){
         }
     }
 });
-
-jQuery(".home #logo").hide().fadeIn(1000);
