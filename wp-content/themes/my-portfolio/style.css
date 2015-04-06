@@ -151,6 +151,7 @@ h2 {
      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
      text-align: center;
      padding: 10px;
+     background-color: rgba(0,0,0,0.8);
  }
  
  .featured-album h3, .featured-album h4 {
@@ -741,7 +742,7 @@ and (min-width : 1024px) {
          color: #fff;
          text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
          text-align: center;
-         background-color: transparent;
+         background-color: rgba(0,0,0,0.8);
          border-top: none;
      }
      .home #logo h1, #logo h1 {
