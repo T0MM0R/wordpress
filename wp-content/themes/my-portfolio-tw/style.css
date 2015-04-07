@@ -92,7 +92,7 @@ h3 {
 }
 
 body {
-    margin-top: 60px;
+    margin-top: 50px;
     color: #555;
     font-family: 'garamound', serif; /* 1 */
     background-color: #f2f2f4;
@@ -104,6 +104,11 @@ body {
     padding: 10px;
     border: solid thin #eee;
     border-radius: 5px;
+}
+
+.page {
+    background-color: #fff;
+    height: 400px;
 }
 
 ul.wptreehouse-badges {

@@ -2,4 +2,4 @@ wp-config.php
 /nbproject*
 /nbproject/private/
 .DS_Store
-
+wp-content/uploads/*
