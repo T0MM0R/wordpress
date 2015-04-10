@@ -63,11 +63,9 @@
 
         ?>
         <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-            <article>
 
                 <?php get_template_part( 'content', 'post' ); ?>
-
-            </article>
+        
         <?php endwhile; endif; ?>
         
     </div>
@@ -76,31 +74,29 @@
             
         <h5>Latest Posts</h5>
         <div class="row recent-post">
-            <article>
 
-                <?php
+            <?php
 
-                wp_reset_postdata();
+            wp_reset_postdata();
 
-                $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 3,
-                    'cat' => -33
-                );
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'cat' => -33
+            );
 
-                $the_query = new WP_Query( $args );
+            $the_query = new WP_Query( $args );
 
-                ?>
+            ?>
 
-                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                    
-                    <div class="col-md-4">
-                        <?php get_template_part( 'content', 'post' ); ?>
-                    </div>
+            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-                <?php endwhile; endif; ?>
+                <div class="col-md-4">
+                    <?php get_template_part( 'content', 'post' ); ?>
+                </div>
 
-            </article>
+            <?php endwhile; endif; ?>
+            
         </div>
         
     </div>

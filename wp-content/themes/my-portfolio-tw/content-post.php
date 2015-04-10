@@ -60,7 +60,7 @@
     
     <?php elseif (has_post_thumbnail() && is_front_page() && in_category('featured')) : ?>
     
-        <div class="title">
+        <div class="title col-md-10 col-md-offset-1">
             <h3>
                 <?php if(!is_single()) :?>
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -74,7 +74,7 @@
             </ul>
         </div>
     
-        <?php the_post_thumbnail('large', array( 'class' => 'img-responsive')); ?>
+        <?php the_post_thumbnail(array( 'class' => 'img-responsive')); ?>
     
         <p>
             <?php echo substr(get_the_excerpt(), 0, 150) . " . . ."; ?>
