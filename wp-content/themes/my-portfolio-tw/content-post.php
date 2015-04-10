@@ -86,6 +86,7 @@
                 <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
             </p>
         </div>
+</div>
         
     <?php elseif (is_front_page()) : ?>
     
@@ -118,6 +119,7 @@
                 <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
             </p>
         </div>
+</div>
     
     <?php elseif (is_single()): ?>
         
