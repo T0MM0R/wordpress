@@ -1,3 +1,4 @@
+<div class="card"> 
 <div class="clearfix <?php echo is_front_page() ? "col-md-10 col-md-offset-1": ""; ?>">
     
     <?php if (has_post_thumbnail() && !is_single() && !is_front_page()) : ?>
@@ -150,6 +151,7 @@
     
     <?php endif; ?>
         
+</div>
 </div>
 
 <?php if (is_single()) : ?>
