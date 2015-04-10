@@ -1,5 +1,4 @@
-<div class="card"> 
-<div class="clearfix <?php echo is_front_page() ? "col-md-10 col-md-offset-1": ""; ?>">
+<div class="card clearfix <?php echo is_front_page() ? "col-md-10 col-md-offset-1": ""; ?>">
     
     <?php if (has_post_thumbnail() && !is_single() && !is_front_page()) : ?>
     
@@ -86,7 +85,6 @@
                 <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
             </p>
         </div>
-</div>
         
     <?php elseif (is_front_page()) : ?>
     
@@ -119,7 +117,6 @@
                 <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
             </p>
         </div>
-</div>
     
     <?php elseif (is_single()): ?>
         
