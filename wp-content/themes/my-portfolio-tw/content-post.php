@@ -1,4 +1,4 @@
-<div class="card clearfix <?php echo is_front_page() ? "col-md-10 col-md-offset-1": ""; ?>">
+<div class="card clearfix">
     
     <?php if (has_post_thumbnail() && !is_single() && !is_front_page()) : ?>
     
