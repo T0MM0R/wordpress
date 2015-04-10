@@ -8,11 +8,6 @@
                     <?php the_title(); ?>
                 <?php endif; ?>
             </h3>
-            <ul class="info">
-                <li>By <?php the_author(); ?></li>
-                <li>In <?php the_terms(get_the_id(), 'work_types'); ?></li>
-                <li>On <?php the_time('F j, Y'); ?></li>
-            </ul>
         </div>
         
         <a href="<?php the_permalink();?>">
@@ -24,7 +19,7 @@
                 <?php the_field( 'description' ); ?>
             </p>
             
-            <a class="btn btn-primary" href="<?php the_field('project_url'); ?>">View Project &rarr;</a>
+            <a class="btn btn-block btn-primary" href="<?php the_field('project_url'); ?>">View Project &rarr;</a>
         <?php endif; ?>
         
     </div>
