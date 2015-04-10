@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 
-<div class="container-fluid" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) 0% 70% no-repeat; background-attachment: fixed; background-size: cover; height: 500px; text-align: center;>
+<div class="container-fluid" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; height: 600px; text-align: center;>
     <div class="row">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
