@@ -74,7 +74,7 @@
     <div class="row">
             
         <h5>Latest Posts</h5>
-        <div class="row recent-post">
+        <div class="recent-post">
 
             <?php
 
@@ -105,11 +105,11 @@
     <div class="row">
         
         <h5>Testimonial</h5>
-        <div class="row">
-            <?php get_template_part( 'content', 'testimonials' );?>
-        </div>
+        
+        <?php get_template_part( 'content', 'testimonials' );?>
         
     </div>
+    
 </div>
 
 <?php get_footer();?>
