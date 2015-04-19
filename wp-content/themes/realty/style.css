@@ -78,7 +78,7 @@ div.home-text {
     color: #FFF;
 }
 
-.tagline p {
+p.tagline {
     font-family: helvetica, arial, sans-serif;
     letter-spacing: 3px;
     color: #D54E21;
