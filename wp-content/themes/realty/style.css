@@ -60,7 +60,7 @@ div.home-text {
     color: #FFF;
     width: 50%;
     height: 200px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.6);
     margin: 0 auto;
     
 }
@@ -75,6 +75,10 @@ div.home-text {
 }
 
 .home-text p {
+    color: #FFF;
+}
+
+.tagline p {
     font-family: helvetica, arial, sans-serif;
     letter-spacing: 3px;
     color: #D54E21;
