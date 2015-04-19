@@ -31,7 +31,6 @@
                 <a class="navbar-brand" href="<?php echo site_url(); ?>">
                     <h1><?php bloginfo( 'name' ); ?></h1>
                 </a>
-                <h2><?php bloginfo( 'description' ) ;?></h2>
 
             </hgroup>
             
@@ -45,13 +44,6 @@
                     );
                     wp_nav_menu( $args );
                 ?>
-                
-                <div class="contact">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="tel:+15176676212" alt="Call me">(616)485-2749</a></li>
-                        <li><a href="mailto:riverside.realty@hotmail.com" alt="Send me a message">riverside.realty@hotmail.com</a></li>
-                    </ul>
-                </div>
                 
             </nav>
             
