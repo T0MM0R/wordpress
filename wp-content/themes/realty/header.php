@@ -28,10 +28,10 @@
                     <span class="menu">MENU</span>
                 </button>
 
-                <a href="<?php echo site_url(); ?>">
+                <a class="navbar-brand" href="<?php echo site_url(); ?>">
                     <h1><?php bloginfo( 'name' ); ?></h1>
-                    <h2><?php bloginfo( 'description' ) ;?></h2>
                 </a>
+                <h2><?php bloginfo( 'description' ) ;?></h2>
 
             </hgroup>
             
