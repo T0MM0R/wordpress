@@ -28,9 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="menu">MENU</span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo site_url(); ?>">
-                        <h1><?php bloginfo( 'name' ); ?></h1>
-                    </a>
+                    <a class="navbar-brand" href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a>
 
                 </div>
 
