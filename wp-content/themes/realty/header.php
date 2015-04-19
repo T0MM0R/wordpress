@@ -17,35 +17,35 @@
     
     <body>
         
-        <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
-            <hgroup id="logo" class="navbar-header">
-                
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="menu">MENU</span>
-                </button>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
 
-                <a class="navbar-brand" href="<?php echo site_url(); ?>">
-                    <h1><?php bloginfo( 'name' ); ?></h1>
-                </a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="menu">MENU</span>
+                    </button>
+                    <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                        <h1><?php bloginfo( 'name' ); ?></h1>
+                    </a>
 
-            </hgroup>
-            
-            <nav class="navbar-collapse collapse" id="nav1">
-                
-               <?php
-                    $args = array(
-                        'menu', 
-                        'main',
-                        'menu_class'      => 'nav navbar-nav'
-                    );
-                    wp_nav_menu( $args );
-                ?>
-                
-            </nav>
-            
-        </div>
+                </div>
+
+                <div class="navbar-collapse collapse" id="nav1">
+
+                   <?php
+                        $args = array(
+                            'menu', 
+                            'main',
+                            'menu_class'      => 'nav navbar-nav'
+                        );
+                        wp_nav_menu( $args );
+                    ?>
+
+                </div>
+            </div>
+        </nav>
         
