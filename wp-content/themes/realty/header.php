@@ -15,7 +15,7 @@
         
     </head>
     
-    <body <?php if (is_front_page()) { echo "class='home'"; } ?>>
+    <body>
         
         <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
             <hgroup id="logo" class="navbar-header">
