@@ -1,0 +1,154 @@
+/*
+Theme Name: Realty
+Theme URI: http://riversiderealtyionia.com
+Description: A Wordpress realty theme
+Author: Thomas Wilson
+Author URI: http://thomaswilson.me
+Version: 1.0
+Tags: bootstrap
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+    
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+html {
+    font-family: 'Helvetica', arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Homepage
+   ========================================================================== */
+
+body {
+    padding-top: 30px;
+}
+
+
+/* Testimonial ----------- */
+
+
+    blockquote {
+        font-family: 'garamound';
+        font-size: 1.75em;
+        margin: 4% 0;
+        border-left: 10px solid #e3e3e3;
+        padding-left: 4%;
+        color: #474747;
+    }
+    cite {
+        font-family: 'garamound', serif; /* 1 */
+        font-style: normal;
+        text-transform: capitalize;
+        font-size: 1.25em;
+        line-height: 1em;
+        color: #474747;
+        margin: 0 0 6% 4%;
+     }
+
+/* ==========================================================================
+   blog
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	width: 100%;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+   
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1024px) {
+
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+ 
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+    
+}
