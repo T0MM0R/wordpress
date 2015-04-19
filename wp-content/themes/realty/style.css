@@ -63,6 +63,8 @@ div.home-text {
     background-color: rgba(0,0,0,0.8);
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+    top: 100px;
     
 }
 
