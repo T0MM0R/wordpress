@@ -57,7 +57,8 @@ body {
 }
 
 div.home-text {
-    width: 80%;
+    color: #FFF;
+    width: 50%;
     height: 200px;
     background-color: rgba(0,0,0,0.8);
     
