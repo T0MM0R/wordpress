@@ -60,17 +60,17 @@ div.home-text {
     color: #FFF;
     width: 50%;
     height: 200px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.2);
     margin: 0 auto;
     
 }
 
-h1 {
+.home-text h1 {
     color: #003cb3;
     text-transform: uppercase;
 }
 
-h1 span {
+.home-text h1 span {
     font-weight: 200;
 }
 
