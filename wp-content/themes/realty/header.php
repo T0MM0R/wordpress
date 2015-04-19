@@ -36,12 +36,7 @@
             </hgroup>
             
             <nav class="navbar-collapse collapse" id="nav1">
-                <div class="contact">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="tel:+15176676212" alt="Call me">(616)485-2749</a></li>
-                        <li><a href="mailto:riverside.realty@hotmail.com" alt="Send me a message">riverside.realty@hotmail.com</a></li>
-                    </ul>
-                </div>
+                
                <?php
                     $args = array(
                         'menu', 
@@ -50,6 +45,13 @@
                     );
                     wp_nav_menu( $args );
                 ?>
+                
+                <div class="contact">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="tel:+15176676212" alt="Call me">(616)485-2749</a></li>
+                        <li><a href="mailto:riverside.realty@hotmail.com" alt="Send me a message">riverside.realty@hotmail.com</a></li>
+                    </ul>
+                </div>
                 
             </nav>
             

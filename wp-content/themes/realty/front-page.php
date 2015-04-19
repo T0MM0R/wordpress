@@ -3,11 +3,17 @@
     <div class="container-fluid">
         
         <div class="row">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            
+            <div class="center">
+            
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <?php the_content(); ?>
+            <?php the_content(); ?>
 
-        <?php endwhile; endif; ?>
+            <?php endwhile; endif; ?>
+                
+            </div>
+            
         </div>
         
     </div>
