@@ -66,7 +66,7 @@ div.home-text {
 }
 
 .home-text h1 {
-    color: #003cb3;
+    color: #5588FF;
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 0
@@ -76,8 +76,12 @@ div.home-text {
     font-weight: 200;
 }
 
-.home-text p {
+.home-text p.body {
     color: #FFF;
+    text-align: justify;
+    font-size: 1.25em;
+    text-shadow: 2px 2px 2px #000;
+    
 }
 
 p.tagline {
