@@ -74,7 +74,9 @@ div.home-text {
     font-weight: 200;
 }
 
-.home-text strong {
+.home-text p {
+    font-family: helvetica, arial, sans-serif;
+    letter-spacing: 3px;
     color: #D54E21;
 }
 
