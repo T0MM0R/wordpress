@@ -65,6 +65,15 @@ div.home-text {
     
 }
 
+.home-text h1 {
+    color: #003cb3;
+    text-transform: uppercase;
+}
+
+.home-text h1 span {
+    font-weight: 200;
+}
+
 .home-text strong {
     color: #D54E21;
 }
