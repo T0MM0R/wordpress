@@ -59,7 +59,7 @@ body {
 div.home-text {
     color: #FFF;
     width: 50%;
-    height: 200px;
+    height: auto;
     background-color: rgba(0,0,0,0.8);
     margin: 0 auto;
     padding: 20px;
