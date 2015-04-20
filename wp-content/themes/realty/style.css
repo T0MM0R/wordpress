@@ -24,7 +24,12 @@ html {
 
 a {
     text-decoration: none;
+    color: #5588FF;
     
+}
+
+a:hover {
+    color: #337ab7;
 }
 
 
