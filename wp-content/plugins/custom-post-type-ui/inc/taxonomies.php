@@ -12,6 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 1.0.0
  */
 function cptui_taxonomies_enqueue_scripts() {
+
+	$currentScreen = get_current_screen();
+
+	if ( ! is_object( $currentScreen ) || $currentScreen->base == "post" ) {
+		return;
+	}
+
 	wp_enqueue_script( 'cptui', plugins_url( 'js/cptui.js' , dirname(__FILE__) ) . '', array( 'jquery', 'jquery-ui-core', 'jquery-ui-accordion' ), CPT_VERSION, true );
 	wp_localize_script(	'cptui', 'confirmdata', array( 'confirm' => __( 'Are you sure you want to delete this?', 'cpt-plugin' ) ) );
 }
@@ -153,7 +160,7 @@ function cptui_manage_taxonomies() {
 								'namearray'         => 'cpt_post_types',
 								'textvalue'         => $post_type->name,
 								'labeltext'         => $post_type->label,
-								'helptext'          => sprintf( esc_attr__( 'Adds %s support', 'cpt-plugin' ), $post_type->name ),
+								'helptext'          => sprintf( esc_attr__( 'Adds %s support', 'cpt-plugin' ), $post_type->label ),
 								'wrap'              => false
 							) );
 						}
@@ -468,6 +475,7 @@ function cptui_manage_taxonomies() {
 							echo '<li>' . sprintf( __( 'Deleting custom taxonomies do %sNOT%s delete terms added to those taxonomies. You can recreate your taxonomies and the terms will return. Changing the name, after adding terms to the taxonomy, will not update the terms in the database.', 'cpt-plugin' ), '<strong class="wp-ui-highlight">', '</strong>' ); ?>
 						</ol></div>
 						<?php } ?>
+				</div>
 				</td>
 			</tr>
 		</table><!-- End outter table -->
@@ -637,21 +645,17 @@ function cptui_update_taxonomy( $data = array() ) {
 		if ( empty( $label ) ) {
 			unset( $data['cpt_tax_labels'][ $key ] );
 		}
-
-		$label = str_replace( "'", "", $label );
-		$label = str_replace( '"', '', $label );
+		$label = str_replace( '"', '', htmlspecialchars_decode( $label ) );
+		$label = htmlspecialchars( $label, ENT_QUOTES );
 
 		$data['cpt_tax_labels'][ $key ] = stripslashes_deep( $label );
 	}
 
-	$data['cpt_custom_tax']['label'] = stripslashes( $data['cpt_custom_tax']['label'] );
-	$data['cpt_custom_tax']['singular_label'] = stripslashes( $data['cpt_custom_tax']['singular_label'] );
+	$label = str_replace( '"', '', htmlspecialchars_decode( $data['cpt_custom_tax']['label'] ) );
+	$label = htmlspecialchars( stripslashes( $label ), ENT_QUOTES );
 
-	$label = str_replace( "'", "", $data['cpt_custom_tax']['label'] );
-	$label = stripslashes( str_replace( '"', '', $label ) );
-
-	$singular_label = str_replace( "'", "", $data['cpt_custom_tax']['singular_label'] );
-	$singular_label = stripslashes( str_replace( '"', '', $singular_label ) );
+	$singular_label = str_replace( '"', '', htmlspecialchars_decode( $data['cpt_custom_tax']['singular_label'] ) );
+	$singular_label = htmlspecialchars( stripslashes( $singular_label ) );
 
 	$taxonomies[ $data['cpt_custom_tax']['name'] ] = array(
 		'name'                 => $data['cpt_custom_tax']['name'],
