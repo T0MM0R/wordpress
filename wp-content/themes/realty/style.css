@@ -62,10 +62,9 @@ body {
 }
 
 div.home-text {
-    color: #FFF;
-    width: 50%;
+    color: #000;
     height: auto;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(255,255,255,0.8);
     margin: 0 auto;
     padding: 20px;
     position: relative;
@@ -85,11 +84,8 @@ div.home-text {
 }
 
 .home-text p.body {
-    color: #FFF;
-    text-align: justify;
+    text-align: center;
     font-size: 1.25em;
-    text-shadow: 2px 2px 2px #000;
-    padding: 20px;
     
 }
 
