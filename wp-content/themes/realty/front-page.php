@@ -21,10 +21,10 @@
 <div class="container">
     <div class="author">
         <div class="row">
-            <div class="avatar">
+            <div class="avatar center">
                 <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
             </div>
-            <div class="bio">
+            <div class="bio col-md-6 col-md-offset-3 center">
                 <h1><?php the_author(); ?></h1>
                 <ul class="info">
                     <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><i class="fa fa-envelope"></i></a></li>
