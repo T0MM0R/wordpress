@@ -20,7 +20,7 @@
 
 <div class="container-fluid center">
     <div class="author">
-        <h3>About The Author</h3>
+        <h3>Your agent</h3>
 
         <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
 
