@@ -20,24 +20,21 @@
 
 <div class="container">
     <div class="author">
-        <h3>Your agent</h3>
+        <h3 class="center">Your agent</h3>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
             </div>
             <div class="col-md-8">
                 <h1><?php the_author(); ?></h1>
+                <ul class="info">
+                    <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="<?php the_author_meta('user_url'); ?>" target="_blank"><i class="fa fa-home"></i></a></li>
+                    <li><a href="<?php the_author_meta('twitter'); ?>"><i class="fa fa-twitter fa-2"></i></a></li>
+                    <li><a href="<?php the_author_meta('facebook'); ?>"><i class="fa fa-facebook"></i></a></li>
+                </ul>
                 <p><?php the_author_meta('description'); ?></p>
             </div>
-        </div>
-        
-        <div class="row">
-            <ul class="info">
-                <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><i class="fa fa-envelope"></i></a></li>
-                <li><a href="<?php the_author_meta('user_url'); ?>" target="_blank"><i class="fa fa-home"></i></a></li>
-                <li><a href="<?php the_author_meta('twitter'); ?>"><i class="fa fa-twitter fa-2"></i></a></li>
-                <li><a href="<?php the_author_meta('facebook'); ?>"><i class="fa fa-facebook"></i></a></li>
-            </ul>
         </div>
     </div>
 </div>
