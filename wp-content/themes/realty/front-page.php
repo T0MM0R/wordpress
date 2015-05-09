@@ -20,12 +20,11 @@
 
 <div class="container">
     <div class="author">
-        <h3 class="center">Your agent</h3>
         <div class="row">
-            <div class="col-md-2">
+            <div class="avatar">
                 <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
             </div>
-            <div class="col-md-8">
+            <div class="bio">
                 <h1><?php the_author(); ?></h1>
                 <ul class="info">
                     <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><i class="fa fa-envelope"></i></a></li>
