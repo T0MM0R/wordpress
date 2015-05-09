@@ -22,7 +22,8 @@
     <div class="author">
         <div class="row">
             <div class="avatar center">
-                <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
+                <?php //echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'gravatar_default' , 'gravatar' ); ?>
+                <img src="<?php echo get_template_directory_uri() ?>/images/avatar.jpg" class="img-circle" alt="gravatar"/>
             </div>
             <div class="bio col-md-6 col-md-offset-3 center">
                 <h1><?php the_author(); ?></h1>
