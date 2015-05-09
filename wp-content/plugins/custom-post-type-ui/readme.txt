@@ -3,8 +3,8 @@ Contributors: williamsba1, tw2113, webdevstudios
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3084056
 Tags: custom post types, CPT, CMS, post, types, post type, cck, taxonomy, tax, custom
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 1.0.2
+Tested up to: 4.1.1
+Stable tag: 1.0.7
 License: GPLv2
 
 Admin UI for creating custom post types and custom taxonomies in WordPress
@@ -36,6 +36,38 @@ Implied credit to:
 9. Help/support screen.
 
 == Changelog ==
+
+= 1.0.7 =
+* Preventive measures for potential XSS security issues with add_query_arg()
+
+= 1.0.6 =
+* Change priority of post type registration function that was causing rewrite issues for many.
+* Fix issues with help text spots not showing up for some post type fields. Props pedro-mendonca.
+* Fix logic issue with PHP's empty() function and CPTUI 0.9.x saved settings.
+
+= 1.0.5 =
+* Explicitly set the post type and taxonomy rewrite slugs as the registered slug if no custom ones provided.
+* Prevent cptui.js from loading where it is not needed.
+* Fixed undefined index notice for post type rewrite_withfront.
+* Repopulated labels when none provided and post type or taxonomy mentioned in default label.
+* Fix for import/export get code tab and hierarchical taxonomies
+
+= 1.0.4 =
+* Fixed incorrect boolean order for hierarchical taxonomies and default value.
+* Fixed missing closing div tags.
+* Default menu position to null instead of empty string.
+* Undefined index notice cleanup.
+* Remove unnecessary hook.
+
+= 1.0.3 =
+* Fix logic error regarding string "0" evaluating to false when checked for not empty.
+* Fix for taxonomy with_front boolean value not evaluating correctly.
+* Fix for taxonomy hierarchical boolean value not evaluating correctly.
+* Fix for post type has_archive.
+* German translation updates. If you speak/read German, myself and the translator would LOVE to have feedback on this.
+* Internationalization string changes after feedback from German translation work.
+* Minor issue with link html being stripped from UI field explanation.
+* Better apostrophe/single quote support in label fields.
 
 = 1.0.2 =
 * Fix issue with checked checkboxes for post type associations for taxonomies.
@@ -201,6 +233,38 @@ Implied credit to:
 * First beta release
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+* Preventive measures for potential XSS security issues with add_query_arg()
+
+= 1.0.6 =
+* Change priority of post type registration function that was causing rewrite issues for many.
+* Fix issues with help text spots not showing up for some post type fields. Props pedro-mendonca.
+* Fix logic issue with PHP's empty() function and CPTUI 0.9.x saved settings.
+
+= 1.0.5 =
+* Explicitly set the post type and taxonomy rewrite slugs as the registered slug if no custom ones provided.
+* Prevent cptui.js from loading where it is not needed.
+* Fixed undefined index notice for post type rewrite_withfront.
+* Repopulated labels when none provided and post type or taxonomy mentioned in default label.
+* Fix for import/export get code tab and hierarchical taxonomies
+
+= 1.0.4 =
+* Fixed incorrect boolean order for hierarchical taxonomies and default value.
+* Fixed missing closing div tags.
+* Default menu position to null instead of empty string.
+* Undefined index notice cleanup.
+* Remove unnecessary hook.
+
+= 1.0.3 =
+* Fix logic error regarding string "0" evaluating to false when checked for not empty.
+* Fix for taxonomy with_front boolean value not evaluating correctly.
+* Fix for taxonomy hierarchical boolean value not evaluating correctly.
+* Fix for post type has_archive.
+* German translation updates. If you speak/read German, myself and the translator would LOVE to have feedback on this.
+* Internationalization string changes after feedback from German translation work.
+* Minor issue with link html being stripped from UI field explanation.
+* Better apostrophe/single quote support in label fields.
 
 = 1.0.2 =
 * PLEASE TEST THIS UPDATE ON A DEV SITE IF YOU CAN, BEFORE UPDATING ON A LIVE SITE.

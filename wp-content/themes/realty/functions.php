@@ -167,6 +167,7 @@ function add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='avatar img-circle", $class);
     return $class;
 }
+<<<<<<< HEAD
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth, $args = array()) {
@@ -174,3 +175,5 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
     $output .= "\n$indent<ul class=\"dropdown-menu\" role=\"menu\">\n";
   }
 }
+=======
+>>>>>>> 3010170fb6227d82a2828b6d28b08d2dfa27271c
