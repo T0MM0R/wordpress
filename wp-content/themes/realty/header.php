@@ -38,7 +38,8 @@
                         $args = array(
                             'menu', 
                             'main',
-                            'menu_class'      => 'nav navbar-nav'
+                            'menu_class'      => 'nav navbar-nav',
+                            'walker' => new My_Walker_Nav_Menu()
                         );
                         wp_nav_menu( $args );
                     ?>
