@@ -104,9 +104,11 @@ div.home-text {
 
 p.tagline {
     font-family: helvetica, arial, sans-serif;
+    font-size: 1.25em;
     text-transform: uppercase;
-    font-weight: 100;
-    letter-spacing: 3px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin: 0 0 5px;
     color: #D54E21;
 }
 
