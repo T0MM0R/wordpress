@@ -124,6 +124,16 @@ p.tagline {
     color: #D54E21;
 }
 
+.author {
+    margin: 10px;
+}
+
+.bio {
+    background-color: rgba(45, 45, 45, 0.8);
+    border-radius: 5px;
+    color: #FFF;
+}
+
 
 /* Testimonial ----------- */
 
