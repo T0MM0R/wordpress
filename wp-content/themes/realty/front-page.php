@@ -18,7 +18,7 @@
 
 </div>
 
-<div class="container center">
+<div class="container">
     <div class="author">
         <h3>Your agent</h3>
         <div class="row">
@@ -26,12 +26,12 @@
                 <?php echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'mysteryman' , 'gravatar' ); ?>
             </div>
             <div class="col-md-8">
+                <h1><?php the_author(); ?></h1>
                 <p><?php the_author_meta('description'); ?></p>
             </div>
         </div>
         
         <div class="row">
-            <h1><?php the_author(); ?></h1>
             <ul class="info">
                 <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><i class="fa fa-envelope"></i></a></li>
                 <li><a href="<?php the_author_meta('user_url'); ?>" target="_blank"><i class="fa fa-home"></i></a></li>
