@@ -40,6 +40,9 @@ a:hover {
     background-color: #5588FF;
 }
 
+.btn-info:hover {
+    background-color: #77AAFF
+}
 
 /* ==========================================================================
    Comments
