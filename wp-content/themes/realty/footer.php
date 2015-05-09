@@ -1,4 +1,4 @@
-    <div class="container-fluid">
+    <footer class="container-fluid">
         <div class="row">
             <p>&copy; Copyright <?php echo date( 'Y' ); ?> Riverside Realty. All Rights Reserved. Site design by <a href="http://thomaswilson.me/" alt="Thomas Wilson Digital Media Consulting">Thomas Wilson Digital Media Consulting</a></p>
             <div class="ss-icon">
@@ -7,7 +7,7 @@
                 <a href="mailto:riverside.realty@hotmail.com">&#x2709;</a>
             </div>
         </div>
-    </div>
+    </footer>
     <?php wp_footer() ;?>
     </body>
 </html>
