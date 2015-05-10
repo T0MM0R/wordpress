@@ -21,6 +21,7 @@
 <div class="container">
     <div class="author">
         <div class="row">
+            <h1 class="center">Your agent</h1>
             <div class="avatar center">
                 <?php //echo get_custom_avatar( get_the_author_meta('user_email'), 150 , 'gravatar_default' , 'gravatar' ); ?>
                 <img src="<?php echo get_template_directory_uri() ?>/images/avatar.jpg" class="img-circle" alt="gravatar"/>
