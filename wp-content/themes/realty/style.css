@@ -38,10 +38,12 @@ a:hover {
 
 .btn-info {
     background-color: #5588FF;
+    border-color: #4477ee;
 }
 
 .btn-info:hover {
-    background-color: #77AAFF
+    background-color: #77AAFF;
+    border-color: #4477ee;
 }
 
 .glyphicon {
