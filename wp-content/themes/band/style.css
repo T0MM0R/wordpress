@@ -1,0 +1,256 @@
+/*
+Theme Name: Band
+Theme URI: http://jakedown.com
+Description: A Wordpress band theme
+Author: Thomas Wilson
+Author URI: http://thomaswilson.me
+Version: 1.0
+Tags: bootstrap
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+    
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+html {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: #5588FF;
+    
+}
+
+a:hover {
+    color: #337ab7;
+}
+
+/* ==========================================================================
+   helpers
+   ========================================================================== */
+
+.btn-info {
+    background-color: #5588FF;
+    border-color: #4477ee;
+}
+
+.btn-info:hover {
+    background-color: #77AAFF;
+    border-color: #4477ee;
+}
+
+.glyphicon {
+    margin-right: 4px;
+    top: 2px;
+}
+
+ul.info {
+	padding: 0;
+ 	font-size: 1em;
+ }
+ ul.info li {
+ 	list-style: none;
+ 	margin: 0 2% 0 0;
+	padding: 1% 0;
+        display: inline-block;
+ }
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0088d0;
+}
+
+
+/* ==========================================================================
+   Homepage
+   ========================================================================== */
+
+body {
+    padding-top: 50px;
+}
+
+.center {
+    text-align: center;
+}
+
+.center img {
+    margin: auto;
+}
+
+div.home-text {
+    color: #454545;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.home-text h1 {
+    color: #5588FF;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.home-text h1 span {
+    font-weight: 200;
+}
+
+.home-text p.body {
+    text-align: center;
+    font-size: 1.25em;
+    
+}
+
+p.tagline {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin: 0 0 5px;
+    color: #D54E21;
+}
+
+.author {
+    margin: 20px;
+}
+
+.bio {
+    background-color: rgba(45, 45, 45, 0.8);
+    border-radius: 5px;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+
+/* Testimonial ----------- */
+
+
+    blockquote {
+        font-family: 'garamound';
+        font-size: 1.75em;
+        margin: 4% 0;
+        border-left: 10px solid #e3e3e3;
+        padding-left: 4%;
+        color: #474747;
+    }
+    cite {
+        font-family: 'garamound', serif; /* 1 */
+        font-style: normal;
+        text-transform: capitalize;
+        font-size: 1.25em;
+        line-height: 1em;
+        color: #474747;
+        margin: 0 0 6% 4%;
+     }
+
+/* ==========================================================================
+   blog
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	width: 100%;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    border-top: thin dotted #454545;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+   
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1024px) {
+
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+ 
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+    
+}
