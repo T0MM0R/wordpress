@@ -178,6 +178,7 @@ textarea {
    ========================================================================== */
 footer {
     text-align: center;
+    border-top: thin dotted #454545;
 }
 
 
