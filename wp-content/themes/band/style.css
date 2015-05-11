@@ -72,6 +72,7 @@ ul.info {
    ========================================================================== */
 
 .navbar-brand {
+    background-image: url('images/header-logo.png');
     text-transform: uppercase;
     font-weight: bold;
     color: #0088d0;
