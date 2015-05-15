@@ -129,6 +129,14 @@ ul.wptreehouse-badges {
     margin-bottom: 60px;
 }
 
+.flexslider .slides img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    height: 300px;
+    border-radius: 2px;
+}
+
 .flex-control-nav {
     visibility: visible;
     bottom: -30px;
