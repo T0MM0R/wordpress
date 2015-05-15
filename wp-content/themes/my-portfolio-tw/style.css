@@ -131,6 +131,7 @@ ul.wptreehouse-badges {
 
 .flexslider .slides img {
     max-width: 100%;
+    width: auto;
     display: block;
     margin: auto;
     height: 300px;
