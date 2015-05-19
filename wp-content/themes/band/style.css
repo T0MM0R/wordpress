@@ -76,19 +76,13 @@ ul.info {
 }
 
 .navbar-header {
-    float: none;
 }
 
 .navbar-brand {
-    float: none;
-    display: block;
-    margin: auto;
     background-image: url('images/header-logo-white.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 150px;
-    width: 100%;
     text-transform: uppercase;
     font-weight: bold;
     color: transparent;
