@@ -83,6 +83,7 @@ ul.info {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    height: 200px;
     text-transform: uppercase;
     font-weight: bold;
     color: transparent;
