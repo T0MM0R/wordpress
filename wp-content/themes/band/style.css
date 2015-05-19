@@ -75,6 +75,9 @@ ul.info {
 }
 
 .navbar-brand {
+    float: none;
+    display: block;
+    margin: auto;
     background-image: url('images/header-logo-white.png');
     background-position: center;
     background-size: contain;
