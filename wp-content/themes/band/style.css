@@ -75,15 +75,12 @@ ul.info {
     border: none;
 }
 
-.navbar-header {
-}
-
 .navbar-brand {
     background-image: url('images/header-logo-white.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 200px;
+    width: 200px;
     text-transform: uppercase;
     font-weight: bold;
     color: transparent;
