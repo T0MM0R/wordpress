@@ -80,7 +80,7 @@ ul.info {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 200px;
+    width: 100%;
     text-transform: uppercase;
     font-weight: bold;
     color: transparent;
