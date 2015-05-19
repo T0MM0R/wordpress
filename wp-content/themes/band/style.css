@@ -74,6 +74,10 @@ ul.info {
     background-color: transparent;
 }
 
+.navbar-header {
+    float: none;
+}
+
 .navbar-brand {
     float: none;
     display: block;
@@ -82,7 +86,7 @@ ul.info {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: auto;
+    height: 200px;
     width: 100%;
     text-transform: uppercase;
     font-weight: bold;
