@@ -77,6 +77,10 @@ hgroup#logo {
         padding: 5px;
         display: block;
     }
+    
+.current-menu-item {
+    background-color: skyblue;
+}
 
 /*body*/
 a {
