@@ -316,7 +316,7 @@ nav a {
     display: block;
 }
 
-hgroup {
+hgroup#logo {
     margin-right: 5px;
 }
 
