@@ -289,7 +289,7 @@ nav a {
     color: #000;
 }
 
-.current-menu-item, .current-page-parent {
+.current-menu-item, .current_page_parent {
     text-decoration: underline;
     color: initial;
 }
