@@ -291,6 +291,8 @@ nav a {
 
 .current-menu-item, .current_page_parent {
     text-decoration: underline;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 5px;
     color: initial;
 }
 
