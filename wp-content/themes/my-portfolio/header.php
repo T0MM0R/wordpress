@@ -45,8 +45,6 @@
                 </div>
                <?php
                     $args = array(
-                        'menu', 
-                        'main',
                         'menu_class'      => 'nav navbar-nav'
                     );
                     wp_nav_menu( $args );
