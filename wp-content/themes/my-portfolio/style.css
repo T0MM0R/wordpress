@@ -293,6 +293,7 @@ nav a {
     text-decoration: underline;
     background-color: rgba(255,255,255,0.8);
     border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
     color: initial;
 }
 
