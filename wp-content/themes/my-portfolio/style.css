@@ -213,6 +213,10 @@ hr {
     height: 1px;
 }
 
+i {
+    padding: 4px;
+}
+
 /* ==========================================================================
    Comments
    ========================================================================== */
@@ -292,7 +296,6 @@ nav a {
 .current-menu-item, .current_page_parent {
     text-decoration: underline;
     background-color: rgba(255,255,255,0.8);
-    border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
     color: initial;
 }
@@ -342,16 +345,11 @@ hgroup#logo {
 }
 
 .contact .nav > li > a {
-    color: #000;
-    font-family: 'garamound', serif;
+    color: #777;
+    font-family: 'Cinzel Decorative', cursive;
     font-size: .85em;
     padding: 4px;
 
-}
-
-ul#menu-main {
-    padding-top: 8px;
-    padding-left: 5px;
 }
 
 /* ==========================================================================
@@ -650,10 +648,10 @@ and (min-width : 321px) {
    }
 }
 
-/* Smartphones (portrait) ----------- */
+/* Smartphones (landscape) ----------- */
 @media only screen 
-and (max-width : 320px) {
-    /* Styles */
+and (min-width : 321px) {
+/* Styles */
     .featured-album {
          position: initial;
          max-width: 100%;
@@ -663,19 +661,36 @@ and (max-width : 320px) {
          background-color: #222;
          border-top: solid 1px #aaa;
      }
-     .home #nav h1, #nav h1 {
-        font-size: 1.75em;
-        padding-top: 5px;
-        padding-left: 20px;
-    }
+    .home #nav h1, #nav h1 {
+           font-size: 2em;
+           padding-top: 5px;
+           padding-left: 20px;
+       }
     .home #logo h2, #logo h2 {
         padding-top: 5px;
         padding-left: 20px;
    }
-        
-    h3 {
-        font-size: 1.5em;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (min-width : 768px)
+and (max-width : 1023px) {
+    
+    ul#menu-main {
+        padding-top: 0;
+        padding-left: 5px;
+        float: right;
     }
+    
+    .current-menu-item, .current_page_parent {
+        border-radius: 5px;
+    }
+    
+    #nav {
+        padding-bottom: 10px;
+    }
+
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -766,6 +781,15 @@ and (min-width : 1024px) {
     hgroup#logo {
         padding: 15px 0;
     }
+    
+    ul#menu-main {
+        padding-top: 8px;
+        padding-left: 5px;
+    }
+    
+    .current-menu-item, .current_page_parent {
+        border-radius: 5px;
+    }
 }
 
 /* Large screens ----------- */
@@ -786,6 +810,15 @@ and (min-width : 1824px) {
     }
     hgroup#logo {
         padding: 15px 0;
+    }
+    
+    ul#menu-main {
+        padding-top: 8px;
+        padding-left: 5px;
+    }
+    
+    .current-menu-item, .current_page_parent {
+        border-radius: 5px;
     }
 }
 

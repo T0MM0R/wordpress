@@ -38,9 +38,9 @@
             <nav class="navbar-collapse collapse" id="nav1">
                 <div class="contact">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="tel:+15176676212" alt="Call me">(517)667-6212</a></li>
-                        <li><a href="mailto:thomasscot@gmail.com" alt="Send me a message">thomasscot@gmail.com</a></li>
-                        <li><a href="https://www.google.com/maps/place/Amorphotograph/@42.929494,-85.309552,17z/data=!3m1!4b1!4m2!3m1!1s0x88185d29410e6283:0x9d9a84023d194eaf" alt="address">Lowell, MI 49331</a></li>
+                        <li><a href="tel:+15176676212" alt="Call me"><i class="glyphicon glyphicon-phone"></i>(517)667-6212</a></li>
+                        <li><a href="mailto:thomasscot@gmail.com" alt="Send me a message"><i class="glyphicon glyphicon-envelope"></i>thomasscot@gmail.com</a></li>
+                        <li><a href="https://www.google.com/maps/place/Amorphotograph/@42.929494,-85.309552,17z/data=!3m1!4b1!4m2!3m1!1s0x88185d29410e6283:0x9d9a84023d194eaf" alt="address"><i class="glyphicon glyphicon-home"></i>Lowell, MI 49331</a></li>
                     </ul>
                 </div>
                <?php
