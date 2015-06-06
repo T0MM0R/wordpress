@@ -297,7 +297,7 @@ nav a {
 .current-menu-item, .current_page_parent {
     text-decoration: underline;
     background-color: #FFF;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
     color: initial;
 }
 
