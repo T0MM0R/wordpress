@@ -227,8 +227,9 @@ add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects');
 function my_wp_nav_menu_objects($items) {
     global $wp_query;
     
+    
     foreach ( $items as $item ) {
-        $item->title = strtolower($item->title);    
+        $item->title = strtolower($item->title);
         if ($item->title == $wp_query->query["post_type"] && 'post_type' == $item->type) {
             $item->classes[] = 'current_page_parent';
         } elseif (!empty($wp_query->query["post_type"])) {

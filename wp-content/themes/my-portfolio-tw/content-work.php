@@ -1,4 +1,4 @@
-<div class="portfolio">
+<div class="portfolio col-md-6">
         
         <div class="title">
             <h3>

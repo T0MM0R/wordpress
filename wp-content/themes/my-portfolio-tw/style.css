@@ -78,7 +78,7 @@ hgroup#logo {
         display: block;
     }
     
-.current-menu-item {
+.current-menu-item, .current_page_parent {
     background-color: skyblue;
 }
 
