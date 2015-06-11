@@ -1,4 +1,4 @@
-<div class="portfolio col-md-6">
+<div class="portfolio <?php echo !is_front_page() ? "col-md-6" : ""?>">
         
         <div class="title">
             <h3>
