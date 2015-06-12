@@ -229,8 +229,7 @@ function my_wp_nav_menu_objects($items) {
     
     
     foreach ( $items as $item ) {
-        $item->title = strtolower($item->title);
-        if ($item->title == $wp_query->query["post_type"] && 'post_type' == $item->type) {
+        if (strtolower($item->title) == $wp_query->query["post_type"] && 'post_type' == $item->type) {
             $item->classes[] = 'current_page_parent';
         } elseif (!empty($wp_query->query["post_type"])) {
             $key = array_search('current_page_parent', $item->classes);

@@ -49,6 +49,7 @@ nav a {
 
 .navbar-default .navbar-nav>li>a {
     color: #fff;
+    text-shadow: 1px 1px 2px black;
 }
 
 .navbar-default:hover .navbar-nav>li>a:hover {
@@ -79,7 +80,7 @@ hgroup#logo {
     }
     
 .current-menu-item, .current_page_parent {
-    background-color: skyblue;
+    background-color: #1188DD;
 }
 
 /*body*/
