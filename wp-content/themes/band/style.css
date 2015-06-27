@@ -61,6 +61,10 @@ ul.info {
 	padding: 1% 0;
         display: inline-block;
  }
+ 
+ .img {
+     margin: 5px;
+ }
 
 /* ==========================================================================
    Comments
