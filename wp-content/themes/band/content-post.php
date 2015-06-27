@@ -1,6 +1,6 @@
 <div class="col-md-4">
     <div class="card">
-        <section class="headline">
+        <section class="headline clearfix">
             <?php if ( has_post_thumbnail() ): ?>
             <?php the_post_thumbnail('thumbnail', array('class' => 'img img-responsive pull-left')) ?>
             <?php endif ?>
