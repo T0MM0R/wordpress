@@ -9,6 +9,7 @@
         </section>
         <section class="body">
             <article><?php the_excerpt() ?></article>
+            <a class="btn btn-default btn-block" href="<?php the_permalink ?>" title="Read more about <?php the_title() ?>">Read More &rarr;</a>
         </section>
     </div>
 </div>

@@ -67,6 +67,15 @@ ul.info {
  .img {
      margin: 5px;
  }
+ 
+ .btn-default {
+     border-radius: initial;
+     background-color: #000;
+     color: #FFF;
+     text-transform: uppercase;
+     font-size: 1.5em;
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+ }
 
 /* ==========================================================================
    Comments
