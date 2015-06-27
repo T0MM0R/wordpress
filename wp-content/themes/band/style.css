@@ -31,7 +31,7 @@ a {
 a:hover, a:focus, a:active {
     text-decoration: none;
     color: #343434;
-    transition: color 500ms ease-in;
+    transition: color 100ms ease-in;
 }
 
 /* ==========================================================================
