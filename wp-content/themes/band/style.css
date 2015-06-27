@@ -28,10 +28,10 @@ a {
     
 }
 
-a:hover {
+a:hover, a:focus, a:active {
     text-decoration: none;
-    color: #ABABAB;
-    transition: color 2s ease-in;
+    color: #343434;
+    transition: color 500ms ease-in;
 }
 
 /* ==========================================================================
