@@ -6,7 +6,7 @@
         
     <div class="row">
 
-        <?php get_template_part( 'content', 'post' );?>
+        <?php get_template_part( 'content', 'single' );?>
 
     </div>
 

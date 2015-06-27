@@ -5,7 +5,9 @@
         <?php endif ?>
         <h2><a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title() ?></a></h2>
         <span>Published on: <?php the_date() ?></span>
-        <article><?php the_excerpt() ?></article>
+        <section>
+            <article><?php the_excerpt() ?></article>
+        </section
     </div>
 </div>
 
