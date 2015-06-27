@@ -10,7 +10,7 @@
         <section class="body">
             <article><?php the_excerpt() ?></article>
         </section>
-        <a class="btn btn-default btn-block" href="<?php the_permalink ?>" title="Read more about <?php the_title() ?>">Read More &rarr;</a>
+        <a class="btn btn-default btn-block" href="<?php the_permalink() ?>" title="Read more about <?php the_title() ?>">Read More &rarr;</a>
     </div>
 </div>
 
