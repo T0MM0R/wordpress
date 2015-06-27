@@ -7,7 +7,7 @@
         <span>Published on: <?php the_date() ?></span>
         <section>
             <article><?php the_excerpt() ?></article>
-        </section
+        </section>
     </div>
 </div>
 
