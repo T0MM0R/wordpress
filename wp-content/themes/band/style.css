@@ -285,6 +285,15 @@ and (orientation : portrait) {
    
 }
 
+/* bootstrap media queries */
+@media (min-width: 992px) {
+    .card section.body {
+        height: 120px;
+        overflow: hidden;
+        
+    }
+}
+
 /* Desktops and laptops ----------- */
 @media only screen 
 and (min-width : 1024px) {
@@ -311,13 +320,4 @@ only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 
     
-}
-
-/* bootstrap media queries */
-@media (min-width: 992px) {
-    .card section.body {
-        height: 120px;
-        overflow: hidden;
-        
-    }
 }
