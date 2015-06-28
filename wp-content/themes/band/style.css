@@ -296,7 +296,7 @@ and (orientation : portrait) {
 
 /* Desktops and laptops ----------- */
 @media only screen 
-and (min-width : 1024px) {
+and (min-width : 1200px) {
     .card section.body {
         height: 180px;
         
