@@ -310,5 +310,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
     .card section.body {
         height: 120px;
         overflow: hidden;
+        text-overflow: elipsis;
+        
     }
 }
