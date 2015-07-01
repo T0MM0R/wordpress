@@ -1,5 +1,5 @@
 
-<div class="card-featured">
+<div class="card-featured clearfix">
     <section class="featured-image col-md-4">
         <?php if ( has_post_thumbnail() ): ?>
         <?php the_post_thumbnail('large', array('class' => 'img img-responsive')) ?>

@@ -68,7 +68,7 @@ ul.info {
      margin: 5px;
  }
  
- .card .btn-default {
+ .card .btn-default, .card-featured .btn-default {
      border-radius: initial;
      border-color: #454545;
      background-color: #000;
