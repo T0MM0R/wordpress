@@ -2,7 +2,7 @@
 <div class="card-featured">
     <section class="featured-image col-md-4">
         <?php if ( has_post_thumbnail() ): ?>
-        <?php the_post_thumbnail('thumbnail', array('class' => 'img img-responsive')) ?>
+        <?php the_post_thumbnail('large', array('class' => 'img img-responsive')) ?>
         <?php endif ?>
     </section>
     <section class="col-md-8">
