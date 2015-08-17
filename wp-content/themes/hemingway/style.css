@@ -1863,6 +1863,8 @@ p.form-allowed-tags {
 
 .footer .widget-content > ul > li:first-child { border-top: none; }
 
+.footer iframe {background-color: #1D1D1D;}
+
 
 /* Widget search --------------------------------------- */
 
