@@ -54,11 +54,11 @@
 								
 			</div> <!-- /post -->
 			
-			<?php if ( comments_open() ) : ?>
+			<?php //if ( comments_open() ) : ?>
 			
-				<?php comments_template( '', true ); ?>
+				<?php //comments_template( '', true ); ?>
 			
-			<?php endif; ?>
+			<?php //endif; ?>
 		
 		</div> <!-- /posts -->
 		
