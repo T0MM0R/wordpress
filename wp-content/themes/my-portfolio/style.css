@@ -15,14 +15,14 @@ body {
     margin-top: 100px;
 }
 
-body.logged-in {
-    margin-top: 32px;
-}
-
 body.home {
     margin-top: 0;
     color: #555;
     font-family: 'garamound', serif; /* 1 */
+}
+
+body.admin-bar {
+    margin-top: 32px;
 }
 
 img.size-thumbnail {
