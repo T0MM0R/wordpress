@@ -15,7 +15,7 @@
         
     </head>
     
-    <body <?php if (is_front_page()) { echo "class='home'"; } ?>>
+    <body <?php body_class() ?>>
         
         <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
             <hgroup id="logo" class="navbar-header">
@@ -45,7 +45,8 @@
                 </div>
                <?php
                     $args = array(
-                        'menu_class'      => 'nav navbar-nav'
+                        'menu_class'      => 'nav navbar-nav',
+                        'container'       => 'false'
                     );
                     wp_nav_menu( $args );
                 ?>
