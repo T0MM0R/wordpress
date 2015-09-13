@@ -21,8 +21,8 @@ body.home {
     font-family: 'garamound', serif; /* 1 */
 }
 
-body.admin-bar {
-    margin-top: 32px;
+body.admin-bar > .navbar-fixed-top {
+    top: 32px;
 }
 
 img.size-thumbnail {
