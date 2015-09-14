@@ -15,7 +15,7 @@
         
     </head>
     
-    <body>
+    <body <?php body_class() ?>>
         
         <div id="nav" class="navbar navbar-default navbar-fixed-top container-fluid">
             <div class="logo pull-left hidden-xs"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" alt="logo"></div>
