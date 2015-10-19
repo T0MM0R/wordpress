@@ -17,70 +17,54 @@
         
     <div class="row">
 
-        <div class="col-md-8">
+        <h5>Recent Work</h5>
+        <div class="flexslider card">
+            <ul class="slides">
+            <?php $work = new WP_Query( array('post_type' => 'work') )?>
 
-            <h5>Recent Work</h5>
-            <div class="flexslider card">
-                <ul class="slides">
-            <?php
+            <?php if ( $work->have_posts() ) : while ( $work->have_posts() ) : $work->the_post(); ?>
 
-            wp_reset_postdata();
+            <li>
 
-            $args = array(
-                'post_type' => 'work'
+                <?php get_template_part( 'content', 'work' ); ?>
 
-            );
+            </li>
 
-            $the_query = new WP_Query( $args );
-
-            ?>
-
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-                <li>
-
-                    <?php get_template_part( 'content', 'work' ); ?>
-
-                </li>
-
-            <?php endwhile; endif; ?>
-                </ul>
-            </div>
-
-        </div>
-        
-        <div class="col-md-4">
-        
-            <h5>Featured Post</h5>
-            <?php
-            wp_reset_postdata();
-            $args = array(
-                'post_type' => 'post',
-                'category_name' => 'featured',
-                'posts_per_page' => 1
-            );
-
-            $the_query = new WP_Query( $args );
-
-            ?>
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-                    <?php get_template_part( 'content', 'post' ); ?>
-
-            <?php endwhile; endif; ?>
-        
+        <?php endwhile; endif; ?>
+            </ul>
         </div>
         
     </div>
+    
+</div>
 
+<?php
+    $args = array(
+        'post_type' => 'post',
+        'category_name' => 'featured',
+        'posts_per_page' => 1
+    );
+    $featured_post = new WP_Query( $args );
+?>
+<?php if ( $featured_post->have_posts() ) : while ( $featured_post->have_posts() ) : $featured_post->the_post(); ?>
+<div class="container-fluid" style="background: url(<?php echo $featured_post->wp_get_attachment_url($featured_post->get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; text-align: center;">
+
+    <div class="container">
+        <div class="row">
+        <?php $featured_post->the_content() ?>
+        </div>
+    </div>
+    
+</div>
+<?php endwhile; endif; ?>
+
+<div class="container">
     <div class="row">
-            
+
         <h5>Latest Posts</h5>
         <div class="recent-post">
 
             <?php
-
-            wp_reset_postdata();
 
             $args = array(
                 'post_type' => 'post',
@@ -88,20 +72,20 @@
                 'cat' => -33
             );
 
-            $the_query = new WP_Query( $args );
+            $posts = new WP_Query( $args );
 
             ?>
 
-            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <?php if ( $posts->have_posts() ) : while ( $posts->have_posts() ) : $posts->the_post(); ?>
 
                 <div class="col-md-4">
                     <?php get_template_part( 'content', 'post' ); ?>
                 </div>
 
             <?php endwhile; endif; ?>
-            
+
         </div>
-        
+
     </div>
     
     <div class="row">
