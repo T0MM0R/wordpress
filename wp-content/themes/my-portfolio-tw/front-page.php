@@ -51,7 +51,8 @@
 
     <div class="container">
         <div class="row">
-        <?php the_content() ?>
+            <h3><?php the_title() ?></h3>
+            <?php the_excerpt() ?>
         </div>
     </div>
     
