@@ -47,11 +47,11 @@
     $featured_post = new WP_Query( $fp_args );
 ?>
 <?php if ( $featured_post->have_posts() ) : while ( $featured_post->have_posts() ) : $featured_post->the_post(); ?>
-<div class="container-fluid" style="background: url(<?php echo $featured_post->wp_get_attachment_url($featured_post->get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; text-align: center;">
+<div class="container-fluid" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; text-align: center;">
 
     <div class="container">
         <div class="row">
-        <?php $featured_post->the_content() ?>
+        <?php the_content() ?>
         </div>
     </div>
     
