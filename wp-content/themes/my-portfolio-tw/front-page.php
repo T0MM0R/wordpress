@@ -50,9 +50,10 @@
 <div class="container-fluid" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; text-align: center;">
 
     <div class="container">
-        <div class="row">
+        <div class="row featured-post">
             <h3><?php the_title() ?></h3>
             <?php the_excerpt() ?>
+            <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
         </div>
     </div>
     

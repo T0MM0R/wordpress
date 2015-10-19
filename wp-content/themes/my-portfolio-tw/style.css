@@ -161,6 +161,17 @@ blockquote {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
 }
 
+.featured-post {
+    padding: 20px;
+}
+
+.featured-post p {
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
+    color: #fff;
+    margin: 50px 0;
+}
+
 /* ==========================================================================
    Comments
    ========================================================================== */
