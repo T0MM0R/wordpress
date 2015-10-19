@@ -39,12 +39,12 @@
 </div>
 
 <?php
-    $args = array(
+    $fp_args = array(
         'post_type' => 'post',
         'category_name' => 'featured',
         'posts_per_page' => 1
     );
-    $featured_post = new WP_Query( $args );
+    $featured_post = new WP_Query( $fp_args );
 ?>
 <?php if ( $featured_post->have_posts() ) : while ( $featured_post->have_posts() ) : $featured_post->the_post(); ?>
 <div class="container-fluid" style="background: url(<?php echo $featured_post->wp_get_attachment_url($featured_post->get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; text-align: center;">
