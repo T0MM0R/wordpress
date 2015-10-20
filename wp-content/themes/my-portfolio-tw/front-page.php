@@ -18,20 +18,14 @@
     <div class="row">
 
         <h5>Recent Work</h5>
-        <div class="flexslider card">
-            <ul class="slides">
-            <?php $work = new WP_Query( array('post_type' => 'work') )?>
+        <div class="card">
+            <?php $work = new WP_Query( array( 'post_type' => 'work','posts_per_page' => 1, 'orderby' => 'rand' ) ) ?>
 
             <?php if ( $work->have_posts() ) : while ( $work->have_posts() ) : $work->the_post(); ?>
 
-            <li>
-
                 <?php get_template_part( 'content', 'work' ); ?>
 
-            </li>
-
         <?php endwhile; endif; ?>
-            </ul>
         </div>
         
     </div>
