@@ -1,4 +1,4 @@
-<div class="portfolio col-md-4">
+<div class="card col-md-4">
         
         <div class="title">
             <h3>
