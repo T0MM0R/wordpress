@@ -1,5 +1,6 @@
-<div class="card col-md-4">
+<div class="col-md-4">
         
+    <div class="card">
         <div class="title">
             <h3>
                 <?php if(!is_single()) :?>
@@ -21,5 +22,6 @@
             
             <a class="btn btn-block btn-primary" href="<?php the_field('project_url'); ?>">View Project &rarr;</a>
         <?php endif; ?>
+    </div>
         
 </div>
