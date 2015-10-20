@@ -19,7 +19,7 @@
 
         <h5>Recent Work</h5>
         <div class="card">
-            <?php $work = new WP_Query( array( 'post_type' => 'work','posts_per_page' => 1, 'orderby' => 'rand' ) ) ?>
+            <?php $work = new WP_Query( array( 'post_type' => 'work','posts_per_page' => 3, 'orderby' => 'rand' ) ) ?>
 
             <?php if ( $work->have_posts() ) : while ( $work->have_posts() ) : $work->the_post(); ?>
 
