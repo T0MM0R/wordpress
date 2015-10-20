@@ -47,7 +47,7 @@
         <div class="row featured-post">
             <h3><?php the_title() ?></h3>
             <?php the_excerpt() ?>
-            <a class="post-link" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
+            <a class="post-link btn btn-primary" href="<?php the_permalink(); ?>">Continue Reading &rarr;</a>
         </div>
     </div>
     
