@@ -1,4 +1,4 @@
-<div class="portfolio <?php echo !is_front_page() ? "col-md-6" : ""?>">
+<div class="portfolio col-md-4">
         
         <div class="title">
             <h3>
@@ -22,4 +22,4 @@
             <a class="btn btn-block btn-primary" href="<?php the_field('project_url'); ?>">View Project &rarr;</a>
         <?php endif; ?>
         
-    </div>
+</div>
