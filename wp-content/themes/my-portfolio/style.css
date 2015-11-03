@@ -571,8 +571,8 @@ textarea {
 
 #overlay img {
     position: absolute;
-    height: 100vh;
-    width: auto;
+    height: auto;
+    width: 100%;
     box-shadow: 0 0 50px rgba(255, 255, 255, .5);
 }
 
