@@ -1,7 +1,8 @@
         <footer>
             <div class="container">
                 <div class="col-md-6">
-                    <?php if ( !dynamic_sidebar( 'footer_left' ) ): ?>
+                    <?php if ( dynamic_sidebar( 'footer_left' ) ): ?>
+                    <?php else: ?>
 
                         <h5>Twitter</h5>
                         <p>Install the TwiGet plugin.</p>
@@ -9,7 +10,8 @@
                     <?php endif; ?>
                 </div>
                 <div class="col-md-6">
-                    <?php if ( !dynamic_sidebar( 'footer_right' ) ): ?>
+                    <?php if ( dynamic_sidebar( 'footer_right' ) ): ?>
+                    <?php else: ?>
 
                         <h5>Treehouse</h5>
                         <p>Install the Treehouse Badges plugin.</p>
