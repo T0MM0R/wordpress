@@ -125,7 +125,7 @@ body.home, body {
 
 .thumbnail .btn-block {
     position: relative;
-    top: 3rem;
+    top: 1rem;
 }
 
 .page-header:not(.front-page) {
