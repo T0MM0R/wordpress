@@ -112,7 +112,7 @@ body.home, body {
     white-space: nowrap;
 }
 
-.thumbnail {
+.front-page .thumbnail {
     height: 475px;
     overflow: hidden;
 }
@@ -148,7 +148,6 @@ body.home, body {
 
 article p {
     font-size: 1.25em;
-    -webkit-columns: 2;
 }
 
 article p:first-child:first-letter {
