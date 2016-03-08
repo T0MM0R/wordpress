@@ -1,15 +1,22 @@
 /*
-Theme Name: My Portfolio Theme Child
+Theme Name: Personal
 Theme URI: http://thomaswilson.me
-Description: My Portfolio Theme Child
+Description: Personal Theme
 Author: Thomas Wilson
 Author URI: http://thomaswilson.me
-Template: my-portfolio
+Template: personal
 Version: 1.0
-Text Domain: My Portfolio
+Tags: clean, light, responsive, two-column, custom-post-types, custom-fields, portfolio
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /* header */
+
+.admin-bar header {
+    margin-top: 32px;
+}
 
 .home #nav, #nav {
     background: #4096ee; /* Old browsers */
@@ -20,9 +27,14 @@ Text Domain: My Portfolio
     background: -ms-linear-gradient(top,  #4096ee 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #4096ee 0%,#60abf8 44%,#4096ee 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 2px 20px rgba(50, 50, 50, 0.3);
     border-bottom: #003cb3;
-    
+    padding: inherit;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 1.75em;
 }
 
 #nav h1 {
@@ -30,14 +42,6 @@ Text Domain: My Portfolio
     color: #fff;
     font-family: 'Helvetica', sans-serif;
     text-shadow: none;
-    display: inline-block;
-}
-
-#nav h2, #logo h2 {
-    font-size: 1.5em;
-    color: #fff;
-    font-family: 'garamound', serif;
-    padding-left: 5px;
     display: inline-block;
 }
 
@@ -73,11 +77,6 @@ span.menu, span.menu:hover, span.menu:focus {
     color: #fff;
     font-family: "Helvetica", Arial, sans-serif;
 }
-
-hgroup#logo {
-        padding: 5px;
-        display: block;
-    }
     
 .current-menu-item, .current_page_parent {
     background-color: #1188DD;
@@ -96,19 +95,50 @@ h3 {
     font-size: 1.5em;
 }
 
-body.home {
+body.home, body {
     margin-top: 50px;
-    color: #555;
     font-family: 'garamound', serif; /* 1 */
     background-color: #f2f2f4;
 }
 
-.card {
-    background-color: #fff;
-    margin: 5px;
+.jumbotron {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.thumbnail h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.thumbnail {
+    height: 475px;
+    overflow: hidden;
+}
+
+.thumbnail .excerpt {
+    height: 100px;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.thumbnail .btn-block {
+    position: relative;
+    top: 3rem;
+}
+
+.page-header:not(.front-page) {
+    background-color: white;
     padding: 10px;
+    border-radius: 2px;
     border: solid thin #eee;
-    border-radius: 5px;
+    text-align: center;
+}
+
+.single .page-header {
+    background-color: initial;
+    border: initial;
 }
 
 .title h3 {
@@ -116,45 +146,34 @@ body.home {
     margin: auto;
 }
 
-.page {
-    background-color: #fff;
-    height: 400px;
+article p {
+    font-size: 1.25em;
+    -webkit-columns: 2;
 }
 
-ul.wptreehouse-badges {
-    border: 1px solid #e8e8e8;
-    border-color: #e8e8e8;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 5px;
+article p:first-child:first-letter {
+    float: left;
+    color: #60abf8;
+    font-size: 75px; line-height: 60px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: Georgia;
 }
 
 .album img {
     box-shadow: none;
 }
 
-.flexslider {
-    border-radius: 5px;
-    box-shadow: none;
-    margin-bottom: 60px;
-}
-
-.flexslider .slides img {
-    max-width: 100%;
-    width: auto;
-    display: block;
-    margin: auto;
-    max-height: 300px;
-    border-radius: 2px;
-}
-
-.flex-control-nav {
-    visibility: visible;
-    bottom: -30px;
-}
-
-blockquote {
+.jumbotron blockquote p, blockquote {
+    font-size: 2em;
     margin: 5px 0;
+}
+
+ul.cite {
+    list-style: none;
+}
+
+ul.cite .name {
+    font-size: 1.5em;
+    color: #60abf8;
+    
 }
 
 .img-circle {
@@ -187,6 +206,51 @@ textarea {
 	box-sizing: border-box;
 
 	width: 100%;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-widget h5 {
+    font-size: 1.75em;
+}
+
+.footer-widget input[type="submit"] {
+    display: inline-block;
+    padding: 6px 16px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+p#subscribe-email {
+    float: left;
+}
+
+#subscribe-email input {
+    border-radius: 4px;
+    padding: 6px 4px !important;
+    width: 350px !important;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#copyright {
+    text-align: center;
 }
 
 /* ==========================================================================
