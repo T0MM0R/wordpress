@@ -256,13 +256,35 @@ p#subscribe-email {
    Media Queries
    ========================================================================== */
 
+/* Medium Screen ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+    
+}
+
+/* Tablets (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+    
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
     
-    #logo h2 {
-        display: none;
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
     }
     
 }
@@ -272,8 +294,8 @@ and (max-device-width : 480px) {
 and (min-width : 320px) 
 and (max-width : 480px) {
     
-    #logo h2 {
-        display: none;
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
     }
     
 }
@@ -281,8 +303,8 @@ and (max-width : 480px) {
 @media only screen 
 and (max-width : 320px) {
 
-    #logo h2 {
-        display: none;
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
     }
 }
 
@@ -291,7 +313,7 @@ and (max-width : 320px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 
-    #logo h2 {
-        display: none;
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
     }
 }
