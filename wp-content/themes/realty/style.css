@@ -1,172 +1,157 @@
 /*
 Theme Name: Realty
-Theme URI: http://riversiderealtyionia.com
-Description: A Wordpress realty theme
+Theme URI: http://thomaswilson.me
+Description: Realty Theme
 Author: Thomas Wilson
 Author URI: http://thomaswilson.me
+Template: realty
 Version: 1.0
-Tags: bootstrap
+Tags: clean, light, responsive, custom-post-types, custom-fields, realty
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-    
 
-/* ==========================================================================
-   Typography
-   ========================================================================== */
+/* header */
 
-html {
-    font-family: helvetica, arial, sans-serif;
-    font-size: 16px;
-    color: #000;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: #5588FF;
+.admin-bar .navbar-fixed-top {
+    top: 32px;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-family: 'Helvetica', sans-serif;
+    color: #fff;
+}
+
+.navbar-default {
+    background-color: #448ebb;
+    border: none;
+    box-shadow: 0px 2px 20px rgba(50, 50, 50, 0.3);
     
+}
+
+span.menu, span.menu:hover, span.menu:focus {
+    color: #fff;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+    
+.current-menu-item, .current_page_parent {
+    background-color: #1188DD;
+}
+
+/*body*/
+a {
+    color: #001F5C;
 }
 
 a:hover {
-    color: #337ab7;
+    text-decoration: none;
 }
 
-/* ==========================================================================
-   helpers
-   ========================================================================== */
-
-.btn-info {
-    background-color: #5588FF;
-    border-color: #4477ee;
+h3 {
+    font-size: 1.5em;
 }
 
-.btn-info:hover {
-    background-color: #77AAFF;
-    border-color: #4477ee;
+body.home, body {
+    margin-top: 50px;
+    font-family: 'garamound', serif;
 }
 
-.glyphicon {
-    margin-right: 4px;
-    top: 2px;
+#myCarousel {
+    background-color: rgba(223, 134, 74, 0.5); 
 }
 
-ul.info {
-	padding: 0;
- 	font-size: 1em;
- }
- ul.info li {
- 	list-style: none;
- 	margin: 0 2% 0 0;
-	padding: 1% 0;
-        display: inline-block;
- }
-
-/* ==========================================================================
-   Comments
-   ========================================================================== */
-
-
-/* ==========================================================================
-   Header
-   ========================================================================== */
-
-.navbar-brand {
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #0088d0;
+.featured-properties img {
+    margin-bottom: 5px;
 }
 
-
-/* ==========================================================================
-   Homepage
-   ========================================================================== */
-
-body {
-    padding-top: 50px;
+.thumbnail h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.center {
-    text-align: center;
+.front-page .thumbnail {
+    height: 475px;
+    overflow: hidden;
 }
 
-.center img {
+.thumbnail .excerpt {
+    height: 100px;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.thumbnail .btn-block {
+    position: relative;
+    top: 1rem;
+}
+
+.title h3 {
+    font-size: 2rem;
     margin: auto;
 }
 
-div.home-text {
-    color: #454545;
-    background-color: rgba(255,255,255,0.8);
+article p {
+    font-size: 1.25em;
+}
+
+article p:first-child:first-letter {
+    float: left;
+    color: #60abf8;
+    font-size: 75px; line-height: 60px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: Georgia;
+}
+
+.album img {
+    box-shadow: none;
+}
+
+.jumbotron blockquote p, blockquote {
+    font-size: 2em;
+    margin: 5px 0;
+}
+
+ul.cite {
+    list-style: none;
+}
+
+ul.cite .name {
+    font-size: 1.5em;
+    color: #60abf8;
+    
+}
+
+.img-circle {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+.featured-post {
+    padding: 20px;
+}
+
+.featured-post h3 {
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 2px 2px 0px black;
+}
+
+.featured-post p {
+    background-color: rgba(0,0,0,0.8);
     padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
+    color: #fff;
+    margin: 50px 0;
 }
 
-.home-text h1 {
-    color: #5588FF;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0
-}
-
-.home-text h1 span {
-    font-weight: 200;
-}
-
-.home-text p.body {
-    text-align: center;
-    font-size: 1.25em;
-    
-}
-
-p.tagline {
-    font-family: helvetica, arial, sans-serif;
-    font-size: 1.25em;
-    text-transform: uppercase;
-    font-weight: 200;
-    letter-spacing: 2px;
-    margin: 0 0 5px;
-    color: #D54E21;
-}
-
-.author {
-    margin: 20px;
-}
-
-.bio {
-    background-color: rgba(45, 45, 45, 0.8);
-    border-radius: 5px;
-    color: #FFF;
-    margin-top: 10px;
-}
-
-
-/* Testimonial ----------- */
-
-
-    blockquote {
-        font-family: 'garamound';
-        font-size: 1.75em;
-        margin: 4% 0;
-        border-left: 10px solid #e3e3e3;
-        padding-left: 4%;
-        color: #474747;
-    }
-    cite {
-        font-family: 'garamound', serif; /* 1 */
-        font-style: normal;
-        text-transform: capitalize;
-        font-size: 1.25em;
-        line-height: 1em;
-        color: #474747;
-        margin: 0 0 6% 4%;
-     }
-
-/* ==========================================================================
-   blog
-   ========================================================================== */
-
+.single-property .page-header
 
 /* ==========================================================================
    Comments
@@ -179,72 +164,105 @@ textarea {
 	width: 100%;
 }
 
-
 /* ==========================================================================
    Footer
    ========================================================================== */
-footer {
-    text-align: center;
-    border-top: thin dotted #454545;
+.footer-widget h5 {
+    font-size: 1.75em;
 }
 
+.footer-widget input[type="submit"] {
+    display: inline-block;
+    padding: 6px 16px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+p#subscribe-email {
+    float: left;
+}
+
+#subscribe-email input {
+    border-radius: 4px;
+    padding: 6px 4px !important;
+    width: 350px !important;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#copyright {
+    text-align: center;
+}
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
+/* Medium Screen ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+    
+}
+
+/* Tablets (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+    
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
-
+    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+    
 }
 
-/* Smartphones (landscape) ----------- */
+/* Smartphones (portrait and landscape) ----------- */
 @media only screen 
-and (min-width : 321px) {
-
+and (min-width : 320px) 
+and (max-width : 480px) {
+    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+    
 }
-
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (max-width : 320px) {
 
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-
-}
-
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-   
-}
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1024px) {
-
-}
-
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
- 
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
 }
 
 /* iPhone 4 ----------- */
@@ -252,5 +270,16 @@ and (min-width : 1824px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 
-    
+    .jumbotron blockquote p, blockquote {
+        font-size: 1.25em;
+    }
+}
+
+/* ==========================================================================
+   Bootstrap overrides
+   ========================================================================== */
+
+.btn-info {
+    background-color: #448ebb;
+    border-color: #448ebb;
 }

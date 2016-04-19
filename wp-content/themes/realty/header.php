@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head lang="en">
         
         <title>
             <?php 
@@ -9,41 +9,47 @@
             
             ?>
         </title>
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1, user-scalable=0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         
         <?php wp_head(); ?>
         
     </head>
     
-    <body>
+    <body <?php body_class() ?>>
         
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <header id="nav" class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
-                <div class="navbar-header">
+                <div id="logo" class="navbar-header">
 
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="menu">MENU</span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo site_url(); ?>"><span class="glyphicon glyphicon-home"></span><?php bloginfo( 'name' ); ?></a>
+
+                    <a class="navbar-brand" href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?> -></a>
 
                 </div>
 
-                <div class="navbar-collapse collapse" id="nav1">
+                <nav class="navbar-collapse collapse" id="nav1">
 
-                   <?php
+    <!--                <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>-->
+
+                    <?php
                         $args = array(
                             'menu', 
                             'main',
-                            'menu_class'      => 'nav navbar-nav',
-                            'walker' => new My_Walker_Nav_Menu()
+                            'menu_class' => 'nav navbar-nav',
+                            'container' => false
                         );
                         wp_nav_menu( $args );
                     ?>
 
-                </div>
+                </nav>
             </div>
-        </nav>
+        </header>
         

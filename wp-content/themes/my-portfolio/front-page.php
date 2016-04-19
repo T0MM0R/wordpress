@@ -8,13 +8,9 @@
         
         <div class="row">
             
-            <div class="col-md-8 col-sm-6">
-                <?php get_template_part("content", "recent-work") ?>
-            </div>
-            
-            <div class="col-md-4 col-sm-6">
-                <?php get_template_part("content", "recent-post") ?>
-            </div>
+            <?php get_template_part("content", "recent-work") ?>
+
+            <?php get_template_part("content", "recent-post") ?>
 
         </div>
         

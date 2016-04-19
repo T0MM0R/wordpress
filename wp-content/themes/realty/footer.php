@@ -1,10 +1,22 @@
-    <footer class="container-fluid">
-        <div class="row">
-            <p>&copy; Copyright <?php echo date( 'Y' ); ?> Riverside Realty. All Rights Reserved. Site design by <a href="http://thomaswilson.me/" alt="Thomas Wilson Digital Media Consulting">Thomas Wilson Digital Media Consulting</a></p>
-            <div class="ss-icon">
-                <a href="facebook">&#xF610;</a>
-                <a href="twitter">&#xF611;</a>
-                <a href="mailto:riverside.realty@hotmail.com">&#x2709;</a>
+    <footer>
+        <div class="container">
+            <div class="col-md-6">
+                <?php if ( dynamic_sidebar( 'footer_left' ) ): ?>
+
+                <?php endif; ?>
+            </div>
+            <div class="col-md-6">
+                <?php if ( dynamic_sidebar( 'footer_right' ) ): ?>
+
+                <?php endif; ?>
+            </div>
+        </div>
+        <div id="copyright" class="container-fluid">
+            <p>&copy; Copyright <?php echo date( 'Y' ); ?> <a href="http://thomaswilson.me">Thomas Wilson</a>. All Rights Reserved.</p>
+            <div class="row ss-icon">
+                <i class="fa fa-facebook" href="facebook"></i>
+                <i class="fa fa-twitter" href="twitter"></i>
+                <i class="fa fa-envelope" href="email"></i>
             </div>
         </div>
     </footer>
