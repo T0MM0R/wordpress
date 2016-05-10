@@ -30,6 +30,15 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 		}
 
 		if ( 'GET' === $this->api->method ) {
+			/**
+			 * Fires on each GET request to a specific endpoint.
+			 *
+			 * @module json-api
+			 *
+			 * @since 3.2.0
+			 *
+			 * @param string sites.
+			 */
 			do_action( 'wpcom_json_api_objects', 'sites' );
 			return $this->get_settings_response();
 		} else if ( 'POST' === $this->api->method ) {
@@ -74,11 +83,30 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 	 */
 	public function get_settings_response() {
 
-		$response_format = self::$site_format;
+		// Allow update in later versions
+		/**
+		 * Filter the structure of site settings to return.
+		 *
+		 * @module json-api
+		 *
+		 * @since 3.9.3
+		 *
+		 * @param array $site_format Data structure.
+		 */
+		$response_format = apply_filters( 'site_settings_site_format', self::$site_format );
+
 		$blog_id = (int) $this->api->get_blog_id_for_output();
+		/** This filter is documented in class.json-api-endpoints.php */
 		$is_jetpack = true === apply_filters( 'is_jetpack_site', false, $blog_id );
 
 		foreach ( array_keys( $response_format ) as $key ) {
+
+			// refactoring to change lang parameter to locale in 1.2
+			if ( $lang_or_locale = $this->get_locale( $key ) ) {
+				$response[$key] = $lang_or_locale;
+				continue;
+			}
+
 			switch ( $key ) {
 			case 'ID' :
 				$response[$key] = $blog_id;
@@ -91,9 +119,6 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 				break;
 			case 'URL' :
 				$response[$key] = (string) home_url();
-				break;
-			case 'lang' :
-				$response[$key] = (string) get_bloginfo( 'language' );
 				break;
 			case 'settings':
 
@@ -111,7 +136,17 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 					)
 				);
 
-				$response[$key] = array(
+				$eventbrite_api_token = (int) get_option( 'eventbrite_api_token' );
+				if ( 0 === $eventbrite_api_token ) {
+					$eventbrite_api_token = null;
+				}
+
+				$holiday_snow = false;
+				if ( function_exists( 'jetpack_holiday_snow_option_name' ) ) {
+					$holiday_snow = (bool) get_option( jetpack_holiday_snow_option_name() );
+				}
+
+				$response[ $key ] = array(
 
 					// also exists as "options"
 					'admin_url'               => get_admin_url(),
@@ -125,7 +160,7 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 					'jetpack_relatedposts_enabled' => (bool) $jetpack_relatedposts_options[ 'enabled' ],
 					'jetpack_relatedposts_show_headline' => (bool) $jetpack_relatedposts_options[ 'show_headline' ],
 					'jetpack_relatedposts_show_thumbnails' => (bool) $jetpack_relatedposts_options[ 'show_thumbnails' ],
-					'default_category'        => get_option('default_category'),
+					'default_category'        => (int) get_option('default_category'),
 					'post_categories'         => (array) $post_categories,
 					'default_post_format'     => get_option( 'default_post_format' ),
 					'default_pingback_flag'   => (bool) get_option( 'default_pingback_flag' ),
@@ -156,7 +191,21 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 					'jetpack_comment_likes_enabled' => (bool) get_option( 'jetpack_comment_likes_enabled', false ),
 					'twitter_via'             => (string) get_option( 'twitter_via' ),
 					'jetpack-twitter-cards-site-tag' => (string) get_option( 'jetpack-twitter-cards-site-tag' ),
+					'eventbrite_api_token'    => $eventbrite_api_token,
+					'holidaysnow'             => $holiday_snow
 				);
+
+				//allow future versions of this endpoint to support additional settings keys
+				/**
+				 * Filter the current site setting in the returned response.
+				 *
+				 * @module json-api
+				 *
+				 * @since 3.9.3
+				 *
+				 * @param mixed $response_item A single site setting.
+				 */
+				$response[ $key ] = apply_filters( 'site_settings_endpoint_get', $response[ $key ] );
 
 				if ( class_exists( 'Sharing_Service' ) ) {
 					$ss = new Sharing_Service();
@@ -181,6 +230,19 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 
 	}
 
+	protected function get_locale( $key ) {
+		if ( 'lang' == $key ) {
+			if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
+				return (string) get_blog_lang_code();
+			} else {
+				return get_locale();
+			}
+		}
+
+		return false;
+	}
+
+
 	/**
 	 * Updates site settings for authorized users
 	 *
@@ -190,7 +252,16 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 
 		// $this->input() retrieves posted arguments whitelisted and casted to the $request_format
 		// specs that get passed in when this class is instantiated
-		$input = $this->input();
+		/**
+		 * Filters the settings to be updated on the site.
+		 *
+		 * @module json-api
+		 *
+		 * @since 3.6.0
+		 *
+		 * @param array $input Associative array of site settings to be updated.
+		 */
+		$input = apply_filters( 'rest_api_update_site_settings', $this->input() );
 
 		$jetpack_relatedposts_options = array();
 		$sharing_options = array();
@@ -267,7 +338,9 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 					}
 
 					$enabled_or_disabled = $wga['code'] ? 'enabled' : 'disabled';
-					bump_stats_extras( 'google-analytics', $enabled_or_disabled );
+
+					/** This action is documented in modules/widgets/social-media-icons.php */
+					do_action( 'jetpack_bump_stats_extras', 'google-analytics', $enabled_or_disabled );
 
 					$business_plugins = WPCOM_Business_Plugins::instance();
 					$business_plugins->activate_plugin( 'wp-google-analytics' );
@@ -291,8 +364,49 @@ class WPCOM_JSON_API_Site_Settings_Endpoint extends WPCOM_JSON_API_Endpoint {
 					$sharing_options[ $key ] = $value;
 					break;
 
-				// no worries, we've already whitelisted and casted arguments above
+				// Keyring token option
+				case 'eventbrite_api_token':
+					// These options can only be updated for sites hosted on WordPress.com
+					if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
+						if ( empty( $value ) || WPCOM_JSON_API::is_falsy( $value ) ) {
+							if ( delete_option( $key ) ) {
+								$updated[ $key ] = null;
+							}
+						} else if ( update_option( $key, $value ) ) {
+							$updated[ $key ] = (int) $value;
+						}
+					}
+					break;
+
+				case 'holidaysnow':
+					if ( empty( $value ) || WPCOM_JSON_API::is_falsy( $value ) ) {
+						if ( function_exists( 'jetpack_holiday_snow_option_name' ) && delete_option( jetpack_holiday_snow_option_name() ) ) {
+							$updated[ $key ] = false;
+						}
+					} else if ( function_exists( 'jetpack_holiday_snow_option_name' ) && update_option( jetpack_holiday_snow_option_name(), 'letitsnow' ) ) {
+						$updated[ $key ] = true;
+					}
+					break;
+
+
 				default:
+					//allow future versions of this endpoint to support additional settings keys
+					if ( has_filter( 'site_settings_endpoint_update_' . $key ) ) {
+						/**
+						 * Filter current site setting value to be updated.
+						 *
+						 * @module json-api
+						 *
+						 * @since 3.9.3
+						 *
+						 * @param mixed $response_item A single site setting value.
+						 */
+						$value = apply_filters( 'site_settings_endpoint_update_' . $key, $value );
+						$updated[ $key ] = $value;
+						continue;
+					}
+
+					// no worries, we've already whitelisted and casted arguments above
 					if ( update_option( $key, $value ) ) {
 						$updated[ $key ] = $value;
 					}

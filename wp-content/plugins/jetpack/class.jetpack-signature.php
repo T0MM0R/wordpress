@@ -2,12 +2,13 @@
 
 defined( 'JETPACK_SIGNATURE__HTTP_PORT'  ) or define( 'JETPACK_SIGNATURE__HTTP_PORT' , 80  );
 defined( 'JETPACK_SIGNATURE__HTTPS_PORT' ) or define( 'JETPACK_SIGNATURE__HTTPS_PORT', 443 );
+defined( 'JETPACK__WPCOM_JSON_API_HOST' )  or define( 'JETPACK__WPCOM_JSON_API_HOST', 'public-api.wordpress.com' );
 
 class Jetpack_Signature {
-	var $token;
-	var $secret;
+	public $token;
+	public $secret;
 
-	function Jetpack_Signature( $access_token, $time_diff = 0 ) {
+	function __construct( $access_token, $time_diff = 0 ) {
 		$secret = explode( '.', $access_token );
 		if ( 2 != count( $secret ) )
 			return;
@@ -107,6 +108,10 @@ class Jetpack_Signature {
 		$parsed = parse_url( $url );
 		if ( !isset( $parsed['host'] ) ) {
 			return new Jetpack_Error( 'invalid_signature', sprintf( 'The required "%s" parameter is malformed.', 'url' ) );
+		}
+
+		if ( $parsed['host'] === JETPACK__WPCOM_JSON_API_HOST ) {
+			$parsed['host'] = 'public-api.wordpress.com';
 		}
 
 		if ( !empty( $parsed['port'] ) ) {

@@ -14,7 +14,7 @@
  * </object><br /><b><a href="http://www.dailymotion.com/video/xen4ms_ghinzu-cold-love-mirror-mirror_music">Ghinzu - Cold Love (Mirror Mirror)</a></b><br /><i>Uploaded by <a href="http://www.dailymotion.com/GhinzuTV">GhinzuTV</a>. - <a href="http://www.dailymotion.com/us/channel/music">Watch more music videos, in HD!</a></i>
  *
  * Code as of 01.01.11:
- * <object width="560" height="421"><param name="movie" value="http://www.dailymotion.com/swf/video/xaose5?width=560&theme=denim&foreground=%2392ADE0&highlight=%23A2ACBF&background=%23202226&start=&animatedTitle=&iframe=0&additionalInfos=0&autoPlay=0&hideInfos=0"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed type="application/x-shockwave-flash" src="http://www.dailymotion.com/swf/video/xaose5?width=560&theme=denim&foreground=%2392ADE0&highlight=%23A2ACBF&background=%23202226&start=&animatedTitle=&iframe=0&additionalInfos=0&autoPlay=0&hideInfos=0" width="560" height="421" allowfullscreen="true" allowscriptaccess="always"></embed></object><br /><b><a href="http://www.dailymotion.com/video/xaose5_sexy-surprise_na">Sexy Surprise</a></b><br /><i>Uploaded by <a href="http://www.dailymotion.com/GilLavie">GilLavie</a>. - <a target="_self" href="http://www.dailymotion.com/channel/sexy/featured/1">Find more steamy, sexy videos.</a></i>
+ * <object width="560" height="421"><param name="movie" value="http://www.dailymotion.com/swf/video/xaose5?width=560&theme=denim&foreground=%2392ADE0&highlight=%23A2ACBF&background=%23202226&start=&animatedTitle=&iframe=0&additionalInfos=0&autoPlay=0&hideInfos=0"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed type="application/x-shockwave-flash" src="http://www.dailymotion.com/swf/video/xaose5?width=560&theme=denim&foreground=%2392ADE0&highlight=%23A2ACBF&background=%23202226&start=&animatedTitle=&iframe=0&additionalInfos=0&autoPlay=0&hideInfos=0" width="560" height="421" allowfullscreen="true" allowscriptaccess="always"></embed></object><br /><b><a href="http://www.dailymotion.com/video/x29zm17_funny-videos-of-cats-and-babies-compilation-2015_fun">Funny cats and babies!</a></b><br /><i>Uploaded by <a href="http://www.dailymotion.com/GilLavie">GilLavie</a>. - <a target="_self" href="http://www.dailymotion.com/channel/funny/featured/1">Find more funny videos.</a></i>
  * movie param enforces anti-xss protection
  *
  * Scroll down for the new <iframe> embed code handler.
@@ -130,6 +130,76 @@ function dailymotion_shortcode( $atts ) {
 }
 
 add_shortcode( 'dailymotion', 'dailymotion_shortcode' );
+
+/**
+ * DailyMotion Channel Shortcode
+ *
+ * Examples:
+ * [dailymotion-channel user=MatthewDominick]
+ * [dailymotion-channel user=MatthewDominick type=grid] (supports grid, carousel, badge/default)
+ */
+function dailymotion_channel_shortcode( $atts ) {
+	$username = $atts['user'];
+
+	switch( $atts['type'] ) {
+		case 'grid':
+			return '<iframe width="300px" height="264px" scrolling="no" frameborder="0" src="' . esc_url( '//www.dailymotion.com/badge/user/' . $username . '?type=grid' ) . '"></iframe>';
+			break;
+		case 'carousel':
+			return '<iframe width="300px" height="360px" scrolling="no" frameborder="0" src="' . esc_url( '//www.dailymotion.com/badge/user/' . $username . '?type=carousel' ) . '"></iframe>';
+			break;
+		default:
+			return '<iframe width="300px" height="78px" scrolling="no" frameborder="0" src="' . esc_url( '//www.dailymotion.com/badge/user/' . $username ) . '"></iframe>';
+	}
+}
+
+add_shortcode( 'dailymotion-channel', 'dailymotion_channel_shortcode' );
+
+/**
+ * Embed Reversal for Badge/Channel
+ */
+function dailymotion_channel_reversal( $content ) {
+	if ( false === stripos( $content, 'dailymotion.com/badge/' ) ) {
+		return $content;
+	}
+
+	/* Sample embed code:
+		<iframe width="300px" height="360px" scrolling="no" frameborder="0" src="http://www.dailymotion.com/badge/user/Dailymotion?type=carousel"></iframe>
+	*/
+
+	$regexes = array();
+
+	$regexes[] = '#<iframe[^>]+?src=" (?:https?:)?//(?:www\.)?dailymotion\.com/badge/user/([^"\'/]++) "[^>]*+></iframe>#ix';
+
+	// Let's play nice with the visual editor too.
+	$regexes[] = '#&lt;iframe(?:[^&]|&(?!gt;))+?src=" (?:https?:)?//(?:www\.)?dailymotion\.com/badge/user/([^"\'/]++) "(?:[^&]|&(?!gt;))*+&gt;&lt;/iframe&gt;#ix';
+
+	foreach ( $regexes as $regex ) {
+		if ( ! preg_match_all( $regex, $content, $matches, PREG_SET_ORDER ) ) {
+	 		continue;
+		}
+
+		foreach ( $matches as $match ) {
+			$url_pieces = parse_url( $match[1] );
+
+			if ( 'type=carousel' === $url_pieces['query'] ) {
+				$type = 'carousel';
+			} else if ( 'type=grid' === $url_pieces['query'] ) {
+				$type = 'grid';
+			} else {
+				$type = 'badge';
+			}
+
+			$shortcode = '[dailymotion-channel user=' . esc_attr( $url_pieces['path'] ) . ' type=' . esc_attr( $type ) . ']';
+			$replace_regex = sprintf( '#\s*%s\s*#', preg_quote( $match[0], '#' ) );
+			$content       = preg_replace( $replace_regex, sprintf( "\n\n%s\n\n", $shortcode ), $content );
+		}
+	}
+
+	return $content;
+}
+
+add_filter( 'pre_kses', 'dailymotion_channel_reversal' );
 
 /**
  * Dailymotion Embed Reversal (with new iframe code as of 17.09.2014)
