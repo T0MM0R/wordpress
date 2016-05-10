@@ -101,6 +101,11 @@ body.home, body {
     background-color: #f2f2f4;
 }
 
+.jumbotron h1 {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+}
+
 .thumbnail h3 {
     overflow: hidden;
     text-overflow: ellipsis;
