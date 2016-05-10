@@ -22,7 +22,6 @@
 </div>
 
 <?php $testimonials = new WP_Query(array("post_type" => "testimonial", "posts_per_page" => 1)); ?>
-<?php var_dump($testimonials); ?>
 <?php if ( $testimonials->have_posts() ) : while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
 <div class="jumbotron" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; background-color: graytext;">
     <div class="container">
