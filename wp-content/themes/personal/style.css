@@ -196,7 +196,7 @@ ul.cite .name {
     margin: 50px 0;
 }
 
-.btn.btn-primary.btn-lg {
+.btn .btn-primary .btn-lg {
     background-color: #fff;
     color: #2e6da4;
     border-width: 3px;
@@ -204,7 +204,7 @@ ul.cite .name {
     transition: .4s;
 }
 
-.btn.btn-primary.btn-lg:hover {
+.btn .btn-primary .btn-lg:hover {
     background-color: #286090;
     border-color: #fff;
     color: #fff;
