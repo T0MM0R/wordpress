@@ -1,1 +1,1 @@
-return array('thomaswilson.me/wp-admin/network/plugins.php' => 'm1', 'thomaswilson.me' => 'm1');
+return array('thomaswilson.me/wp-admin/network/admin.php' => 'm1', 'thomaswilson.me/wp-admin/network/plugins.php' => 'm1', 'thomaswilson.me' => 'm1');
