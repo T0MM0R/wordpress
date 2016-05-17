@@ -1,4 +1,58 @@
-*** Hemingway changelog ***
+*** Hemingway Changelog ***
+
+
+Version 1.55 (2016-03-12)
+-------------------------
+- Removed wp_title() from header.php
+
+
+Version 1.54 (2015-08-25)
+-------------------------
+- Fixed overflow bug with wp-caption
+- Added screen-reader-text styling
+
+
+Version 1.53 (2015-08-24)
+-------------------------
+- Fixed a floating bug with the single post navigation
+
+
+
+Version 1.52 (2015-08-11)
+-------------------------
+- Removed the title_tag fallback
+
+
+Version 1.51 (2015-08-11)
+-------------------------
+- Added a missing margin between the format-video post content and post meta on archive pages
+
+
+Version 1.50 (2015-08-11)
+-------------------------
+- Removed a add_shortcode() function from functions.php
+- Added title_tag() support
+- Fixed a busted sanitize_callback in functions.php
+
+
+Version 1.49 (2015-08-10)
+-------------------------
+- Added UTF-8 as charset in style.css
+- Updated widgets with PHP5 object constructors for WordPress 4.3
+- Removed meta fields for the video post format in order to comply with WordPress theme review guidelines (presentation vs. functionality)
+- Condensed functions.php and added the comment-reply script
+- ...as well as styling for the comment form when it is within .commentlist
+- Fixed so that the featured image is centered if it's smaller than the containing element
+- Fixed so that comments will be displayed on pages if there are comments, even if "Allow Comments" is not checked (the reply form is still hidden)
+- Fixed a bug with floating elements in the comments navigation
+- Fixed a styling error with the dropdown arrow in the main menu (one level deep)
+- Changed titles on single posts/pages from h2 to the h1 element
+
+
+Version 1.48 (2014-10-01)
+-------------------------
+- Added a width attribute in the inline style of images in posts (thanks, RavanH!)
+- Added styling of input elements of the email type to style.css (Ibid)
 
 
 Version 1.47 (2014-08-06)

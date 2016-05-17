@@ -8,6 +8,11 @@ class hemingway_video_widget extends WP_Widget {
 		parent::WP_Widget(false, $name = 'Video widget', array('description' => __('Displays a video of your choosing.', 'hemingway') ));	
 	}
 	
+	function __construct() {
+        $widget_ops = array( 'classname' => 'hemingway_video_widget', 'description' => __('Displays a video of your choosing.', 'hemingway') );
+        parent::__construct( 'hemingway_video_widget', __('Video Widget','hemingway'), $widget_ops );
+    }
+	
 	function widget($args, $instance) {
 	
 		// Outputs the content of the widget

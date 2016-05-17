@@ -6,10 +6,11 @@ include_once(ABSPATH . WPINC . '/feed.php');
 
 class hemingway_dribbble_widget extends WP_Widget {
 
-	function hemingway_dribbble_widget() {
-		parent::WP_Widget(false, $name = 'Dribbble widget', array('description' => __('Displays your latest Dribbble photos.', 'hemingway') ));	
-	}
-	
+	function __construct() {
+        $widget_ops = array( 'classname' => 'hemingway_dribbble_widget', 'description' => __('Displays your latest Dribbble photos.', 'hemingway') );
+        parent::__construct( 'hemingway_dribbble_widget', __('Dribbble Widget','hemingway'), $widget_ops );
+    }
+
 	function widget($args, $instance) {
 	
 		extract($args);

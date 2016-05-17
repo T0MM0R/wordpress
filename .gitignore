@@ -3,3 +3,7 @@ wp-config.php
 /nbproject/private/
 .DS_Store
 wp-content/uploads/*
+wp-content/cache/*
+wp-content/w3tc-config/*
+wp-content/db.php
+wp-content/object-cache.php
