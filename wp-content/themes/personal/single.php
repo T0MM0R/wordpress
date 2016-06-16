@@ -19,6 +19,9 @@
             <article>
                <?php the_content(); ?> 
             </article>
+            <section>
+                <?php comments_template(); ?>
+            </section>
         </div>
     </div>
 </div>
