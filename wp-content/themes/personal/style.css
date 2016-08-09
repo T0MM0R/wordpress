@@ -106,6 +106,12 @@ body.home, body {
     text-shadow: 2px 2px 2px #000;
 }
 
+.jumbotron h3 {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 2px 2px 2px #000;
+}
+
 .thumbnail h3 {
     overflow: hidden;
     text-overflow: ellipsis;

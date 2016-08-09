@@ -2,7 +2,9 @@
 $theme_features = array(
     "post-thumbnails",
     "custom-background",
-    "title-tag");
+    "title-tag",
+    "html5"
+    );
 
 foreach ($theme_features as $feature) {
     add_theme_support($feature);
@@ -18,7 +20,7 @@ function load_styles_and_scripts() {
     wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 }
 
-function create_widget( $name, $id, $description) {
+function create_footer_widget( $name, $id, $description) {
     $args = array(
         'name' => __( $name ),
         'id' => $id,
@@ -32,8 +34,17 @@ function create_widget( $name, $id, $description) {
     register_sidebar( $args );
 }
 
-create_widget( 'Left Footer', "footer_left", "Displays in the bottom left of footer" );
-create_widget( 'Right Footer', 'footer_right', 'Displays in the bottom right of footer' );
+create_footer_widget( 'Left Footer', "footer_left", "Displays in the bottom left of footer" );
+create_footer_widget( 'Right Footer', 'footer_right', 'Displays in the bottom right of footer' );
+register_sidebar($arts = array(
+   'name' => __( 'Header Right' ),
+    'id' => 'header_right',
+    'description' => 'Header widget area in header floated to the right',
+    'before_widget' => '<div class="form-group">',
+    'after_widget' => '</div>',
+    'before_title' => '',
+    'after_title' => ''
+));
 
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects');
 function my_wp_nav_menu_objects($items) {

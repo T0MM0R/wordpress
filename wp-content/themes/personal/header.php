@@ -32,13 +32,6 @@
 
                 <nav class="navbar-collapse collapse" id="nav1">
 
-    <!--                <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>-->
-
                     <?php
                         $args = array(
                             'menu', 
@@ -48,6 +41,11 @@
                         );
                         wp_nav_menu( $args );
                     ?>
+                    <div class="navbar-form navbar-right">
+                        <?php if ( dynamic_sidebar( 'header_right' ) ): ?>
+
+                        <?php endif; ?>
+                    </div>
 
                 </nav>
             </div>
