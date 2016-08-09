@@ -14,6 +14,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* header */
 
+body {
+    font-family: "Affogato-Regular", "Helvetica", arial, sans-serif;
+}
+
 .admin-bar header {
     margin-top: 32px;
 }
@@ -40,13 +44,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #nav h1 {
     font-size: 2em;
     color: #fff;
-    font-family: 'Helvetica', sans-serif;
     text-shadow: none;
     display: inline-block;
 }
 
 nav a {
-    font-family: 'Helvetica', sans-serif;
     font-size: 1.25em;
     color: #fff;
 }
@@ -70,12 +72,10 @@ nav a {
 
 .navbar-toggle:hover, .navbar-toggle:focus {
     color: #fff;
-    font-family: "Helvetica", Arial, sans-serif;
 }
 
 span.menu, span.menu:hover, span.menu:focus {
     color: #fff;
-    font-family: "Helvetica", Arial, sans-serif;
 }
     
 .current-menu-item, .current_page_parent {
@@ -97,7 +97,6 @@ h3 {
 
 body.home, body {
     margin-top: 50px;
-    font-family: 'garamound', serif; /* 1 */
     background-color: #f2f2f4;
 }
 
@@ -161,6 +160,8 @@ article p:first-child:first-letter {
 .jumbotron blockquote p, blockquote {
     font-size: 2em;
     margin: 5px 0;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
 }
 
 ul.cite {

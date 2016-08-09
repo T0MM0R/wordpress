@@ -18,6 +18,7 @@ function load_styles_and_scripts() {
     wp_enqueue_style( 'style.css', get_stylesheet_uri() );
     wp_enqueue_script( 'theme.js', get_stylesheet_directory_uri() . '/js/theme.js', array('jquery'), '', true);
     wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'affogato', get_stylesheet_directory_uri() . 'css/affogato.css');
 }
 
 function create_footer_widget( $name, $id, $description) {
