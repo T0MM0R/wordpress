@@ -39,6 +39,8 @@ body {
 .navbar-default .navbar-brand {
     color: #fff;
     font-size: 1.75em;
+    font-family: "Affogato-Bold", "Helvetica", arial, sans-serif;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 #nav h1 {
