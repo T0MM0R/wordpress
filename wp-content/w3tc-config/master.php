@@ -431,7 +431,7 @@ return array(
 	'browsercache.other.etag' => false,
 	'browsercache.other.w3tc' => false,
 	'browsercache.other.replace' => false,
-	'browsercache.timestamp' => '1464203209',
+	'browsercache.timestamp' => '1470766041',
 	'browsercache.replace.exceptions' => array(
 		0 => '',
 	),
