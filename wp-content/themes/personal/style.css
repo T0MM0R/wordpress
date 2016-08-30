@@ -41,12 +41,13 @@ body {
     font-size: 1.75em;
     font-family: "Affogato-Bold", "Helvetica", arial, sans-serif;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    transition: all ease-in 300ms;
 }
 
 .navbar-default .navbar-brand:hover {
     color: #fff;
-    font-size: 1.7em;
-    text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    transition: all ease-in 300ms;
 }
 
 #nav h1 {
