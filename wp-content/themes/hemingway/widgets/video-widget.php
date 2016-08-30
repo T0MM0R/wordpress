@@ -3,14 +3,10 @@
 // Video widget for hemingway WordPress theme
 
 class hemingway_video_widget extends WP_Widget {
-
-	function hemingway_video_widget() {
-		parent::WP_Widget(false, $name = 'Video widget', array('description' => __('Displays a video of your choosing.', 'hemingway') ));	
-	}
 	
 	function __construct() {
         $widget_ops = array( 'classname' => 'hemingway_video_widget', 'description' => __('Displays a video of your choosing.', 'hemingway') );
-        parent::__construct( 'hemingway_video_widget', __('Video Widget','hemingway'), $widget_ops );
+        parent::__construct( 'hemingway_video_widget', __( 'Video Widget', 'hemingway' ), $widget_ops );
     }
 	
 	function widget($args, $instance) {
@@ -61,8 +57,8 @@ class hemingway_video_widget extends WP_Widget {
 	function form($instance) {
 	
 		// Get the options into variables, escaping html characters on the way
-		$widget_title = $instance['widget_title'];
-		$video_url = $instance['video_url'];
+		if ( isset( $instance['widget_title'] ) ) $widget_title = $instance['widget_title'];
+		if ( isset( $instance['video_url'] ) ) $video_url = $instance['video_url'];
 		?>
 		
 		<p>

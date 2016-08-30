@@ -10,8 +10,7 @@
 				
 			<h2 class="comments-title">
 			
-				<?php echo count($wp_query->comments_by_type['comment']) . ' ';
-				echo _n( 'Comment' , 'Comments' , count($wp_query->comments_by_type['comment']), 'hemingway' ); ?>
+				<?php printf( _n( '%s Comment', '%s Comments', count($wp_query->comments_by_type[comment]), 'hemingway' ), count($wp_query->comments_by_type[comment]) ); ?>
 				
 			</h2>
 	
@@ -19,16 +18,15 @@
 			    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'hemingway_comment' ) ); ?>
 			</ol>
 			
-			<?php if (!empty($comments_by_type['pings'])) : ?>
+			<?php if ( ! empty( $comments_by_type['pings'] ) ) : ?>
 			
 				<div class="pingbacks">
 				
 					<div class="pingbacks-inner">
 				
 						<h3 class="pingbacks-title">
-						
-							<?php echo count($wp_query->comments_by_type['pings']) . ' ';
-							echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type['pings']), 'hemingway' ); ?>
+                        
+                            <?php printf( _n( '%s Pingback', '%s Pingbacks', count($wp_query->comments_by_type[pings]), 'hemingway' ), count($wp_query->comments_by_type[pings]) ); ?>
 						
 						</h3>
 					

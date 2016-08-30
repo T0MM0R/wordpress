@@ -1,6 +1,13 @@
 *** Hemingway Changelog ***
 
 
+Version 1.56 (2016-06-18)
+-------------------------
+- Added the new theme directory tags
+- Fixed video widget notice
+- Some PHP cleanup
+
+
 Version 1.55 (2016-03-12)
 -------------------------
 - Removed wp_title() from header.php
@@ -15,7 +22,6 @@ Version 1.54 (2015-08-25)
 Version 1.53 (2015-08-24)
 -------------------------
 - Fixed a floating bug with the single post navigation
-
 
 
 Version 1.52 (2015-08-11)
