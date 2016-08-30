@@ -43,6 +43,12 @@ body {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
+.navbar-default .navbar-brand:hover {
+    color: #fff;
+    font-size: 1.7em;
+    text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.5);
+}
+
 #nav h1 {
     font-size: 2em;
     color: #fff;

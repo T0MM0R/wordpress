@@ -18,7 +18,7 @@
     <body <?php body_class() ?>>
         
         <header id="nav" class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
+            <div class="container">
                 <div id="logo" class="navbar-header">
 
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1">
