@@ -2,6 +2,11 @@
 
 ## Changelog
 
+### 2.2.0, 2016-09-09
+
+* added: stop WooCommerce cached widgets from http showing on https
+* added: fix Gravity Forms confirmation content
+
 ### 2.1.6, 2016-02-02
 
 * fixed: malware warning with GOTMLS vulnerability scanner
