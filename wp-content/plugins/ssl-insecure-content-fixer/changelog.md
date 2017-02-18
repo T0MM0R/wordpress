@@ -2,6 +2,17 @@
 
 ## Changelog
 
+### 2.2.2, 2017-01-21
+
+* fixed: make protocol header tests case-insensitive (thanks, [waja](https://github.com/waja)!)
+* added: support for Amazon CloudFront `CloudFront-Forwarded-Proto` header (thanks, [gmazovec](https://github.com/gmazovec)!)
+* added: clean up responsive image srcset links to external images (WordPress already handles local images)
+
+### 2.2.1, 2016-11-19
+
+* fixed: improve accessibility of admin pages
+* removed: update message display forced on multisite; just leave that for WordPress to handle (it does it so well)
+
 ### 2.2.0, 2016-09-09
 
 * added: stop WooCommerce cached widgets from http showing on https
@@ -40,7 +51,7 @@
 
 * **SECURITY FIX**: restrict access to AJAX test script; don't disclose server environment with system information
 * changed: always show server environment on test results
-* added: Bulgarian translation (thanks, [Ivan Arnaudov](http://templateinspector.com/)!)
+* added: Bulgarian translation (thanks, [Ivan Arnaudov](https://www.bvionline.eu/)!)
 * added: .htaccess file for AJAX SSL Tests, fixes conflict with some security plugins
 
 ### 2.0.0, 2015-07-26

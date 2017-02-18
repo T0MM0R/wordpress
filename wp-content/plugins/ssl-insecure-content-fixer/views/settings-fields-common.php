@@ -79,17 +79,18 @@ if (!defined('ABSPATH')) {
 </tr>
 
 <tr valign="top">
-	<th scope="row"><?php echo esc_html_x('HTTPS detection', 'proxy settings', 'ssl-insecure-content-fixer'); ?><i id="sslfix-https-detection"></i></th>
+	<th scope="row"><?php echo esc_html_x('HTTPS detection', 'proxy settings', 'ssl-insecure-content-fixer'); ?><i id="sslfix-https-detection" aria-hidden="true"></i></th>
 	<td>
 		<p><em><?php echo esc_html_x('Select how WordPress should detect that a page is loaded via HTTPS', 'proxy settings', 'ssl-insecure-content-fixer'); ?></em></p>
 		<p><?php
 		$proxies = array(
 			/* translators: standard WordPress function means no reverse proxy, just plain website access */
-			'normal'					=> _x('standard WordPress function', 'proxy settings', 'ssl-insecure-content-fixer'),
-			'HTTP_X_FORWARDED_PROTO'	=> _x('HTTP_X_FORWARDED_PROTO (e.g. load balancer, reverse proxy, NginX)', 'proxy settings', 'ssl-insecure-content-fixer'),
-			'HTTP_X_FORWARDED_SSL'		=> _x('HTTP_X_FORWARDED_SSL (e.g. reverse proxy)', 'proxy settings', 'ssl-insecure-content-fixer'),
-			'HTTP_CF_VISITOR'			=> _x('HTTP_CF_VISITOR (CloudFlare Flexible SSL)', 'proxy settings', 'ssl-insecure-content-fixer'),
-			'detect_fail'				=> _x('unable to detect HTTPS', 'proxy settings', 'ssl-insecure-content-fixer'),
+			'normal'							=> _x('standard WordPress function', 'proxy settings', 'ssl-insecure-content-fixer'),
+			'HTTP_X_FORWARDED_PROTO'			=> _x('HTTP_X_FORWARDED_PROTO (e.g. load balancer, reverse proxy, NginX)', 'proxy settings', 'ssl-insecure-content-fixer'),
+			'HTTP_X_FORWARDED_SSL'				=> _x('HTTP_X_FORWARDED_SSL (e.g. reverse proxy)', 'proxy settings', 'ssl-insecure-content-fixer'),
+			'HTTP_CLOUDFRONT_FORWARDED_PROTO'	=> _x('HTTP_CLOUDFRONT_FORWARDED_PROTO (Amazon CloudFront HTTPS cached content)', 'proxy settings', 'ssl-insecure-content-fixer'),
+			'HTTP_CF_VISITOR'					=> _x('HTTP_CF_VISITOR (Cloudflare Flexible SSL); deprecated, since Cloudflare sends HTTP_X_FORWARDED_PROTO now', 'proxy settings', 'ssl-insecure-content-fixer'),
+			'detect_fail'						=> _x('unable to detect HTTPS', 'proxy settings', 'ssl-insecure-content-fixer'),
 		);
 
 		foreach ($proxies as $value => $label) {

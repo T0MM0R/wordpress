@@ -122,13 +122,19 @@ class SSLInsecureContentFixer {
 			switch ($this->options['proxy_fix']) {
 
 				case 'HTTP_X_FORWARDED_PROTO':
-					if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+					if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https') {
 						$_SERVER['HTTPS'] = 'on';
 					}
 					break;
 
 				case 'HTTP_X_FORWARDED_SSL':
-					if (isset($_SERVER['HTTP_X_FORWARDED_SSL']) && ($_SERVER['HTTP_X_FORWARDED_SSL'] === 'on' || $_SERVER['HTTP_X_FORWARDED_SSL'] === '1')) {
+					if (isset($_SERVER['HTTP_X_FORWARDED_SSL']) && (strtolower($_SERVER['HTTP_X_FORWARDED_SSL']) === 'on' || $_SERVER['HTTP_X_FORWARDED_SSL'] === '1')) {
+						$_SERVER['HTTPS'] = 'on';
+					}
+					break;
+
+				case 'HTTP_CLOUDFRONT_FORWARDED_PROTO':
+					if (isset($_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO']) === 'https') {
 						$_SERVER['HTTPS'] = 'on';
 					}
 					break;
@@ -186,6 +192,7 @@ class SSLInsecureContentFixer {
 		static $embed_searches = array(
 			'#<object .*?</object>#is',								// fix object elements, including contained embed elements
 			'#<embed .*?(?:/>|</embed>)#is',						// fix embed elements, not contained in object elements
+			'#<img .*?srcset=["\']\K[^"\']+#is',					// responsive image srcset links (to external images; WordPress already handles local images)
 		);
 		$content = preg_replace_callback($embed_searches, array(__CLASS__, 'fixContent_embed_callback'), $content);
 
@@ -208,7 +215,7 @@ class SSLInsecureContentFixer {
 	*/
 	public static function fixContent_embed_callback($matches) {
 		// match from start of http: URL until either end quotes or query parameter separator, thus allowing for URLs in parameters
-		$content = preg_replace_callback('#http://[^\'"&\?]+#i', array(__CLASS__, 'fixContent_src_callback'), $matches[0]);
+		$content = preg_replace_callback('#http://[^\'"&\?]+?#i', array(__CLASS__, 'fixContent_src_callback'), $matches[0]);
 
 		return $content;
 	}

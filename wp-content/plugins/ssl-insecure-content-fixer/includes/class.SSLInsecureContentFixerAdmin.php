@@ -33,11 +33,6 @@ class SSLInsecureContentFixerAdmin {
 	public function adminInit() {
 		add_settings_section(SSLFIX_PLUGIN_OPTIONS, false, false, SSLFIX_PLUGIN_OPTIONS);
 		register_setting(SSLFIX_PLUGIN_OPTIONS, SSLFIX_PLUGIN_OPTIONS, array($this, 'settingsValidate'));
-
-		// in_plugin_update_message isn't supported on multisite != blog-1, so just add another row
-		if (current_user_can('update_plugins')) {
-			add_action('after_plugin_row_' . SSLFIX_PLUGIN_NAME, array($this, 'upgradeMessage'), 20, 2);
-		}
 	}
 
 	/**
@@ -122,27 +117,6 @@ class SSLInsecureContentFixerAdmin {
 	}
 
 	/**
-	* show upgrade messages on Plugins admin page
-	* @param string $file
-	* @param object $current_meta
-	*/
-	public function upgradeMessage($file, $plugin_data) {
-		$current = get_site_transient('update_plugins');
-
-		if (isset($current->response[$file])) {
-			$r = $current->response[$file];
-
-			if (!empty($r->upgrade_notice)) {
-				$wp_list_table = _get_list_table('WP_Plugins_List_Table');
-				$colspan = $wp_list_table->get_column_count();
-				$plugin_name = wp_kses($plugin_data['Name'], 'strip');
-
-				require SSLFIX_PLUGIN_ROOT . 'views/admin-upgrade-message.php';
-			}
-		}
-	}
-
-	/**
 	* settings admin
 	*/
 	public function settingsPage() {
@@ -201,7 +175,7 @@ class SSLInsecureContentFixerAdmin {
 			$this->has_settings_errors = true;
 		}
 
-		if (!in_array($output['proxy_fix'], array('normal', 'HTTP_X_FORWARDED_PROTO', 'HTTP_X_FORWARDED_SSL', 'HTTP_CF_VISITOR', 'detect_fail'))) {
+		if (!in_array($output['proxy_fix'], array('normal', 'HTTP_X_FORWARDED_PROTO', 'HTTP_CLOUDFRONT_FORWARDED_PROTO', 'HTTP_X_FORWARDED_SSL', 'HTTP_CF_VISITOR', 'detect_fail'))) {
 			add_settings_error(SSLFIX_PLUGIN_OPTIONS, 'sslfix-proxy_fix', _x('HTTPS detection setting is invalid', 'settings error', 'ssl-insecure-content-fixer'));
 			$this->has_settings_errors = true;
 		}
