@@ -171,10 +171,12 @@ article p:first-child:first-letter {
     margin: 5px 0;
     color: #fff;
     text-shadow: 2px 2px 2px #000;
+	background-color: yellow;
 }
 
 ul.cite {
     list-style: none;
+	background-color: lightblue;
 }
 
 ul.cite .name {
