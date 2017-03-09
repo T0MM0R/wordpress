@@ -1,7 +1,12 @@
 <?php get_header();?>
-
+<style>
+    background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) center no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover; 
+    text-align: center;
+</style>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<div class="jumbotron" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>) center no-repeat; background-attachment: fixed; background-size: cover; text-align: center;">
+<div class="jumbotron">
     <div class="container">
         <div class="row">
 
