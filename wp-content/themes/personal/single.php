@@ -11,6 +11,7 @@
     
     .jumbotron {
         background-color: transparent;
+        text-align: center;
     }
 
 </style>
