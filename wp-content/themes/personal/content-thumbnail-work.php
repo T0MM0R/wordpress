@@ -8,7 +8,7 @@
             <div class="caption">
               <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
               <div class="excerpt"><?php the_excerpt(); ?></div>
-              <p><a href="<?php the_field('project-url'); ?>" class="btn btn-block btn-primary" role="button" target="blank">View project &rarr;</a></p>
+              <p><a href="<?php the_field('project_url'); ?>" class="btn btn-block btn-primary" role="button" target="blank">View project &rarr;</a></p>
             </div>
           </div>
         </div>
