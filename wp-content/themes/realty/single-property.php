@@ -21,11 +21,16 @@
             </article>
         </div>
         <div class="thumbnail col-md-4">
-            <div class="embed-responsive embed-responsive-4by3">
-                <iframe class="embed-responsive-item" 
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdd41ph5PmiBzzmgYaJi65soPJrrAZIZQ&q=<?= get_field('location')['address'] ?>" 
-                        allowfullscreen></iframe>
-            </div>
+            <?php 
+
+                $location = get_field('location');
+
+                if( !empty($location) ):
+                ?>
+                <div class="acf-map">
+                    <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+                </div>
+            <?php endif; ?>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-info">Square feet <span class="badge"><?php the_field('squarefeet')?></span></li>
                 <li class="list-group-item list-group-item-info">Acreage <span class="badge"><?php the_field('acreage')?></span></li>
