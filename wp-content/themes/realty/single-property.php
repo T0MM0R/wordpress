@@ -23,7 +23,7 @@
         <div class="thumbnail col-md-4">
             <div class="embed-responsive embed-responsive-4by3">
                 <iframe class="embed-responsive-item" 
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdd41ph5PmiBzzmgYaJi65soPJrrAZIZQq=<?= get_field('location')['address'] ?>" 
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdd41ph5PmiBzzmgYaJi65soPJrrAZIZQ&q=<?= get_field('location')['address'] ?>" 
                         allowfullscreen></iframe>
             </div>
             <ul class="list-group">
