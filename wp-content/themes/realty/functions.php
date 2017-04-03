@@ -52,3 +52,11 @@ function my_wp_nav_menu_objects($items) {
     
     return $items;
 }
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = 'AIzaSyBdd41ph5PmiBzzmgYaJi65soPJrrAZIZQ';
+	
+	return $api;
+	
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
