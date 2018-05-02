@@ -14,11 +14,14 @@
 </div>
 
 <div class="container">
-    <div class="page-header">
-        <h2>Recent Work <small>Check out my most recent projects!</small></h2>
+    <div class="recent-posts">
+        <div class="page-header">
+            <h2>Recent Posts <small>Read about what I have been learning!</small></h2>
+        </div>
+        
+        <?php get_template_part('content', 'thumbnail-posts'); ?>
+        
     </div>
-    
-    <?php get_template_part('content', 'thumbnail-work'); ?>
 </div>
 
 <?php $testimonials = new WP_Query(array("post_type" => "testimonial", "posts_per_page" => 1)); ?>
@@ -34,16 +37,12 @@
 </div>
 <?php endwhile; endif; ?>
 
-
 <div class="container">
-    <div class="recent-posts">
-        <div class="page-header">
-            <h2>Recent Posts <small>Read about what I have been learning!</small></h2>
-        </div>
-        
-        <?php get_template_part('content', 'thumbnail-posts'); ?>
-        
+    <div class="page-header">
+        <h2>Recent Work <small>Check out my most recent projects!</small></h2>
     </div>
+    
+    <?php get_template_part('content', 'thumbnail-work'); ?>
 </div>
 
 <?php get_footer();?>
