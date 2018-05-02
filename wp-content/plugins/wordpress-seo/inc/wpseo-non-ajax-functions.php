@@ -90,11 +90,19 @@ function wpseo_admin_bar_menu() {
 			}
 
 			if ( $new_notifications_count ) {
-				$notification = sprintf(
-					/* translators: %d resolves to the number of alerts being added. */
-					_n( 'You have a new issue concerning your SEO!', 'You have %d new issues concerning your SEO!', $new_notifications_count, 'wordpress-seo' ),
-					$new_notifications_count
-				);
+				if ( $new_notifications_count === 1 ) {
+					$notification = sprintf(
+						__( 'You have a new issue concerning your SEO!', 'wordpress-seo' ),
+						$new_notifications_count
+					);
+				}
+				else {
+					$notification = sprintf(
+						/* translators: %d resolves to the number of alerts being added. */
+						_n( 'You have %d new issue concerning your SEO!', 'You have %d new issues concerning your SEO!', $new_notifications_count, 'wordpress-seo' ),
+						$new_notifications_count
+					);
+				}
 				$alert_popup = '<div class="yoast-issue-added">' . $notification . '</div>';
 			}
 		}
@@ -301,7 +309,7 @@ function wpseo_admin_bar_menu() {
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'wpseo-settings',
 			'id'     => 'wpseo-licenses',
-			'title'  => __( 'Go Premium', 'wordpress-seo' ),
+			'title'  => __( 'Premium', 'wordpress-seo' ),
 			'href'   => admin_url( 'admin.php?page=wpseo_licenses' ),
 		) );
 	}
@@ -370,7 +378,7 @@ function wpseo_tax_adminbar_content_score() {
 function wpseo_adminbar_score( $score ) {
 	$score = WPSEO_Utils::translate_score( $score );
 
-	$score_adminbar_element = '<div class="wpseo-score-icon adminbar-seo-score '. $score .'"><span class="adminbar-seo-score-text screen-reader-text"></span></div>';
+	$score_adminbar_element = '<div class="wpseo-score-icon adminbar-seo-score ' . $score . '"><span class="adminbar-seo-score-text screen-reader-text"></span></div>';
 	return $score_adminbar_element;
 }
 

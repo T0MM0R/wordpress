@@ -4,7 +4,7 @@ Plugin Name: FlexMLS&reg; IDX
 Plugin URI: http://www.flexmls.com/wpdemo/
 Description: Provides FlexMLS&reg; Customers with FlexMLS&reg; IDX features on their WordPress websites. <strong>Tips:</strong> <a href="admin.php?page=fmc_admin_settings">Activate your FlexMLS&reg; IDX plugin</a> on the settings page; <a href="widgets.php">add widgets to your sidebar</a> using the Widgets Admin under Appearance; and include widgets on your posts or pages using the FlexMLS&reg; IDX Widget Short-Code Generator on the Visual page editor.
 Author: FBS
-Version: 3.5.11.1
+Version: 3.5.11.5
 Author URI: http://www.flexmls.com/
 */
 
@@ -13,11 +13,11 @@ defined( 'ABSPATH' ) or die( 'This plugin requires WordPress' );
 const FMC_API_BASE = 'api.flexmls.com';
 const FMC_API_VERSION = 'v1';
 const FMC_LOCATION_SEARCH_URL = 'https://www.flexmls.com';
-const FMC_PLUGIN_VERSION = '3.5.11.1';
+const FMC_PLUGIN_VERSION = '3.5.11.5';
 
 define( 'FMC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-global $auth_token_failures;
+global $auth_token_failures, $spark_oauth_global;
 $auth_token_failures = 0;
 
 $fmc_version = FMC_PLUGIN_VERSION;
@@ -64,6 +64,8 @@ class FlexMLS_IDX {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		add_action( 'flexmls_hourly_cache_cleanup', array( '\FlexMLS\Admin\Update', 'hourly_cache_cleanup' ) );
+		add_action( 'init', array( $this, 'rewrite_rules' ) );
+		add_action( 'parse_query', array( $this, 'parse_query' ) );
 		add_action( 'plugins_loaded', array( '\FlexMLS\Admin\Settings', 'update_settings' ), 9 );
 		add_action( 'plugins_loaded', array( $this, 'session_start' ) );
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
@@ -141,6 +143,23 @@ class FlexMLS_IDX {
 		}
 	}
 
+	function parse_query(){
+		global $wp_query;
+		if( isset( $wp_query->query_vars[ 'oauth_tag' ] ) ){
+			if( 'oauth-login' == $wp_query->query_vars[ 'oauth_tag' ] ){
+				$fmc_settings = get_option( 'fmc_settings' );
+				$fmc_api_portal = new flexmlsConnectPortalUser( $fmc_settings[ 'oauth_key' ], $fmc_settings[ 'oauth_secret' ] );
+				//$OAuth = new \SparkAPI\OAuth();
+				//$OAuth->do_login();
+			}
+			if( 'oauth-logout' == $wp_query->query_vars[ 'oauth_tag' ] ){
+				\SparkAPI\OAuth::log_out();
+				$state = isset( $_GET[ 'redirect' ] ) ? $_GET[ 'redirect' ] : home_url();
+				exit( '<meta http-equiv="refresh" content="0; url=' . $state . '">' );
+			}
+		}
+	}
+
 	public static function plugin_activate(){
 		$is_fresh_install = false;
 		if( false === get_option( 'fmc_settings' ) ){
@@ -171,10 +190,25 @@ class FlexMLS_IDX {
 		flush_rewrite_rules();
 	}
 
+	function rewrite_rules(){
+		$fmc_settings = get_option( 'fmc_settings' );
+		add_rewrite_rule( 'oauth/callback/?', 'index.php?plugin=flexmls-idx&oauth_tag=oauth-login', 'top' );
+		add_rewrite_rule( 'oauth/spark-logout/?', 'index.php?plugin=flexmls-idx&oauth_tag=oauth-logout', 'top' );
+		add_rewrite_tag( '%oauth_tag%', '([^&]+)' );
+
+		add_rewrite_rule( $fmc_settings[ 'permabase' ] . '/([^/]+)?' , 'index.php?plugin=flexmls-idx&fmc_tag=$matches[1]&page_id=' . $fmc_settings[ 'destlink' ], 'top' );
+		add_rewrite_rule( 'portal/([^/]+)?', 'index.php?plugin=flexmls-idx&fmc_vow_tag=$matches[1]&page_id=' . $fmc_settings[ 'destlink' ], 'top' );
+		add_rewrite_tag( '%fmc_tag%', '([^&]+)' );
+		add_rewrite_tag( '%fmc_vow_tag%', '([^&]+)' );
+	}
+
 	function session_start(){
+		//self::write_log( json_decode( $_COOKIE[ 'spark_oauth' ] ) );
+		/*
 		if( !session_id() ){
 			session_start();
 		}
+		*/
 		$SparkAPI = new \SparkAPI\Core();
 		$fmc_plugin_version = get_option( 'fmc_plugin_version' );
 		if( false === $fmc_plugin_version || version_compare( $fmc_plugin_version, FMC_PLUGIN_VERSION, '<' ) ){
@@ -186,6 +220,26 @@ class FlexMLS_IDX {
 			wp_schedule_event( time(), 'hourly', 'flexmls_hourly_cache_cleanup');
 		}
 		$auth_token = $SparkAPI->generate_auth_token();
+
+		global $listings_per_page;
+		if( isset( $_GET[ 'Limit' ] ) ){
+			$listings_per_page = intval( $_GET[ 'Limit' ] );
+			setcookie( 'spark_listings_per_page', $listings_per_page, time() + 30 * DAY_IN_SECONDS, '/' );
+		} elseif( isset( $_COOKIE[ 'spark_listings_per_page' ] ) ){
+			$listings_per_page = intval( $_COOKIE[ 'spark_listings_per_page' ] );
+		} else {
+			$listings_per_page = 10;
+		}
+
+		global $listings_orderby;
+		if( isset( $_GET[ 'OrderBy' ] ) ){
+			$listings_orderby = sanitize_text_field( $_GET[ 'OrderBy' ] );
+			setcookie( 'spark_listings_orderby', $listings_orderby, time() + 30 * DAY_IN_SECONDS, '/' );
+		} elseif( isset( $_COOKIE[ 'spark_listings_orderby' ] ) ){
+			$listings_orderby = $_COOKIE[ 'spark_listings_orderby' ];
+		} else {
+			$listings_orderby = '-ListPrice';
+		}
 	}
 
 	function widgets_init(){
@@ -365,6 +419,7 @@ $fmc_api = new flexmlsConnectUser($api_key,$api_secret);
 
 if($options && array_key_exists('oauth_key', $options) && array_key_exists('oauth_secret', $options)) {
   $fmc_api_portal = new flexmlsConnectPortalUser($options['oauth_key'], $options['oauth_secret']);
+
 }
 
 $api_ini_file = $fmc_plugin_dir . '/lib/api.ini';
@@ -397,8 +452,8 @@ add_action('admin_menu', array('flexmlsConnect', 'admin_menus_init') );
 add_action('init', array('flexmlsConnect', 'initial_init') );
 
 
-add_filter('query_vars', array('flexmlsConnectPage', 'query_vars_init') );
-add_action('init', array('flexmlsConnectPage','do_rewrite'));
+//add_filter('query_vars', array('flexmlsConnectPage', 'query_vars_init') );
+//add_action('init', array('flexmlsConnectPage','do_rewrite'));
 add_action('wp', array('flexmlsConnectPage', 'catch_special_request') );
 add_action('wp', array('flexmlsConnect', 'wp_init') );
 

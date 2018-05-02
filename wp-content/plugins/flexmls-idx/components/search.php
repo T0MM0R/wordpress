@@ -62,8 +62,10 @@ class fmcSearch extends fmcWidget {
     $orientation = (array_key_exists('orientation', $settings)) ? trim($settings['orientation']) : "horizontal" ;
 
     $width = ($orientation == "horizontal") ? 760 : 360;
-    if (array_key_exists('width', $settings)) {
-      $width = trim($settings['width']) - 40;
+    if( array_key_exists( 'width', $settings ) ){
+    	if( is_numeric( $settings[ 'width' ] ) ){
+		      $width = trim($settings['width']) - 40;
+	     }
     }
 
     $border_style = (array_key_exists('border_style', $settings)) ? trim($settings['border_style']) : "squared" ;
@@ -88,7 +90,10 @@ class fmcSearch extends fmcWidget {
     $api_property_sub_types = $fmc_api->GetPropertySubTypes();
     $api_system_info = $fmc_api->GetSystemInfo();
     $api_location_search_api = flexmlsConnect::get_locationsearch_url();
-    $api_links = flexmlsConnect::get_all_idx_links();
+
+    $IDXLinks = new \SparkAPI\IDXLinks();
+    $api_links = $IDXLinks->get_all_idx_links();
+    //$api_links = flexmlsConnect::get_all_idx_links();
 
     if ($api_prop_types === false || $api_system_info === false || $api_location_search_api === false || $api_links === false) {
       return flexmlsConnect::widget_not_available($fmc_api, false, $args, $settings);

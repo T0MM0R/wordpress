@@ -2,8 +2,8 @@
 Tags: flexmls, IDX, MLS search
 Contributors: flexmls
 Requires at least: 4.1
-Tested up to: 4.7.2
-Stable tag: 3.5.11.1
+Tested up to: 4.8
+Stable tag: 3.5.11.5
 
 Add FlexMLS&reg; IDX listings, market statistics, IDX searches, and a contact form on your web site.
 
@@ -55,6 +55,25 @@ Please call FBS Broker Agent Services at 866-320-9977 or email <a href='mailto:i
 
 
 == Changelog ==
+
+= 3.5.11.5 =
+* Fixed: Fixes search parameters on search widget
+
+= 3.5.11.4 =
+* Fixed: Issue with saved searches not appearing properly in portal
+* Fixed: Open in new window setting not saving
+* Fixed: No listing results in areas with slashes in their names
+
+= 3.5.11.3 =
+* Fixed: Replaces PHP sessions for hosts that don't support them
+* Fixed: PHP errors from empty loops
+* Fixed: Javascript error in dashboard for certain slider plugins
+
+= 3.5.11.2 =
+* Fixed: Issue with visitors not able to log into portals
+* Fixed: Portal position on screen
+* Fixed: Portal timing for popup
+* Fixed: Required/force setting for portal dismissal
 
 = 3.5.11.1 =
 * Fixed: Issue where contact widget would not use a custom title in sidebars
@@ -515,11 +534,3 @@ Bugs fixed:
 = 0.9.0 =
 
 * This is a beta version.
-
-
-
-== Upgrade Notice ==
-
-
-= 0.9.0 =
-This is a beta version.

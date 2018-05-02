@@ -37,6 +37,7 @@ class IDXLinks extends Core {
 		while( $current_page < $total_pages ){
 			$current_page++;
 			$params = array(
+				'_limit' => 25,
 				'_pagination' => 1,
 				'_page' => $current_page
 			);

@@ -84,7 +84,7 @@ class Core {
 		global $auth_token_failures;
 		if( false === ( $auth_token = get_transient( 'flexmls_auth_token' ) ) && $auth_token_failures < 2 ){
 			$options = get_option( 'fmc_settings' );
-			if( !isset( $options[ 'api_key' ] ) || !isset( $options[ 'api_secret' ] ) ){
+			if( !isset( $options[ 'api_key' ] ) || empty( $options[ 'api_key' ] ) || !isset( $options[ 'api_secret' ] ) || empty( $options[ 'api_secret' ] ) ){
 				return false;
 			}
 			$security_string = md5( $options[ 'api_secret' ] . 'ApiKey' . $options[ 'api_key' ] );
@@ -111,6 +111,7 @@ class Core {
 				if( array_key_exists( 'D', $json ) && true == $json[ 'D' ][ 'Success' ] ){
 					set_transient( 'flexmls_auth_token', $json, 15 * MINUTE_IN_SECONDS );
 					$auth_token = $json;
+					$auth_token_failures = 0;
 				} else {
 					$auth_token_failures++;
 				}
@@ -211,7 +212,7 @@ class Core {
 		$return = array();
 
 		if( false === ( $json = get_transient( $transient_name ) ) ){
-			$url = 'http://' . $this->api_base . '/' . $this->api_version . '/' . $service . '?' . $request[ 'query_string' ];
+			$url = 'https://' . $this->api_base . '/' . $this->api_version . '/' . $service . '?' . $request[ 'query_string' ];
 			$json = array();
 			$args = array(
 				'method' => $method,

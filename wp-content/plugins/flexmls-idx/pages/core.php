@@ -21,18 +21,20 @@ class flexmlsConnectPageCore {
     $this->standard_fields = $result[0];
 
     $searchable_fields = array();
-    foreach ($this->standard_fields as $k => $v) {
-      if ($v['Searchable']) {
-        $searchable_fields[] = $k;
-      }
-    }
+    if( count( $this->standard_fields ) ){
+		foreach( $this->standard_fields as $k => $v ){
+			if( $v[ 'Searchable' ] ){
+				$searchable_fields[] = $k;
+			}
+		}
+	}
 
     // add in special fields
     $searchable_fields[] = 'SavedSearch';
     $searchable_fields[] = 'StreetAddress';
     $searchable_fields[] = 'MapOverlay';
     $searchable_fields[] = 'ListingCart';
-    
+
     // start catching and building API search criteria
     $search_criteria = array();
 
@@ -167,7 +169,7 @@ class flexmlsConnectPageCore {
         'operator' => 'Eq',
         'field' => 'MLSAreaMajor',
         'allow_or' => true
-      ), 
+      ),
       array(
         'input' => 'StatusChangeTimestamp',
         'operator' => 'Gt',
@@ -203,83 +205,83 @@ class flexmlsConnectPageCore {
     $field_value_count = array();
 
     // pluck out values from GET or POST
-    foreach ($catch_fields as $f) {
+	foreach( $catch_fields as $f ){
 
-      if ($f['field'] == "BathsTotal") {
-        if (array_key_exists('BathsTotal', $this->standard_fields)) {
-          if (array_key_exists('MlsVisible', $this->standard_fields['BathsTotal']) and empty($this->standard_fields['BathsTotal']['MlsVisible'])) {
-            $f['field'] = "BathsFull";
-          }
-        }
-      }
+		if( 'BathsTotal' == $f[ 'field' ] ){
+			if( is_array( $this->standard_fields ) && array_key_exists( 'BathsTotal', $this->standard_fields ) ){
+				if( array_key_exists( 'MlsVisible', $this->standard_fields[ 'BathsTotal' ] ) && empty( $this->standard_fields[ 'BathsTotal' ][ 'MlsVisible' ] ) ){
+					$f[ 'field' ] = 'BathsFull';
+				}
+			}
+		}
 
-      $value = $this->fetch_input_data($f['input']);
-      if ($value === null or $value == '') {
-        // not provided
-        continue;
-      }
+		$value = $this->fetch_input_data( $f[ 'input' ] );
 
-      if ( !in_array($f['field'], $searchable_fields) ) {
-        // field would usually be OK but it's not searchable for this user
-        continue;
-      }
+		if( null === $value || '' == $value ){
+			// not provided
+			continue;
+		}
 
-      $field_value_count[ $f['field'] ] = 0;
+		if( !in_array( $f[ 'field' ], $searchable_fields ) ){
+			// field would usually be OK but it's not searchable for this user
+			continue;
+		}
 
-      $cleaned_raw_criteria[ $f['input'] ] = $value;
+		$field_value_count[ $f[ 'field' ] ] = 0;
 
-      if ( array_key_exists($f['field'], $this->standard_fields) ) {
-        $type = $this->standard_fields[ $f['field'] ][ 'Type' ];
-      } else {
-        $type = 'Character';
-      }
-
-      if ( array_key_exists('allow_or', $f) and $f['allow_or']) {
-        $this_field = array();
-
-        $condition = '(';
-        $f_values = explode(',', $value);
-        foreach ($f_values as $fv) {
-          $field_value_count[ $f['field'] ]++;
-
-          $decoded_value = str_replace("&#44;", ",", urldecode($fv));
-
-          $formatted_value = flexmlsConnect::make_api_formatted_value($decoded_value, $type);
-          if ($formatted_value === null) {
-            continue;
-          }
-          $this_field[] = $f['field'] .' '. $f['operator'] .' '. $formatted_value;
-        }
-        $condition .= implode(" Or ", $this_field);
-        $condition .= ')';
-      }
-      else {
-        $field_value_count[ $f['field'] ]++;
-        $formatted_value = flexmlsConnect::make_api_formatted_value($value, $type);
-        if ($formatted_value === null) {
-          continue;
-        }
-        $condition = $f['field'] .' '. $f['operator'] .' '. $formatted_value;
-      }
+		$cleaned_raw_criteria[ $f[ 'input' ] ] = $value;
 
 
-      // If the listing id is included in the search criteria, ignore all the
-      // criteria and stop here.
-      if ($f['input'] == "ListingId"){
-        $search_criteria = array($condition);
-        break;
-      } else {
-        $search_criteria[] = $condition;
-      }
-      
-    }
+		if( array_key_exists( $f[ 'field' ], $this->standard_fields ) ){
+			$type = $this->standard_fields[ $f[ 'field' ] ][ 'Type' ];
+		} else {
+			$type = 'Character';
+		}
 
-    // check for ListAgentId
-    $list_agent_id = $this->fetch_input_data('ListAgentId');
-    if ($list_agent_id != null) {
-      $cleaned_raw_criteria['ListAgentId'] = $list_agent_id;
-      $search_criteria[] = "(ListAgentId Eq '{$list_agent_id}' Or CoListAgentId Eq '{$list_agent_id}')";
-    }
+		if( array_key_exists( 'allow_or', $f ) && $f[ 'allow_or' ] ){
+			$this_field = array();
+
+			$condition = '(';
+			$f_values = explode( ',', $value );
+			foreach( $f_values as $fv ){
+				$field_value_count[ $f[ 'field' ] ]++;
+
+				$decoded_value = str_replace( "&#44;", ",", urldecode( $fv ) );
+
+				$formatted_value = flexmlsConnect::make_api_formatted_value( $decoded_value, $type );
+				if( null === $formatted_value ){
+					continue;
+				}
+				$this_field[] = $f[ 'field' ] . ' ' . $f[ 'operator' ] . ' ' . $formatted_value;
+			}
+			$condition .= implode(" Or ", $this_field);
+			$condition .= ')';
+		} else {
+			$field_value_count[ $f[ 'field' ] ]++;
+			$formatted_value = flexmlsConnect::make_api_formatted_value( $value, $type );
+			if( null === $formatted_value ){
+				continue;
+			}
+			$condition = $f[ 'field' ] . ' ' . $f[ 'operator' ] . ' ' . $formatted_value;
+		}
+
+
+		// If the listing id is included in the search criteria, ignore all the
+		// criteria and stop here.
+		if( 'ListingId' == $f[ 'input' ] ){
+			$search_criteria = array( $condition );
+			break;
+		} else {
+			$search_criteria[] = $condition;
+		}
+	}
+
+	// check for ListAgentId
+	$list_agent_id = $this->fetch_input_data( 'ListAgentId' );
+	if ($list_agent_id != null) {
+		$cleaned_raw_criteria['ListAgentId'] = $list_agent_id;
+		$search_criteria[] = "(ListAgentId Eq '{$list_agent_id}' Or CoListAgentId Eq '{$list_agent_id}')";
+	}
 
     $this->field_value_count = $field_value_count;
 
@@ -342,6 +344,9 @@ class flexmlsConnectPageCore {
 
   function get_browse_redirects() {
     global $fmc_api;
+
+    $previous_listing_url = '';
+    $next_listing_url = '';
 
     $last_page = flexmlsConnect::wp_input_get('pg');
 
@@ -448,12 +453,12 @@ class flexmlsConnectPageCore {
   }
 
   function contact_form_office_email($standard_fields) {
-    
+
     if($this->account->UserType == "Member") {
       $office_id = $this->account->OfficeId;
       $office_account = new FMC_Account($this->api->GetAccount($office_id));
       $email = $office_account->primary_email();
-    } 
+    }
     elseif ($this->account->UserType == "Office") {
       $email = $this->account->primary_email();
     } else {

@@ -6,8 +6,8 @@ Author URI: https://shop.webaware.com.au/
 Donate link: https://shop.webaware.com.au/donations/?donation_for=SSL+Insecure+Content+Fixer
 Tags: ssl, https, insecure content, partially encrypted, mixed content
 Requires at least: 4.0
-Tested up to: 4.7.1
-Stable tag: 2.2.2
+Tested up to: 4.7
+Stable tag: 2.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,9 +31,11 @@ Many thanks to the generous efforts of our translators:
 * Chinese simplified (zh_CN) -- [the Chinese translation team](https://translate.wordpress.org/locale/zh-cn/default/wp-plugins/ssl-insecure-content-fixer)
 * English (en_CA) -- [the English (Canadian) translation team](https://translate.wordpress.org/locale/en-ca/default/wp-plugins/ssl-insecure-content-fixer)
 * English (en_GB) -- [the English (British) translation team](https://translate.wordpress.org/locale/en-gb/default/wp-plugins/ssl-insecure-content-fixer)
+* Dutch (nl_NL) -- [the Dutch translation team](https://translate.wordpress.org/locale/nl/default/wp-plugins/ssl-insecure-content-fixer)
 * German (de_DE) -- [the German translation team](https://translate.wordpress.org/locale/de/default/wp-plugins/ssl-insecure-content-fixer)
 * French (fr_FR) -- [the French translation team](https://translate.wordpress.org/locale/fr/default/wp-plugins/ssl-insecure-content-fixer)
 * Italian (it_IT) -- [the Italian translation team](https://translate.wordpress.org/locale/it/default/wp-plugins/ssl-insecure-content-fixer)
+* Japanese (ja) -- [the Japanese translation team](https://translate.wordpress.org/locale/ja/default/wp-plugins/ssl-insecure-content-fixer)
 * Russian (ru_RU) -- [the Russian translation team](https://translate.wordpress.org/locale/ru/default/wp-plugins/ssl-insecure-content-fixer)
 * Spanish (es_ES) -- [the Spanish translation team](https://translate.wordpress.org/locale/es/default/wp-plugins/ssl-insecure-content-fixer)
 
@@ -96,16 +98,15 @@ Great! Tell me which plugin is yours and how to check for your new version, and 
 
 == Upgrade Notice ==
 
-= 2.2.2 =
+= 2.4.0 =
 
-case-insensitive protocol header tests; support Amazon CloudFront `CloudFront-Forwarded-Proto` header; clean up responsive image srcset links to external images
+don't capture content on admin pages when mode is Capture or Capture All; added filter for disabling Capture modes
 
 == Changelog ==
 
 The full changelog can be found [on GitHub](https://github.com/webaware/ssl-insecure-content-fixer/blob/master/changelog.md). Recent entries:
 
-### 2.2.2, 2017-01-21
+### 2.4.0, 2017-05-14
 
-* fixed: make protocol header tests case-insensitive (thanks, [waja](https://github.com/waja)!)
-* added: support for Amazon CloudFront `CloudFront-Forwarded-Proto` header (thanks, [gmazovec](https://github.com/gmazovec)!)
-* added: clean up responsive image srcset links to external images (WordPress already handles local images)
+* fixed: don't capture content on admin pages when mode is Capture or Capture All
+* added: filter `ssl_insecure_content_disable_capture` for disabling Capture mode on selected pages / scripts

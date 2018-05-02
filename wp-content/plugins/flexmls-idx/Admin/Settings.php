@@ -257,6 +257,7 @@ class Settings {
 						$fmc_settings[ $key ] = preg_replace( '/[^0-9]/', '', $val );
 						break;
 					case 'default_link':
+					case 'destwindow':
 					case 'destpref':
 					case 'listpref':
 					case 'permabase':
@@ -283,6 +284,9 @@ class Settings {
 			}
 			if( !isset( $_POST[ 'fmc_settings' ][ 'destlink' ] ) ){
 				$fmc_settings[ 'destlink' ] = 0;
+			}
+			if( !isset( $_POST[ 'fmc_settings' ][ 'destwindow' ] ) ){
+				$fmc_settings[ 'destwindow' ] = '';
 			}
 			if( empty( $fmc_settings[ 'permabase' ] ) ){
 				$fmc_settings[ 'permabase' ] = 'idx';

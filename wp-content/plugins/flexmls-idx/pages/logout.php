@@ -3,7 +3,7 @@
 class flexmlsConnectPageLogout {
 
 	function pre_tasks( $tag ){
-		$_SESSION[ 'fmc_oauth_logged_in' ] = false;
+		setcookie( 'spark_oauth', json_encode( array() ), time() - DAY_IN_SECONDS, '/' );
 		wp_redirect( home_url() );
 		exit;
 	}

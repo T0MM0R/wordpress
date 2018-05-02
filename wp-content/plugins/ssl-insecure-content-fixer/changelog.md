@@ -2,6 +2,22 @@
 
 ## Changelog
 
+### 2.4.0, 2017-05-14
+
+* fixed: don't capture content on admin pages when mode is Capture or Capture All
+* added: filter `ssl_insecure_content_disable_capture` for disabling Capture mode on selected pages / scripts
+
+### 2.3.0, 2017-05-01
+
+* added: support for Windows Azure with ARR
+* added: filter `ssl_insecure_content_domain_exclusions` for domains that can be excluded from content cleaning (ignored for enqueued scripts)
+
+### 2.2.3, 2017-02-01
+
+* fixed: breaks Visual Composer back end editing due to a regular expression problem (now you have two!)
+* changed: Capture no longer captures AJAX requests; new mode Capture All introduced to capture AJAX requests too
+* added: prerequisites check, to ensure that plugin can run successfully
+
 ### 2.2.2, 2017-01-21
 
 * fixed: make protocol header tests case-insensitive (thanks, [waja](https://github.com/waja)!)

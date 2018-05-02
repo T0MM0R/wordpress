@@ -39,7 +39,7 @@ $fmc_settings[ 'portal_force' ] = ( isset( $fmc_settings[ 'portal_force' ] ) && 
 					<label>OAuth Redirect URI</label>
 				</th>
 				<td>
-					<p><input type="text" class="large-text" value="<?php echo site_url( 'index.php/oauth/callback' ); ?>" readonly="readonly" onclick="javascript:this.focus();this.select();"></p>
+					<p><input type="text" class="large-text" value="<?php echo home_url( 'index.php/oauth/callback' ); ?>" readonly="readonly" onclick="javascript:this.focus();this.select();"></p>
 				</td>
 			</tr>
 		</tbody>

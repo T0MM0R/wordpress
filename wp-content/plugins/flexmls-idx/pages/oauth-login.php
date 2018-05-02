@@ -14,10 +14,13 @@ class flexmlsConnectPageOAuthLogin {
 
     $URI = parse_url($state);
     $query_params = array();
-    parse_str($URI['query'], $query_params);
+    if( isset( $URI['query'] ) && !empty( $URI['query'] ) ){
+	    parse_str($URI['query'], $query_params);
+	}
 
     if (!empty($code)) {
       $grant = $fmc_api_portal->Grant($code);
+
       if ($grant) {
         if (array_key_exists('remove_cart', $query_params)){
           $carts = $fmc_api_portal->GetListingCartsWithListing($query_params['listing_id']);

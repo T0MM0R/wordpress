@@ -13,10 +13,11 @@ class flexmlsAPI_OAuth extends flexmlsAPI_Core  {
     $this->api_client_id = $api_client_id;
     $this->api_client_secret = $api_client_secret;
     $this->oauth_redirect_uri = $redirect_uri;
+
     $this->SetAccessToken($access_token);
-    
+
     $this->auth_mode = 'oauth';
-    
+
     parent::__construct();
   }
 
@@ -29,11 +30,11 @@ class flexmlsAPI_OAuth extends flexmlsAPI_Core  {
     $request['cacheable_query_string'] = $request['query_string'];
     return $request;
   }
-  
+
   function is_auth_request($request) {
     return ($request['uri'] == '/'. $this->api_version .'/oauth2/grant') ? true : false;
   }
-  
+
   function Grant($code, $type = 'authorization_code') {
     $body = array(
       'client_id' => $this->api_client_id,
@@ -41,37 +42,37 @@ class flexmlsAPI_OAuth extends flexmlsAPI_Core  {
       'grant_type' => $type,
       'redirect_uri' => $this->oauth_redirect_uri
     );
-    
+
     if ($type == 'authorization_code') {
       $body['code'] = $code;
     }
     if ($type == 'refresh_token') {
       $body['refresh_token'] = $code;
     }
-    
+
     $response = $this->MakeAPICall("POST", "oauth2/grant", '0s', array(), json_encode($body) );
-    
+
     if ($response['success'] == true) {
       $this->SetAccessToken( $response['results']['access_token'] );
       $this->SetRefreshToken( $response['results']['refresh_token'] );
-      
+
       if ( is_callable($this->access_change_callback) ) {
         call_user_func($this->access_change_callback, 'oauth', array('access_token' => $this->oauth_access_token, 'refresh_token' => $this->oauth_refresh_token) );
       }
-      
+
       return true;
     }
     else {
       return false;
     }
-    
+
   }
-  
+
   function SetAccessToken($token) {
     $this->oauth_access_token = $token;
     $this->last_token = $token;
   }
-  
+
   function SetRefreshToken($token) {
     $this->oauth_refresh_token = $token;
   }
@@ -84,14 +85,14 @@ class flexmlsAPI_OAuth extends flexmlsAPI_Core  {
   function Authenticate() {
     return true;
   }
-  
+
   function ReAuthenticate() {
     if ( !empty($this->oauth_refresh_token) ) {
       return $this->Grant($this->oauth_refresh_token, 'refresh_token');
     }
     return false;
   }
-  
+
   function Ping() {
     return $this->return_all_results( $this->MakeAPICall("GET", "my/account") );
   }

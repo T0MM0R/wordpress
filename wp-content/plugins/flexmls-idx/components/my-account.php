@@ -10,7 +10,7 @@
 class fmcAccount extends fmcWidget {
 
   function __construct() {
-    
+
     parent::__construct();
 
     global $fmc_widgets;
@@ -56,6 +56,8 @@ class fmcAccount extends fmcWidget {
       'listing_id' => flexmlsConnect::wp_input_get_post('flexmls_listing_id')
       );
     $current_page = flexmlsConnect::wp_input_get_post('flexmls_page_override');
+    $SparkAPI = new \SparkAPI\Core();
+	$SparkAPI->clear_cache( true );
     $bool ? exit("SUCCESS") : exit($fmc_api_portal->get_portal_page(false, $add_cart_params, $current_page));
   }
 
@@ -79,15 +81,19 @@ class fmcAccount extends fmcWidget {
       'listing_id' => flexmlsConnect::wp_input_get_post('flexmls_listing_id')
       );
     $current_page = flexmlsConnect::wp_input_get_post('flexmls_page_override');
+    $SparkAPI = new \SparkAPI\Core();
+	$SparkAPI->clear_cache( true );
     $bool ? exit("SUCCESS") : exit($fmc_api_portal->get_portal_page(false, $add_cart_params, $current_page));
   }
 
-  function portal_clear_session_vars(){
-    ob_clean();
-    global $fmc_api_portal;
-    $fmc_api_portal->log_out();
-    exit(true);
-  }
+	function portal_clear_session_vars(){
+		ob_clean();
+		global $fmc_api_portal;
+		if( $fmc_api_portal->log_out() ){
+			exit( true );
+		}
+		exit( false );
+	}
 
   function jelly($args, $settings, $type) {
     global $fmc_api;
@@ -190,6 +196,7 @@ class fmcAccount extends fmcWidget {
     $shown_fields = trim($settings['shown_fields']);
     $show_shown_fields = explode(",", $shown_fields);
 
+
     ?><div class="my_account_outer"><?php
     if (in_array('name',$show_shown_fields)) {
       $this->display_name();
@@ -209,23 +216,26 @@ class fmcAccount extends fmcWidget {
     <?php
   }
 
-  private function display_searches(){
-    global $fmc_api_portal;
-    ?>
-      <div class="my_account_inner">
-      <span class='flexmls_connect__heading'>My Searches</span><br />
-        <?php $searches = $fmc_api_portal->GetSavedSearches(); ?>
-
-        <?php foreach($searches as $search): ?>
-          <a title="<? echo $search['Description'] ?>" href='<?php echo flexmlsConnect::make_nice_tag_url('search',array('SavedSearch'=>$search['Id'])); ?>'>
-            <?php echo $search['Name'] ?>
-          </a>
-          <br/>
-        <?php endforeach ?>
-      </div>
-    <?php
-    return;
-  }
+	private function display_searches(){
+		global $fmc_api_portal;
+		//$searches = $fmc_api_portal->GetSavedSearches();
+		$info = $fmc_api_portal->get_info();
+		$searches = $fmc_api_portal->GetMySavedSearches( $info[ 'Id' ] );
+		if( $searches ) :
+			?>
+			<div class="my_account_inner">
+				<span class='flexmls_connect__heading'>My Searches</span><br />
+				<?php foreach( $searches as $search ) : ?>
+					<a title="<?php echo $search[ 'Description' ]; ?>" href='<?php echo flexmlsConnect::make_nice_tag_url( 'search', array( 'SavedSearch' => $search[ 'Id' ] ) ); ?>'>
+						<?php echo $search[ 'Name' ]; ?>
+					</a>
+					<br/>
+				<?php endforeach; ?>
+			</div>
+	    <?php
+	    endif;
+		return;
+	}
 
   private function display_name(){
     global $fmc_api_portal;
@@ -250,7 +260,8 @@ class fmcAccount extends fmcWidget {
     <div class='my_account_inner'>
     <span class='flexmls_connect__heading'>My Listing Carts</span><br />
 
-    <?php foreach ($carts as $cart):
+    <?php if( $carts ): ?>
+    	<?php foreach ($carts as $cart):
       if (in_array($cart['PortalCartType'],$ignore_type)){
         continue;
       }
@@ -261,6 +272,7 @@ class fmcAccount extends fmcWidget {
         <br/>
       <?php endif;?>
     <?php endforeach;?>
+	<?php endif; ?>
     </div>
     <?php
   }
@@ -312,12 +324,12 @@ class fmcAccount extends fmcWidget {
 
     ?>
     <div class='listing_cart' value=<?php echo $record['Id']?>>
-      <span class="Favorites flexmls_portal_cart_handle <?php echo $is_favorite ?>" 
+      <span class="Favorites flexmls_portal_cart_handle <?php echo $is_favorite ?>"
         title="Mark this listing as a favorite (Login required)" value='<?php echo $favorite_id ?>' >
         <i class="flexmls-icon-heart"></i>
       </span>
 
-      <span class="Rejects flexmls_portal_cart_handle <?php echo $is_reject ?>" 
+      <span class="Rejects flexmls_portal_cart_handle <?php echo $is_reject ?>"
         title="No Interest (Login required)" value='<?php echo $reject_id ?>' >
         <i class="flexmls-icon-thumb_down"></i>
       </span>

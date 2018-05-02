@@ -38,17 +38,18 @@ class flexmlsPortalPopup{
 
     $page_view_number = (isset($_COOKIE[$page])) ? intval($_COOKIE[$page])  : 1 ;
     $needed_page_views = intval($options->$page());
-    $show_for_time = ($options->portal_mins() !== null ? (flexmlsPortalPopup::timeout_time_left() <= 0) : false);
-    $show_for_page = ($options->$page() !== null ? ($needed_page_views <= $page_view_number) : false);
+    $show_for_time = (!empty( $options->portal_mins() ) ? (flexmlsPortalPopup::timeout_time_left() <= 0) : false);
+    $show_for_page = (!empty( $options->$page() ) ? ($needed_page_views <= $page_view_number) : false);
     if ($show_for_time or $show_for_page){
       $show = true;
     }
     $time_left = false;
-    if ($show == false and $options->portal_mins() !== null){
+
+    if ($show == false and !empty( $options->portal_mins() ) ){
       $time_left = flexmlsPortalPopup::timeout_time_left();
     }
 
-    flexmlsPortalPopup::draw_portal_popup($show, $time_left);
+    @@flexmlsPortalPopup::draw_portal_popup($show, $time_left);
     return;
 
   }

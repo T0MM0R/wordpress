@@ -40,7 +40,7 @@ class flexmlsAPI_Core {
   public $last_error_code = null;
   public $last_error_mess = null;
 
-	public static $api_headers = array(
+	public $api_headers = array(
 		'Accept-Encoding' => "gzip,deflate",
 		'Content-Type' => "application/json",
 		'User-Agent' => "FlexMLS WordPress Plugin/3.5.9.3",
@@ -177,14 +177,14 @@ class flexmlsAPI_Core {
   }
 
 	function return_all_results( $response ){
-		if( true == $response[ 'success' ] ){
+		if( isset( $response[ 'success' ] ) && true == $response[ 'success' ] ){
 			return $response[ 'results' ];
 		}
 		return false;
 	}
 
 	function return_first_result( $response ){
-		if( true == $response[ 'success' ] ){
+		if( isset( $response[ 'success' ] ) && true == $response[ 'success' ] ){
 			if( count( $response[ 'results' ] ) ){
 				return $response[ 'results' ][ 0 ];
 			} else {

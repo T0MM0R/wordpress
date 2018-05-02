@@ -5,7 +5,8 @@ defined( 'ABSPATH' ) or die( 'This plugin requires WordPress' );
 ?>
 <div class="changelog point-releases">
 	<h3>Maintenance and Security Releases</h3>
-	<p><strong>Version 3.5.11.1</strong> Fixes an issue that prevented custom titles in Contact Form widgets, and one where schedule showing forms were not being sent from Chrome browsers.</p>
+	<p><strong>Version 3.5.11.5</strong> Fixes an issue where search parameters were not sending properly from the search widget.</p>
+	<p><strong>Version 3.5.11.4</strong> Fixes saved search listings in visitor portals, addresses an issue with bad search results for areas with a slash in their name, and fixes an issue with the "open link in new window" setting not being saved.</p>
 </div>
 <div class="feature-section one-col flex-intro">
 	<h2>Less Spam, More Speed</h2>

@@ -16,7 +16,7 @@ class Enqueue {
 			'widgets.php'
 		);
 		if( !in_array( $hook, $hooked_pages ) ){
-			return;
+			//return;
 		}
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-sortable' );

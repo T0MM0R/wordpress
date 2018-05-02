@@ -314,6 +314,7 @@ class flexmlsConnectPageSearchResults extends flexmlsConnectPageCore {
         $main_photo_urilarge = "{$fmc_plugin_url}/assets/images/nophoto.gif";
         $caption = "";
       }
+
     //set alt value
     if(!empty($caption)){
       $img_alt_attr = $caption;
@@ -441,6 +442,7 @@ class flexmlsConnectPageSearchResults extends flexmlsConnectPageCore {
 
       }
 
+
       $compList = flexmlsConnect::mls_required_fields_and_values("Summary",$record);
       foreach ($compList as $reqs){
         $zebra = (flexmlsConnect::is_odd($detail_count)) ? 'on' : 'off';
@@ -463,6 +465,7 @@ class flexmlsConnectPageSearchResults extends flexmlsConnectPageCore {
           $detail_count++;
         }
       }
+
 
       // end table
       echo "</div></div>";

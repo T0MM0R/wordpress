@@ -67,24 +67,15 @@ class flexmlsConnectPageListingDetails extends flexmlsConnectPageCore {
     }
 
     if ($this->listing_data == null) {
-      if (flexmlsConnect::get_no_listings_pref() == 'page')
-      {
-        if (!(isset($_SESSION['prevent_recursion'])))
-        {
-          $_SESSION['prevent_recursion'] = true;
+		if (flexmlsConnect::get_no_listings_pref() == 'page'){
           $page = flexmlsConnect::get_no_listings_page_number();
           $page_data = get_page($page);
           remove_filter('the_content', array('flexmlsConnectPage', 'custom_post_content'));
           echo apply_filters('the_content', $page_data->post_content);
-        }
-      }
-      else
-      {
-        echo "This listing is no longer available.";
-      }
-      if (isset($_SESSION['prevent_recursion']))
-        unset($_SESSION['prevent_recursion']);
-      return;
+		} else {
+			echo "This listing is no longer available.";
+		}
+		return;
     }
 
     $standard_fields_plus = $this->api->GetStandardFields();
@@ -471,114 +462,117 @@ class flexmlsConnectPageListingDetails extends flexmlsConnectPageCore {
 
     $MlsFieldOrder = $this->api->GetFieldOrder($sf["PropertyType"]);
     $property_features_values = array();
+    if( $MlsFieldOrder ){
+	    foreach ($MlsFieldOrder as $field){
+	      foreach ($field as $name => $key){
+	        foreach ($key as $property){
 
-    foreach ($MlsFieldOrder as $field){
-      foreach ($field as $name => $key){
-        foreach ($key as $property){
+	          if (in_array($property["Label"],$mls_fields_to_suppress)){
+	            continue;
+	          }
 
-          if (in_array($property["Label"],$mls_fields_to_suppress)){
-            continue;
-          }
-
-          $is_standard_Field = false;
-          if (isset($property["Domain"]) and (isset($sf[$property["Field"]]))){
-            /* Temporary hack to prevent warnings until Field Ordering gets rewritten */
-            if (is_array($sf[$property["Field"]])){
-              continue;
-            }
-            if ($property["Domain"] == "StandardFields" and
-                flexmlsConnect::is_not_blank_or_restricted($sf[$property["Field"]])){
-              $is_standard_Field = true;
-            }
-          }
+	          $is_standard_Field = false;
+	          if (isset($property["Domain"]) and (isset($sf[$property["Field"]]))){
+	            /* Temporary hack to prevent warnings until Field Ordering gets rewritten */
+	            if (is_array($sf[$property["Field"]])){
+	              continue;
+	            }
+	            if ($property["Domain"] == "StandardFields" and
+	                flexmlsConnect::is_not_blank_or_restricted($sf[$property["Field"]])){
+	              $is_standard_Field = true;
+	            }
+	          }
 
 
-          $detail_custom_bool = false;
-          $custom_custom_bool = false;
-          // If a field has a boolean for a value, mark it in the features section
-          if (isset($custom_fields["Details"][$name][$property["Label"]])) {
-            $detail_custom_bool = $custom_fields["Details"][$name][$property["Label"]] === true;
-          }
-          if (isset($custom_fields["Main"][$name][$property["Label"]])) {
-            $custom_custom_bool = $custom_fields["Main"][$name][$property["Label"]] === true;
-          }
+	          $detail_custom_bool = false;
+	          $custom_custom_bool = false;
+	          // If a field has a boolean for a value, mark it in the features section
+	          if (isset($custom_fields["Details"][$name][$property["Label"]])) {
+	            $detail_custom_bool = $custom_fields["Details"][$name][$property["Label"]] === true;
+	          }
+	          if (isset($custom_fields["Main"][$name][$property["Label"]])) {
+	            $custom_custom_bool = $custom_fields["Main"][$name][$property["Label"]] === true;
+	          }
 
-          // Check if for Custom field Details
-          $custom_details = false;
-          if (isset($property["Detail"]) and isset($custom_fields["Details"][$name][$property["Label"]])){
-            $custom_details = $property["Detail"] and flexmlsConnect::is_not_blank_or_restricted($custom_fields["Details"][$name][$property["Label"]]);
-          }
+	          // Check if for Custom field Details
+	          $custom_details = false;
+	          if (isset($property["Detail"]) and isset($custom_fields["Details"][$name][$property["Label"]])){
+	            $custom_details = $property["Detail"] and flexmlsConnect::is_not_blank_or_restricted($custom_fields["Details"][$name][$property["Label"]]);
+	          }
 
-          $custom_main = false;
-          if ( isset($custom_fields["Main"][$name][$property["Label"]]) ) {
-            $custom_main = flexmlsConnect::is_not_blank_or_restricted(
-              $custom_fields["Main"][$name][$property["Label"]]
-            );
-          }
+	          $custom_main = false;
+	          if ( isset($custom_fields["Main"][$name][$property["Label"]]) ) {
+	            $custom_main = flexmlsConnect::is_not_blank_or_restricted(
+	              $custom_fields["Main"][$name][$property["Label"]]
+	            );
+	          }
 
-          //Standard Fields
-		if( $is_standard_Field ){
-			if( 'PublicRemarks' == $property[ 'Field' ] ){
-				continue; //WP-325
+	          //Standard Fields
+			if( $is_standard_Field ){
+				if( 'PublicRemarks' == $property[ 'Field' ] ){
+					continue; //WP-325
+				}
+				switch( $property[ 'Label' ] ){
+					case 'Current Price':
+					case 'List Price':
+						$this->add_property_detail_value( '$' . flexmlsConnect::gentle_price_rounding( $sf[ $property[ 'Field' ] ] ), $property[ 'Label' ], $name );
+						break;
+					default:
+						$this->add_property_detail_value( $sf[ $property[ 'Field' ] ], $property[ 'Label' ], $name );
+				}
 			}
-			switch( $property[ 'Label' ] ){
-				case 'Current Price':
-				case 'List Price':
-					$this->add_property_detail_value( '$' . flexmlsConnect::gentle_price_rounding( $sf[ $property[ 'Field' ] ] ), $property[ 'Label' ], $name );
-					break;
-				default:
-					$this->add_property_detail_value( $sf[ $property[ 'Field' ] ], $property[ 'Label' ], $name );
-			}
-		}
 
-          //Custom Fields with value of true are placed in property feature section
-          else if ($detail_custom_bool or $custom_custom_bool){
-            $property_features_values[$name][]= $property["Label"];
-          }
-          //Custom Fields - DETAIL
-          else if ($custom_details){
-            $this->property_detail_values[$name][] = "<b>".$property["Label"].":</b> " .
-              $custom_fields["Details"][$name][$property["Label"]];
-          }
+	          //Custom Fields with value of true are placed in property feature section
+	          else if ($detail_custom_bool or $custom_custom_bool){
+	            $property_features_values[$name][]= $property["Label"];
+	          }
+	          //Custom Fields - DETAIL
+	          else if ($custom_details){
+	            $this->property_detail_values[$name][] = "<b>".$property["Label"].":</b> " .
+	              $custom_fields["Details"][$name][$property["Label"]];
+	          }
 
-          //Custom Fields - MAIN
-          else if ($custom_main){
-            $this->add_property_detail_value( $custom_fields["Main"][$name][$property["Label"]],
-              $property["Label"], $name );
+	          //Custom Fields - MAIN
+	          else if ($custom_main){
+	            $this->add_property_detail_value( $custom_fields["Main"][$name][$property["Label"]],
+	              $property["Label"], $name );
 
-          }
-        }
-      }
-    }
+	          }
+	        }
+	      }
+	    }
+	   }
 
     // render the results now
-    foreach ($this->property_detail_values as $k => $v) {
-      echo "<div class='flexmls_connect__ld_detail_table'>";
-        echo "<div class='flexmls_connect__detail_header'>{$k}</div>";
-        echo "<div class='flexmls_connect__ld_property_detail_body columns2'>";
+	if( $this->property_detail_values ){
+	    foreach ($this->property_detail_values as $k => $v) {
+	      echo "<div class='flexmls_connect__ld_detail_table'>";
+	        echo "<div class='flexmls_connect__detail_header'>{$k}</div>";
+	        echo "<div class='flexmls_connect__ld_property_detail_body columns2'>";
 
-          $details_count = 0;
+	          $details_count = 0;
 
-          foreach ($v as $value) {
-            $details_count++;
+	          foreach ($v as $value) {
+	            $details_count++;
 
-            if ($details_count === 1) {
-              echo "<div class='flexmls_connect__ld_property_detail_row'>";
-            }
-            echo "<div class='flexmls_connect__ld_property_detail'>{$value}</div>";
+	            if ($details_count === 1) {
+	              echo "<div class='flexmls_connect__ld_property_detail_row'>";
+	            }
+	            echo "<div class='flexmls_connect__ld_property_detail'>{$value}</div>";
 
-            if ($details_count === 2) {
-              echo "</div>"; // end row
-              $details_count = 0;
-            }
-          }
-          if ($details_count === 1) {
-            // details ended earlier without closing the last row
-            echo "</div>";
-          }
-        echo "</div>"; // end details body
-      echo "</div>"; // end details table
-    }
+	            if ($details_count === 2) {
+	              echo "</div>"; // end row
+	              $details_count = 0;
+	            }
+	          }
+	          if ($details_count === 1) {
+	            // details ended earlier without closing the last row
+	            echo "</div>";
+	          }
+	        echo "</div>"; // end details body
+	      echo "</div>"; // end details table
+	    }
+	   }
 
     echo "<div class='flexmls_connect__ld_detail_table'>";
       echo "<div class='flexmls_connect__detail_header'>Property Features</div>";

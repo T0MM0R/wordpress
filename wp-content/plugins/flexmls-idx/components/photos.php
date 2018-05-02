@@ -42,8 +42,8 @@ class fmcPhotos extends fmcWidget {
 
     $settings = new Photo_Settings($arg_settings);
 
-    $variables = array('title', 'horizontal', 'vertical', 'auto_rotate', 'source', 'display', 'days', 
-      'property_type', 'link', 'location', 'sort', 'page', 'additional_fields', 'destination', 'agent', 
+    $variables = array('title', 'horizontal', 'vertical', 'auto_rotate', 'source', 'display', 'days',
+      'property_type', 'link', 'location', 'sort', 'page', 'additional_fields', 'destination', 'agent',
       'send_to', 'image_size');
 
     foreach ($variables as $variable) {
@@ -361,8 +361,8 @@ class fmcPhotos extends fmcWidget {
       // set the width
       $container_style = ($image_size > 0) ? "style='width: {$image_size}px '" : "";
 
-      $div_box = "<div class='{$carousel_class}' {$container_style} data-connect-vertical='{$vertical}' 
-        data-connect-horizontal='{$horizontal}' data-connect-autostart='{$auto_rotate}' 
+      $div_box = "<div class='{$carousel_class}' {$container_style} data-connect-vertical='{$vertical}'
+        data-connect-horizontal='{$horizontal}' data-connect-autostart='{$auto_rotate}'
         data-connect-settings=\"{$encoded_settings}\" data-connect-total-pages='{$total_js_pages}'>";
 
       $title_line = !empty($title) ? $before_title . $title . $after_title : "";
@@ -413,7 +413,7 @@ class fmcPhotos extends fmcWidget {
         $one_line_address = $listing_address[2];
 
 
-        $price = (flexmlsConnect::is_not_blank_or_restricted($listing['ListPrice'])) ? '$' . flexmlsConnect::gentle_price_rounding($listing['ListPrice']) : ""; 
+        $price = (flexmlsConnect::is_not_blank_or_restricted($listing['ListPrice'])) ? '$' . flexmlsConnect::gentle_price_rounding($listing['ListPrice']) : "";
 
         if ($source != "my" and $source != "my_office" and flexmlsConnect::get_office_id() != $listing['ListOfficeId'] ) {
           if (array_key_exists('IdxLogoSmall', $api_system_info['Configuration'][0]) && !empty($api_system_info['Configuration'][0]['IdxLogoSmall'])) {
@@ -556,7 +556,7 @@ class fmcPhotos extends fmcWidget {
 
     	if(!empty($main_photo_caption)){
           $img_alt_attr = $main_photo_caption;
-        } 
+        }
 	elseif(!empty($one_line_address)){
           $img_alt_attr = $one_line_address;
     	}
@@ -566,7 +566,7 @@ class fmcPhotos extends fmcWidget {
 
         $return .= "<!-- Listing -->
             <div class='flexmls_connect__listing'
-              title='{$one_line_address} | MLS #: {$listing['ListingId']} | {$price}{$extra_title_line}' 
+              title='{$one_line_address} | MLS #: {$listing['ListingId']} | {$price}{$extra_title_line}'
               link='{$this_link}' target=\"{$this_target}\">
                         $fmc_send_to
                 <img class='flexmls_connect__slideshow_image' src='{$main_photo_uri640}' alt='{$img_alt_attr}' />
@@ -670,8 +670,8 @@ class fmcPhotos extends fmcWidget {
 
     $settings = new Photo_Settings($instance);
 
-    $variables = array('title', 'horizontal', 'vertical', 'auto_rotate', 'source', 'display', 'days', 
-      'property_type', 'link', 'location', 'sort', 'additional_fields', 'destination', 'agent', 
+    $variables = array('title', 'horizontal', 'vertical', 'auto_rotate', 'source', 'display', 'days',
+      'property_type', 'link', 'location', 'sort', 'additional_fields', 'destination', 'agent',
       'send_to', 'image_size');
 
     foreach ($variables as $variable) {
@@ -796,7 +796,9 @@ class fmcPhotos extends fmcWidget {
     $api_property_type_options = $fmc_api->GetPropertyTypes();
     $api_system_info = $fmc_api->GetSystemInfo();
     $api_location_search_api = flexmlsConnect::get_locationsearch_url();
-    $api_my_account = $fmc_api->GetMyAccount();
+    //$api_my_account = $fmc_api->GetMyAccount();
+    $Account = new \SparkAPI\Account();
+    $api_my_account = $Account->get_my_account();
 
     if ($api_property_type_options === false || $api_system_info === false || $api_location_search_api === false || $api_my_account === false) {
       return flexmlsConnect::widget_not_available($fmc_api, true);

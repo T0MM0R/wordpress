@@ -504,8 +504,10 @@ class flexmlsConnect {
 
 
   static function get_destination_window_pref() {
-    $options = new Fmc_Settings;
-    return $options->destwindow();
+    $fmc_settings = get_option( 'fmc_settings' );
+    return $fmc_settings[ 'destwindow' ];
+    //$options = new Fmc_Settings;
+	//return $options->destwindow();
   }
 
   static function get_destination_pref() {
@@ -543,7 +545,10 @@ class flexmlsConnect {
   static function get_idx_link_details($my_link) {
     global $fmc_api;
 
-    $api_links = flexmlsConnect::get_all_idx_links();
+    $IDXLinks = new \SparkAPI\IDXLinks();
+    $api_links = $IDXLinks->get_all_idx_links();
+
+    //$api_links = flexmlsConnect::get_all_idx_links();
 
     if (is_array($api_links)) {
       foreach ($api_links as $link) {

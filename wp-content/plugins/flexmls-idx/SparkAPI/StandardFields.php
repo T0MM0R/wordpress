@@ -19,7 +19,7 @@ class StandardFields extends Core {
 
 	function get_standard_fields( $has_list = false ){
 		$results = $this->get_all_results( $this->get_from_api( 'GET', 'standardfields', DAY_IN_SECONDS ) );
-		if( !$has_list ){
+		if( !$has_list || empty( $results ) ){
 			return $results;
 		}
 		$results = $results[ 0 ];

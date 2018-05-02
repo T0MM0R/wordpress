@@ -7,6 +7,10 @@ $fmc_settings = get_option( 'fmc_settings' );
 $fmc_settings[ 'multiple_summaries' ] = ( 1 == $fmc_settings[ 'multiple_summaries' ] ) ? 1 : 0;
 $fmc_settings[ 'contact_notifications' ] = ( 1 == $fmc_settings[ 'contact_notifications' ] ) ? 1 : 0;
 $fmc_settings[ 'allow_sold_searching' ] = ( 1 == $fmc_settings[ 'allow_sold_searching' ] ) ? 1 : 0;
+$fmc_settings[ 'neigh_template' ] = isset( $fmc_settings[ 'neigh_template' ] ) ? $fmc_settings[ 'neigh_template' ] : '';
+$fmc_settings[ 'destwindow' ] = isset( $fmc_settings[ 'destwindow' ] ) ? $fmc_settings[ 'destwindow' ] : '';
+
+
 
 add_thickbox();
 
